@@ -8,12 +8,23 @@
 
 import UIKit
 
-class AnnouncementsConentViewController: UIViewController {
+class AnnouncementConentTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate  {
 
+    var announcement:Announcement!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //title.set
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.hidesBarsOnSwipe = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +32,10 @@ class AnnouncementsConentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+
 
     /*
     // MARK: - Navigation

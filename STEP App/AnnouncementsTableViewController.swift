@@ -145,12 +145,10 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                 (objects:[AnyObject]!,error:NSError!)->Void in
                 
                 if error == nil{
-                    println("No errors, getting announcements")
                     for object in objects{
                         let announcement:PFObject = object as PFObject
                         self.announcementList.addObject(announcement)
                     }
-                    println("Retrieved: \(self.announcementList.count) announcements...")
                     let array:NSArray = self.announcementList.reverseObjectEnumerator().allObjects
                     self.announcementList = NSMutableArray(array: array)
                     self.tableView.reloadData()
@@ -160,6 +158,17 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                 }
                 
             })
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "detailedAnnouncement" {
+            if let row = tableView.indexPathForSelectedRow()?.row {
+                let destinationController = segue.destinationViewController as AnnouncementConentTableViewController
+                //destinationController.announcement = restaurants[row]
+                destinationController.hidesBottomBarWhenPushed = true
+            }
+        }
+        
     }
     
 

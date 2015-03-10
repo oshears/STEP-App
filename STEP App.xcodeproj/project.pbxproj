@@ -34,6 +34,8 @@
 		80D6638A1AAE677E00433C79 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D663881AAE677E00433C79 /* Bolts.framework */; };
 		80D6638B1AAE677E00433C79 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D663891AAE677E00433C79 /* Parse.framework */; };
 		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */; };
+		80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */; };
+		80D663911AAE805900433C79 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D663901AAE805900433C79 /* Announcement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		80D663881AAE677E00433C79 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		80D663891AAE677E00433C79 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentViewController.swift; sourceTree = "<group>"; };
+		80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementsTableViewController.swift; sourceTree = "<group>"; };
+		80D663901AAE805900433C79 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */,
 				80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */,
 				80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */,
+				80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */,
+				80D663901AAE805900433C79 /* Announcement.swift */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80D663911AAE805900433C79 /* Announcement.swift in Sources */,
 				80AF32041AAD1E4A006C94CE /* AnnouncementsTableViewController.swift in Sources */,
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
 				80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */,
@@ -318,6 +325,7 @@
 				80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */,
 				80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */,
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,
+				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,
 			);

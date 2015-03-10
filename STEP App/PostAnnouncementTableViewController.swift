@@ -19,6 +19,7 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
     
     var announcementType:Int = -1
     //var announcementImage:UIImage; //Not implimented yet
+    var announcementHasImage = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,7 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
         announcement["title"] = announcementTitle.text
         announcement["content"] = announcementContent.text
         announcement["type"] = announcementType
+        announcement["hasImage"] = announcementHasImage
         println("New Announcement with image of \(announcementType)")
         
         //Create a check here to determine if PFUser is nil or not
