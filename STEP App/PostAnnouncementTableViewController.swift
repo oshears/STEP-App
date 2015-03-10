@@ -17,6 +17,10 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
     @IBOutlet weak var urgentButton: UIButton!
     @IBOutlet weak var informativeButton: UIButton!
     
+    @IBOutlet weak var generalText: UILabel!
+    @IBOutlet weak var urgentText: UILabel!
+    @IBOutlet weak var infoText: UILabel!
+    
     var announcementType:Int = -1
     //var announcementImage:UIImage; //Not implimented yet
     var announcementHasImage = false
@@ -91,24 +95,28 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
     }
     @IBAction func updateAnnouncementType(sender: AnyObject){
         let buttonClicked = sender as UIButton
+        
         if buttonClicked == generalButton {
             announcementType = 0
-            generalButton.backgroundColor = UIColor(red: 175.0/255.0, green: 210.0/255.0, blue: 63.0/255.0, alpha: 1.0)
-            urgentButton.backgroundColor = UIColor.clearColor()
-            informativeButton.backgroundColor = UIColor.clearColor()
+            generalText.backgroundColor = UIColor(red: 255.0/255.0, green: 204/255.0, blue: 51/255.0, alpha: 1.0)
+            urgentText.backgroundColor = UIColor.clearColor()
+            infoText.backgroundColor = UIColor.clearColor()
         } else if buttonClicked == urgentButton {
             announcementType = 1
-            generalButton.backgroundColor = UIColor.clearColor()
-            urgentButton.backgroundColor = UIColor(red: 175.0/255.0, green: 210.0/255.0, blue: 63.0/255.0, alpha: 1.0)
-            informativeButton.backgroundColor = UIColor.clearColor()
+            generalText.backgroundColor = UIColor.clearColor()
+            urgentText.backgroundColor = UIColor(red: 255.0/255.0, green: 204/255.0, blue: 51/255.0, alpha: 1.0)
+            infoText.backgroundColor = UIColor.clearColor()
         }
         else if buttonClicked == informativeButton{
             announcementType = 2
-            generalButton.backgroundColor = UIColor.clearColor()
-            urgentButton.backgroundColor = UIColor.clearColor()
-            informativeButton.backgroundColor = UIColor(red: 175.0/255.0, green: 210.0/255.0, blue: 63.0/255.0, alpha: 1.0)
+            generalText.backgroundColor = UIColor.clearColor()
+            urgentText.backgroundColor = UIColor.clearColor()
+            infoText.backgroundColor = UIColor(red: 255.0/255.0, green: 204/255.0, blue: 51/255.0, alpha: 1.0)
         }
 
+    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     /*

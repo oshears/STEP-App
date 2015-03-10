@@ -18,6 +18,16 @@ class SideMenuTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //No excess
+        
+        self.tableView.tableFooterView = UIView(frame:CGRectZero)
+    }
+    override func viewWillAppear(animated: Bool) {
+            UIApplication.sharedApplication().statusBarStyle = .Default
+    }
+    override func viewWillDisappear(animated: Bool) {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +36,12 @@ class SideMenuTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        (indexPath.row == 0) ? tableView.deselectRowAtIndexPath(indexPath, animated: false) : tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+    }
 
     
     /*override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -37,7 +53,7 @@ class SideMenuTableViewController: UITableViewController {
 
         return cell
     }*/
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 4{
             if !((PFUser.currentUser()) != nil){
                 self.showLogin()
@@ -101,7 +117,7 @@ class SideMenuTableViewController: UITableViewController {
         
         
         
-    }
+    }*/
 
 
     /*

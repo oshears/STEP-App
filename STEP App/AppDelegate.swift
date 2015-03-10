@@ -18,34 +18,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        
-        // Change navigation bar appearance
-        UINavigationBar.appearance().barTintColor = UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 107.0/255.0, alpha: 1)
-        
-        UINavigationBar.appearance().tintColor = UIColor(red: 175.0/255.0, green: 210.0/255.0, blue: 63.0/255.0, alpha: 1)
-        
-        if let barFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 22.0) {
-            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 175.0/255.0, green: 210.0/255.0, blue: 63.0/255.0, alpha: 1), NSFontAttributeName:barFont]
-        }
-        
         // Change status bar style
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        
+        // Change navigation bar appearance
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0/255.0, green: 102.0/255.0, blue: 51/255.0, alpha: 1)
+        
+        UINavigationBar.appearance().tintColor = UIColor(red: 255.0/255.0, green: 204.0/255.0, blue: 51.0/255.0, alpha: 1)
+        
+        if let barFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 22.0) {
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
+        }
+        
+        //GMU Yellow: UIColor(red: 255.0/255.0, green: 204.0/255.0, blue: 51.0/255.0, alpha: 1)
+        
+        
+        
         // Change toolbar style
         //    UIBarButtonItem.appearance().tintColor = UIColor(red: 235.0/255.0, green: 73.0/255.0, blue: 27.0/255.0, alpha: 1.0)
-        UIToolbar.appearance().barTintColor = UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 107.0/255.0, alpha: 1)
+        UIToolbar.appearance().barTintColor = UIColor(red: 0/255.0, green: 104/255.0, blue: 51.0/255.0, alpha: 1)
         
-        UITabBar.appearance().tintColor = UIColor(red: 70.0/255.0, green: 194.0/255.0, blue:
-            203.0/255.0, alpha: 1.0)
-        //UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().tintColor = UIColor(red: 0.0/255.0, green: 102.0/255.0, blue:153.0/255.0, alpha: 1.0)
+        //UITabBar.appearance().barTintColor = UIColor.lightGrayColor()
         
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-        
-        
-        //Initialize Parse
-        Parse.enableLocalDatastore()
-        Parse.setApplicationId("QaWUilnbC0lQoBcjrYXkEos4vOZYmCxoDyEXYAba", clientKey: "6kM74pku4lgflvu9HQbequLoRjqJ3WA78Ci6l4VC")
-        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(nil, block: nil)
         
 
         //Initialize Auto Refresh
@@ -53,6 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationSettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
+        
+        //Initialize Parse
+        Parse.enableLocalDatastore()
+        Parse.setApplicationId("QaWUilnbC0lQoBcjrYXkEos4vOZYmCxoDyEXYAba", clientKey: "6kM74pku4lgflvu9HQbequLoRjqJ3WA78Ci6l4VC")
+        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(nil, block: nil)
+
+                
         return true
 
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */; };
+		8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */; };
 		80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF31881AAC8E08006C94CE /* AppDelegate.swift */; };
 		80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */; };
 		80AF31911AAC8E08006C94CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AF318F1AAC8E08006C94CE /* Main.storyboard */; };
@@ -33,7 +35,7 @@
 		80C2E8DF1AAEAA47000C4CA6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */; };
 		80C2E8E01AAEAA47000C4CA6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */; };
 		80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */; };
-		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */; };
+		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */; };
 		80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */; };
 		80D663911AAE805900433C79 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D663901AAE805900433C79 /* Announcement.swift */; };
 		80DD6E211AAF1132001D4479 /* MiscPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
+		8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
 		80AF31831AAC8E08006C94CE /* STEP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AF31871AAC8E08006C94CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AF31881AAC8E08006C94CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +86,7 @@
 		80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.6.4/Bolts.framework"; sourceTree = "<group>"; };
 		80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.6.4/Parse.framework"; sourceTree = "<group>"; };
 		80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
-		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentViewController.swift; sourceTree = "<group>"; };
+		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentTableViewController.swift; sourceTree = "<group>"; };
 		80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementsTableViewController.swift; sourceTree = "<group>"; };
 		80D663901AAE805900433C79 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscPostTableViewController.swift; sourceTree = "<group>"; };
@@ -119,12 +123,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8026B31A1AAF60A7001DC66A /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		8026B31F1AAF8BEE001DC66A /* People */ = {
+			isa = PBXGroup;
+			children = (
+				8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */,
+			);
+			name = People;
+			sourceTree = "<group>";
+		};
 		804B23891AAF1BE80008EE81 /* Announcements */ = {
 			isa = PBXGroup;
 			children = (
 				80AF32031AAD1E4A006C94CE /* AnnouncementsTableViewController.swift */,
 				80AF32051AAD21CE006C94CE /* AnnoucementTableViewCell.swift */,
-				80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */,
+				80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */,
 				80D663901AAE805900433C79 /* Announcement.swift */,
 				80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */,
 				80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */,
@@ -165,16 +185,18 @@
 			isa = PBXGroup;
 			children = (
 				80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */,
-				80AF32211AAD2611006C94CE /* Frameworks */,
-				80AF31881AAC8E08006C94CE /* AppDelegate.swift */,
 				80AF31861AAC8E08006C94CE /* Supporting Files */,
 				80AF32711AADFE38006C94CE /* SWRevealView */,
+				80AF32211AAD2611006C94CE /* Frameworks */,
+				80AF31881AAC8E08006C94CE /* AppDelegate.swift */,
 				80AF31941AAC8E08006C94CE /* LaunchScreen.xib */,
 				80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */,
 				80AF31921AAC8E08006C94CE /* Images.xcassets */,
 				80AF318F1AAC8E08006C94CE /* Main.storyboard */,
-				804B238A1AAF1C190008EE81 /* Admin */,
 				804B23891AAF1BE80008EE81 /* Announcements */,
+				804B238A1AAF1C190008EE81 /* Admin */,
+				8026B31F1AAF8BEE001DC66A /* People */,
+				8026B31A1AAF60A7001DC66A /* Calendar */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -338,6 +360,8 @@
 				80D663911AAE805900433C79 /* Announcement.swift in Sources */,
 				80AF32041AAD1E4A006C94CE /* AnnouncementsTableViewController.swift in Sources */,
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
+				8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */,
+				8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */,
 				80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */,
 				80DD6E211AAF1132001D4479 /* MiscPostTableViewController.swift in Sources */,
 				80AF32061AAD21CE006C94CE /* AnnoucementTableViewCell.swift in Sources */,
@@ -345,7 +369,7 @@
 				80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */,
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,
 				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
-				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */,
+				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */,
 				80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,
 			);

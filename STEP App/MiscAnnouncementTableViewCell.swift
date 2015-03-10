@@ -20,9 +20,7 @@ class MiscAnnouncementTableViewCell: UITableViewCell {
         // Initialization code
         
         var screenRect:CGRect = UIScreen.mainScreen().bounds
-        
-        println(announcementContent.frame.height)
-        
+                
         var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 25, self.cellSize))
         whiteRoundedCornerView.backgroundColor = UIColor.whiteColor()
         whiteRoundedCornerView.layer.masksToBounds = false

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MiscPostTableViewController: UITableViewController, UINavigationControllerDelegate {
+class MiscPostTableViewController: UITableViewController, UINavigationControllerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var announcementContent: UITextView!
     override func viewDidLoad() {
@@ -19,6 +19,12 @@ class MiscPostTableViewController: UITableViewController, UINavigationController
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        announcementContent.layer.borderColor = UIColor.blackColor().CGColor
+        announcementContent.layer.borderWidth = 0.5
+        announcementContent.layer.cornerRadius = 5
+        announcementContent.delegate = self
+        announcementContent.becomeFirstResponder()
         
     }
 
@@ -51,6 +57,9 @@ class MiscPostTableViewController: UITableViewController, UINavigationController
         
         
         performSegueWithIdentifier("unwindToAnnouncementScreen", sender: self)
+    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     /*

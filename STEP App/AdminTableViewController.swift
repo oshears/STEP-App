@@ -62,6 +62,7 @@ class AdminTableViewController: UITableViewController {
         return 3
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.row == 0{
             if PFUser.currentUser() != nil{
                 PFUser.logOut()
