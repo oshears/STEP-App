@@ -29,6 +29,8 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         // Self Sizing Cells
         self.tableView.estimatedRowHeight = 100.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
         
         self.loadAnnouncementData()
@@ -186,12 +188,15 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let announcement:PFObject = self.announcementList.objectAtIndex(indexPath.row) as PFObject
+        //Attempt at creating a custom segue to chose either the image detail view or standard detail view
+        
+        /*let announcement:PFObject = self.announcementList.objectAtIndex(indexPath.row) as PFObject
         
         //Will change for image announcements
         if true{
-            self.prepareForSegue(UIStoryboardSegue("detailedAnnouncement",source:self,destination:AnnouncementConentTableViewController,performHandler:nil), self)
-        }
+            var vc:AnnouncementConentTableViewController = AnnouncementConentTableViewController?
+            prepareForSegue(UIStoryboardSegue("detailedAnnouncement",source:self,destination:vc,performHandler:nil), self)
+        }*/
         
     }
     

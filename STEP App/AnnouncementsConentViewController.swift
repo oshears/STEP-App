@@ -12,6 +12,10 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
 
     var announcement:Announcement!
     
+    @IBOutlet weak var announcementTitle: UILabel!
+    @IBOutlet weak var announcementPostDate: UILabel!
+    @IBOutlet weak var announcementContent: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,14 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
         //Self-Sizing
         tableView.estimatedRowHeight = 36.0;
         tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        println(announcement.title)
+        announcementTitle.text = announcement.title
+        announcementContent.text = announcement.content
+        announcementPostDate.text = announcement.postDate
+        
+        //No excess
+        self.tableView.tableFooterView = UIView(frame:CGRectZero)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -36,32 +48,6 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        cell.backgroundColor = UIColor.clearColor()
-        
-        // Configure the cell...
-        switch indexPath.row {
-        case 0:
-            cell.textLabel?.text = announcement.title
-        case 1:
-            cell.textLabel?.text = announcement.postDate
-        case 2:
-            cell.textLabel?.text = announcement.content
-        default:
-            cell.textLabel?.text = ""
-            cell.textLabel?.text = ""
-            
-        }
-        
-        return cell
-    }
 
 
 

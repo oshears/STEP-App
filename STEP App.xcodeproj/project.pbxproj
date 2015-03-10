@@ -31,11 +31,12 @@
 		80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */; };
 		80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */; };
 		80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */; };
-		80D6638A1AAE677E00433C79 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D663881AAE677E00433C79 /* Bolts.framework */; };
-		80D6638B1AAE677E00433C79 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D663891AAE677E00433C79 /* Parse.framework */; };
+		80C2E8DF1AAEAA47000C4CA6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */; };
+		80C2E8E01AAEAA47000C4CA6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */; };
 		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */; };
 		80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */; };
 		80D663911AAE805900433C79 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D663901AAE805900433C79 /* Announcement.swift */; };
+		80D663991AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D663981AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +80,12 @@
 		80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAnnouncementTableViewController.swift; sourceTree = "<group>"; };
 		80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEP App-Bridging-Header.h"; sourceTree = "<group>"; };
-		80D663881AAE677E00433C79 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		80D663891AAE677E00433C79 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.6.4/Bolts.framework"; sourceTree = "<group>"; };
+		80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.6.4/Parse.framework"; sourceTree = "<group>"; };
 		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentViewController.swift; sourceTree = "<group>"; };
 		80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementsTableViewController.swift; sourceTree = "<group>"; };
 		80D663901AAE805900433C79 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		80D663981AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +93,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C2E8DF1AAEAA47000C4CA6 /* Bolts.framework in Frameworks */,
+				80C2E8E01AAEAA47000C4CA6 /* Parse.framework in Frameworks */,
 				80AF32201AAD25EF006C94CE /* libsqlite3.dylib in Frameworks */,
 				80AF321E1AAD25EA006C94CE /* libz.dylib in Frameworks */,
 				80AF321C1AAD25E3006C94CE /* SystemConfiguration.framework in Frameworks */,
-				80D6638A1AAE677E00433C79 /* Bolts.framework in Frameworks */,
 				80AF321A1AAD25D8006C94CE /* StoreKit.framework in Frameworks */,
 				80AF32181AAD25D4006C94CE /* Security.framework in Frameworks */,
-				80D6638B1AAE677E00433C79 /* Parse.framework in Frameworks */,
 				80AF32161AAD25CF006C94CE /* QuartzCore.framework in Frameworks */,
 				80AF32141AAD25CA006C94CE /* MobileCoreServices.framework in Frameworks */,
 				80AF32121AAD25C4006C94CE /* CoreLocation.framework in Frameworks */,
@@ -138,8 +140,6 @@
 		80AF31851AAC8E08006C94CE /* STEP App */ = {
 			isa = PBXGroup;
 			children = (
-				80D663881AAE677E00433C79 /* Bolts.framework */,
-				80D663891AAE677E00433C79 /* Parse.framework */,
 				80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */,
 				80AF32211AAD2611006C94CE /* Frameworks */,
 				80AF31881AAC8E08006C94CE /* AppDelegate.swift */,
@@ -158,6 +158,7 @@
 				80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */,
 				80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */,
 				80D663901AAE805900433C79 /* Announcement.swift */,
+				80D663981AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -190,6 +191,8 @@
 		80AF32211AAD2611006C94CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */,
+				80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */,
 				80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */,
 				80AF321D1AAD25EA006C94CE /* libz.dylib */,
 				80AF321B1AAD25E3006C94CE /* SystemConfiguration.framework */,
@@ -326,6 +329,7 @@
 				80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */,
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,
 				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
+				80D663991AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,
 			);
@@ -457,12 +461,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/STEP",
-					App,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library-1.6.4";
 				INFOPLIST_FILE = "STEP App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,12 +478,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/STEP",
-					App,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library-1.6.4";
 				INFOPLIST_FILE = "STEP App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
