@@ -17,7 +17,11 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
 
         // Do any additional setup after loading the view.
         
-        //title.set
+        title = announcement.title
+        
+        //Self-Sizing
+        tableView.estimatedRowHeight = 36.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,8 +37,32 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        
+        cell.backgroundColor = UIColor.clearColor()
+        
+        // Configure the cell...
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = announcement.title
+        case 1:
+            cell.textLabel?.text = announcement.postDate
+        case 2:
+            cell.textLabel?.text = announcement.content
+        default:
+            cell.textLabel?.text = ""
+            cell.textLabel?.text = ""
+            
+        }
+        
+        return cell
+    }
+
 
 
     /*

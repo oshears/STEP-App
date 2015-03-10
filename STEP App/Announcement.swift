@@ -13,25 +13,26 @@ class Announcement {
     
     var title:String = ""
     var content:String = ""
-    var image:UIImage = UIImage(named: "STEPAppLogoAsmallx")!
-    var hasImage:Bool = false
+    //Create a subclass for image stuff
+    //var image:UIImage = UIImage(named: "STEPAppLogoAsmallx")!
+    //var hasImage:Bool = false
     var postDate:String = ""
     
-    func Announcement(title:String, content:String, image:UIImage, hasImage:Bool, postDate:String){
+    init(title:String, content:String, postDate:String){
         
         self.title = title
         self.content = content
-        self.image = image
-        self.hasImage = hasImage
+        //self.image = image
+        //self.hasImage = hasImage
         self.postDate = postDate
         
     }
     
-    func getImage() -> UIImage{
+    /*func getImage() -> UIImage{
         if hasImage{
             return self.image
         }
         return UIImage(named: "STEPAppLogoAsmallx")!
-    }
+    }*/
     
 }

@@ -163,10 +163,34 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "detailedAnnouncement" {
             if let row = tableView.indexPathForSelectedRow()?.row {
+                
+                //var retrievedAnnouncement:PFObject = announcementList[row] as PFObject
+                let announcement:PFObject = self.announcementList.objectAtIndex(row) as PFObject
+                var title:String = announcement.objectForKey("title") as String
+                var content:String = announcement.objectForKey("content") as String
+                
+                var dataFormatter:NSDateFormatter = NSDateFormatter()
+                dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
+                var postDate:String = dataFormatter.stringFromDate(announcement.createdAt)
+                
+                
                 let destinationController = segue.destinationViewController as AnnouncementConentTableViewController
-                //destinationController.announcement = restaurants[row]
+                
+                
+                destinationController.announcement = Announcement(title: title, content: content, postDate: postDate)
+                
                 destinationController.hidesBottomBarWhenPushed = true
             }
+        }
+        
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let announcement:PFObject = self.announcementList.objectAtIndex(indexPath.row) as PFObject
+        
+        //Will change for image announcements
+        if true{
+            self.prepareForSegue(UIStoryboardSegue("detailedAnnouncement",source:self,destination:AnnouncementConentTableViewController,performHandler:nil), self)
         }
         
     }
