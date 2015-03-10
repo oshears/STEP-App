@@ -10,6 +10,7 @@ import UIKit
 
 class MiscPostTableViewController: UITableViewController, UINavigationControllerDelegate {
 
+    @IBOutlet weak var announcementContent: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,18 +28,26 @@ class MiscPostTableViewController: UITableViewController, UINavigationController
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
     @IBAction func postMisc(){
+        
+        var announcement:PFObject = PFObject(className: "MiscAnnouncement")
+        announcement["content"] = announcementContent.text
+        
+        //Create a check here to determine if PFUser is nil or not
+        announcement.saveInBackgroundWithTarget(nil, selector: nil)
+        var push:PFPush = PFPush()
+        push.setChannel("Reload")
+            
+        //Custom sound, badge app icon, alert message?
+        var data:NSDictionary = ["alert":"","badge":"0","content-available":"1","sound":""]
+        push.setData(data)
+        push.sendPushInBackgroundWithTarget(nil, selector: nil)
+            
+        
+        println("Done uploading misc announcement")
+
+        
         
         performSegueWithIdentifier("unwindToAnnouncementScreen", sender: self)
     }

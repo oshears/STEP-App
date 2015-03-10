@@ -143,17 +143,6 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         return cell
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, 300, 90))
-        whiteRoundedCornerView.backgroundColor = UIColor.whiteColor()
-        whiteRoundedCornerView.layer.masksToBounds = false
-        whiteRoundedCornerView.layer.cornerRadius = 3
-        whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(-1, 1)
-        whiteRoundedCornerView.layer.shadowOpacity = 0.5
-        cell.contentView.addSubview(whiteRoundedCornerView)
-        cell.contentView.sendSubviewToBack(whiteRoundedCornerView)
-        
-    }
     
     @IBAction func loadAnnouncementData(){
             announcementList.removeAllObjects()

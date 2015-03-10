@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             203.0/255.0, alpha: 1.0)
         //UITabBar.appearance().barTintColor = UIColor.blackColor()
         
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
         
         
         //Initialize Parse

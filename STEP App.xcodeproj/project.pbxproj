@@ -32,6 +32,7 @@
 		80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */; };
 		80C2E8DF1AAEAA47000C4CA6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */; };
 		80C2E8E01AAEAA47000C4CA6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */; };
+		80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */; };
 		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */; };
 		80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */; };
 		80D663911AAE805900433C79 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D663901AAE805900433C79 /* Announcement.swift */; };
@@ -80,6 +81,7 @@
 		80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEP App-Bridging-Header.h"; sourceTree = "<group>"; };
 		80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.6.4/Bolts.framework"; sourceTree = "<group>"; };
 		80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.6.4/Parse.framework"; sourceTree = "<group>"; };
+		80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentViewController.swift; sourceTree = "<group>"; };
 		80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementsTableViewController.swift; sourceTree = "<group>"; };
 		80D663901AAE805900433C79 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */,
 				80D663901AAE805900433C79 /* Announcement.swift */,
 				80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */,
+				80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */,
 				80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */,
 			);
 			name = Announcements;
@@ -343,6 +346,7 @@
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,
 				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */,
+				80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
