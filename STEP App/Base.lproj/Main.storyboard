@@ -292,7 +292,7 @@
                                                         <constraint firstAttribute="height" constant="50" id="H48-5Q-R3d"/>
                                                         <constraint firstAttribute="width" constant="50" id="d8r-8d-baN"/>
                                                     </constraints>
-                                                    <state key="normal" image="generalb">
+                                                    <state key="normal" image="type_General">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -305,7 +305,7 @@
                                                         <constraint firstAttribute="width" constant="50" id="foC-wE-eAs"/>
                                                         <constraint firstAttribute="height" constant="50" id="p1L-td-peZ"/>
                                                     </constraints>
-                                                    <state key="normal" image="urgent">
+                                                    <state key="normal" image="type_Urgent">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -318,7 +318,7 @@
                                                         <constraint firstAttribute="height" constant="50" id="PI2-0v-or1"/>
                                                         <constraint firstAttribute="width" constant="50" id="a1n-Ug-b8s"/>
                                                     </constraints>
-                                                    <state key="normal" image="informative">
+                                                    <state key="normal" image="type_Informative">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -419,10 +419,11 @@
         <scene sceneID="2L8-92-QfU">
             <objects>
                 <tableViewController storyboardIdentifier="AnnouncementDetailView" id="eBd-iG-yqg" customClass="AnnouncementConentTableViewController" customModule="STEP_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jtc-DY-zFS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jtc-DY-zFS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                         <sections>
                             <tableViewSection id="scc-aM-Jom">
                                 <cells>
@@ -433,11 +434,12 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5G-0p-6CY">
                                                     <rect key="frame" x="8" y="8" width="584" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                             <constraints>
                                                 <constraint firstItem="x5G-0p-6CY" firstAttribute="bottom" secondItem="J0v-Ad-d2O" secondAttribute="bottomMargin" id="0xn-mJ-6y1"/>
                                                 <constraint firstItem="x5G-0p-6CY" firstAttribute="leading" secondItem="J0v-Ad-d2O" secondAttribute="leadingMargin" id="BXf-vK-47d"/>
@@ -451,9 +453,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fV9-Aq-4Xd" id="GBs-Td-dZe">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znK-KH-UOa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostDate" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znK-KH-UOa">
                                                     <rect key="frame" x="8" y="8" width="584" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -465,15 +467,16 @@
                                                 <constraint firstItem="znK-KH-UOa" firstAttribute="trailing" secondItem="GBs-Td-dZe" secondAttribute="trailingMargin" id="iaq-1e-6QQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="50" id="jca-1T-r51">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="jca-1T-r51">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jca-1T-r51" id="UWt-gq-gOH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conent" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE1-wF-O46">
-                                                    <rect key="frame" x="8" y="8" width="584" height="33.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="584" height="27.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -485,6 +488,7 @@
                                                 <constraint firstItem="SE1-wF-O46" firstAttribute="bottom" secondItem="UWt-gq-gOH" secondAttribute="bottomMargin" id="yYJ-Nb-Bzc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1062,7 +1066,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJx-HO-p2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="-517"/>
+            <point key="canvasLocation" x="1411" y="-517"/>
         </scene>
     </scenes>
     <resources>
@@ -1071,15 +1075,15 @@
         <image name="camera-7" width="30" height="30"/>
         <image name="clock-7" width="30" height="30"/>
         <image name="crown-7" width="30" height="30"/>
-        <image name="generalb" width="200" height="200"/>
-        <image name="informative" width="200" height="200"/>
         <image name="man-7" width="29" height="30"/>
         <image name="megaphone" width="30" height="30"/>
         <image name="menu" width="22" height="22"/>
         <image name="message-7" width="30" height="30"/>
         <image name="paper-map-7" width="30" height="30"/>
         <image name="paper-piece-7" width="30" height="30"/>
-        <image name="urgent" width="201" height="200"/>
+        <image name="type_General" width="200" height="200"/>
+        <image name="type_Informative" width="200" height="200"/>
+        <image name="type_Urgent" width="201" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="v6S-qo-Tu2"/>

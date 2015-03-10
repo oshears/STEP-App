@@ -78,12 +78,20 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
             announcement["poster"] = PFUser.currentUser()
             announcement.saveInBackgroundWithTarget(nil, selector: nil)
             var push:PFPush = PFPush()
-            push.setChannel("Reload")
+            //push.setChannel("Reload")
             
             //Custom sound, badge app icon, alert message?
             var data:NSDictionary = ["alert":"","badge":"0","content-available":"1","sound":""]
             
             push.setData(data)
+            
+            //Send push notification
+            var pushQuery:PFQuery = PFInstallation.query()
+            pushQuery.whereKey("channels",equalTo: "Reload")
+            push.setQuery(pushQuery)
+            push.setMessage(announcementTitle.text)
+            
+            
             push.sendPushInBackgroundWithTarget(nil, selector: nil)
             
         }

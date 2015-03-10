@@ -121,13 +121,13 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         if announcement.objectForKey("type") != nil{
             if announcement.objectForKey("type") as? Int != nil{
                 if announcement.objectForKey("type") as? Int == 0{
-                    cell.announcementImage.image = UIImage(named: "generalb")
+                    cell.announcementImage.image = UIImage(named: "type_General")
                 }
                 if announcement.objectForKey("type") as? Int == 1{
-                    cell.announcementImage.image = UIImage(named: "urgent")
+                    cell.announcementImage.image = UIImage(named: "type_Urgent")
                 }
                 if announcement.objectForKey("type") as? Int == 2{
-                    cell.announcementImage.image = UIImage(named: "informative")
+                    cell.announcementImage.image = UIImage(named: "type_Informative")
                 }
             }
         }
