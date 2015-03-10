@@ -61,10 +61,13 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
     }
     
+    
     @IBAction func postAnnouncement(sender: AnyObject) {
         var announcement:PFObject = PFObject(className: "Announcement")
         announcement["title"] = announcementTitle.text
         announcement["content"] = announcementContent.text
+        announcement["type"] = announcementType
+        println("New Announcement with image of \(announcementType)")
         
         //Create a check here to determine if PFUser is nil or not
         if PFUser.currentUser() != nil{
@@ -80,7 +83,13 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
             push.sendPushInBackgroundWithTarget(nil, selector: nil)
             
         }
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        println("Done uploading announcement")
+        
+        
+        //performSegueWithIdentifier("unwindToHomeScreen", sender: self)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     @IBAction func updateAnnouncementType(sender: AnyObject){
         let buttonClicked = sender as UIButton

@@ -13,6 +13,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     var announcementList:NSMutableArray = NSMutableArray()
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,12 +27,12 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
         // Self Sizing Cells
-        self.tableView.estimatedRowHeight = 80.0;
+        self.tableView.estimatedRowHeight = 100.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
         
         self.loadAnnouncementData()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadData", name: "reloadAnnouncements", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnouncementData", name: "reloadAnnouncements", object: nil)
         
         //Side Menu
         if self.revealViewController() != nil {
@@ -111,6 +112,20 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         var dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
         cell.announcementTime.text = dataFormatter.stringFromDate(announcement.createdAt)
+        
+        if announcement.objectForKey("type") != nil{
+            if announcement.objectForKey("type") as? Int != nil{
+                if announcement.objectForKey("type") as? Int == 0{
+                    cell.announcementImage.image = UIImage(named: "generalb")
+                }
+                if announcement.objectForKey("type") as? Int == 1{
+                    cell.announcementImage.image = UIImage(named: "urgent")
+                }
+                if announcement.objectForKey("type") as? Int == 2{
+                    cell.announcementImage.image = UIImage(named: "informative")
+                }
+            }
+        }
         
         
         

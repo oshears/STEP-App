@@ -28,12 +28,12 @@
 		80AF32201AAD25EF006C94CE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */; };
 		80AF32341AADD551006C94CE /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32331AADD551006C94CE /* AnnouncementsViewController.swift */; };
 		80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AF326D1AADF164006C94CE /* SWRevealViewController.m */; };
-		80AF32701AADF267006C94CE /* TempViewControlTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF326F1AADF267006C94CE /* TempViewControlTableViewController.swift */; };
 		80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */; };
 		80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */; };
 		80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */; };
-		80AF328B1AAE5D12006C94CE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF32891AAE5D12006C94CE /* Bolts.framework */; };
-		80AF328C1AAE5D13006C94CE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF328A1AAE5D12006C94CE /* Parse.framework */; };
+		80D6638A1AAE677E00433C79 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D663881AAE677E00433C79 /* Bolts.framework */; };
+		80D6638B1AAE677E00433C79 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D663891AAE677E00433C79 /* Parse.framework */; };
+		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,13 +73,13 @@
 		80AF32331AADD551006C94CE /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
 		80AF326C1AADF164006C94CE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		80AF326D1AADF164006C94CE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		80AF326F1AADF267006C94CE /* TempViewControlTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewControlTableViewController.swift; sourceTree = "<group>"; };
 		80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
 		80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAnnouncementTableViewController.swift; sourceTree = "<group>"; };
 		80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEP App-Bridging-Header.h"; sourceTree = "<group>"; };
-		80AF32891AAE5D12006C94CE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		80AF328A1AAE5D12006C94CE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		80D663881AAE677E00433C79 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		80D663891AAE677E00433C79 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +90,10 @@
 				80AF32201AAD25EF006C94CE /* libsqlite3.dylib in Frameworks */,
 				80AF321E1AAD25EA006C94CE /* libz.dylib in Frameworks */,
 				80AF321C1AAD25E3006C94CE /* SystemConfiguration.framework in Frameworks */,
-				80AF328B1AAE5D12006C94CE /* Bolts.framework in Frameworks */,
+				80D6638A1AAE677E00433C79 /* Bolts.framework in Frameworks */,
 				80AF321A1AAD25D8006C94CE /* StoreKit.framework in Frameworks */,
 				80AF32181AAD25D4006C94CE /* Security.framework in Frameworks */,
-				80AF328C1AAE5D13006C94CE /* Parse.framework in Frameworks */,
+				80D6638B1AAE677E00433C79 /* Parse.framework in Frameworks */,
 				80AF32161AAD25CF006C94CE /* QuartzCore.framework in Frameworks */,
 				80AF32141AAD25CA006C94CE /* MobileCoreServices.framework in Frameworks */,
 				80AF32121AAD25C4006C94CE /* CoreLocation.framework in Frameworks */,
@@ -134,24 +134,24 @@
 		80AF31851AAC8E08006C94CE /* STEP App */ = {
 			isa = PBXGroup;
 			children = (
-				80AF32891AAE5D12006C94CE /* Bolts.framework */,
-				80AF328A1AAE5D12006C94CE /* Parse.framework */,
+				80D663881AAE677E00433C79 /* Bolts.framework */,
+				80D663891AAE677E00433C79 /* Parse.framework */,
 				80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */,
 				80AF32211AAD2611006C94CE /* Frameworks */,
 				80AF31881AAC8E08006C94CE /* AppDelegate.swift */,
+				80AF31861AAC8E08006C94CE /* Supporting Files */,
 				80AF32711AADFE38006C94CE /* SWRevealView */,
 				80AF318F1AAC8E08006C94CE /* Main.storyboard */,
-				80AF32031AAD1E4A006C94CE /* AnnouncementsTableViewController.swift */,
 				80AF31921AAC8E08006C94CE /* Images.xcassets */,
 				80AF31941AAC8E08006C94CE /* LaunchScreen.xib */,
 				80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */,
-				80AF31861AAC8E08006C94CE /* Supporting Files */,
+				80AF32031AAD1E4A006C94CE /* AnnouncementsTableViewController.swift */,
 				80AF32051AAD21CE006C94CE /* AnnoucementTableViewCell.swift */,
 				80AF32331AADD551006C94CE /* AnnouncementsViewController.swift */,
-				80AF326F1AADF267006C94CE /* TempViewControlTableViewController.swift */,
 				80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */,
 				80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */,
 				80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */,
+				80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -318,8 +318,8 @@
 				80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */,
 				80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */,
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,
+				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,
-				80AF32701AADF267006C94CE /* TempViewControlTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +378,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -398,6 +399,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -420,6 +422,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -433,6 +436,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -447,10 +451,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/STEP",
-					App,
-					"$(PROJECT_DIR)/STEP",
-					App,
+					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/STEP",
 					App,
 				);
@@ -472,10 +473,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/STEP",
-					App,
-					"$(PROJECT_DIR)/STEP",
-					App,
+					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/STEP",
 					App,
 				);
@@ -494,8 +492,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/STEP",
-					App,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -515,8 +511,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/STEP",
-					App,
 				);
 				INFOPLIST_FILE = "STEP AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
