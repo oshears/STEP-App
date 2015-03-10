@@ -1,17 +1,15 @@
 //
-//  MiscAnnouncementsTableViewController.swift
+//  MiscPostTableViewController.swift
 //  STEP App
 //
-//  Created by Osaze Shears on 3/9/15.
+//  Created by Osaze Shears on 3/10/15.
 //  Copyright (c) 2015 OSApps. All rights reserved.
 //
 
 import UIKit
 
-class MiscAnnouncementsTableViewController: UITableViewController {
+class MiscPostTableViewController: UITableViewController, UINavigationControllerDelegate {
 
-    
-    @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,14 +18,6 @@ class MiscAnnouncementsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        //Side Menu
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,17 +27,20 @@ class MiscAnnouncementsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 0
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        
-        
-        //Misc Announcement Count
         return 0
     }
-    @IBAction func unwindToAnnouncementScreen(segue:UIStoryboardSegue) {
+    @IBAction func postMisc(){
         
+        performSegueWithIdentifier("unwindToAnnouncementScreen", sender: self)
     }
 
     /*

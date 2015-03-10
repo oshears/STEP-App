@@ -149,7 +149,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="sAw-TQ-w5c" kind="show" identifier="postGeneralAnnouncement" id="Mu7-Jp-568"/>
+                                            <segue destination="sAw-TQ-w5c" kind="presentation" identifier="postGeneralAnnouncement" id="Mu7-Jp-568"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Naf-qJ-iah">
@@ -372,6 +372,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Post General Notification" id="Y4L-xg-vSk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ci4-R0-bj7">
+                            <connections>
+                                <segue destination="Zy1-e9-Ukr" kind="unwind" identifier="unwindToHomeScreen" unwindAction="unwindToHomeScreen:" id="iga-Su-XfQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="KZN-b9-c7f">
                             <connections>
                                 <action selector="postAnnouncement:" destination="1RH-6I-ieN" id="65R-jD-LBK"/>
@@ -387,6 +392,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGZ-8J-Sz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Zy1-e9-Ukr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2629" y="1863"/>
         </scene>
@@ -417,12 +423,12 @@
                         <sections>
                             <tableViewSection id="scc-aM-Jom">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="hwK-DT-m1o" customClass="AnnouncementDetailCellTableViewCell" customModule="STEP_App" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="hwK-DT-m1o">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hwK-DT-m1o" id="J0v-Ad-d2O">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5G-0p-6CY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5G-0p-6CY">
                                                     <rect key="frame" x="8" y="8" width="584" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -437,12 +443,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="fV9-Aq-4Xd" customClass="AnnouncementDetailCellTableViewCell" customModule="STEP_App" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="fV9-Aq-4Xd">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fV9-Aq-4Xd" id="GBs-Td-dZe">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znK-KH-UOa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znK-KH-UOa">
                                                     <rect key="frame" x="8" y="8" width="584" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -457,12 +463,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="jca-1T-r51" customClass="AnnouncementDetailCellTableViewCell" customModule="STEP_App" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="jca-1T-r51">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jca-1T-r51" id="UWt-gq-gOH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE1-wF-O46">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE1-wF-O46">
                                                     <rect key="frame" x="8" y="8" width="584" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -495,10 +501,10 @@
             </objects>
             <point key="canvasLocation" x="2037" y="-1775"/>
         </scene>
-        <!--View Controller-->
+        <!--Announcemet Image Content View-->
         <scene sceneID="ITW-bu-d6g">
             <objects>
-                <viewController storyboardIdentifier="AnnouncementDetailViewImage" id="cmh-r3-olP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnnouncementDetailViewImage" title="Announcemet Image Content View" id="cmh-r3-olP" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F0M-yq-Hfp"/>
                         <viewControllerLayoutGuide type="bottom" id="VdZ-Jz-azc"/>
@@ -511,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYk-NM-BnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2037" y="-1022"/>
+            <point key="canvasLocation" x="2667" y="-1360"/>
         </scene>
         <!--Miscellaneous-->
         <scene sceneID="Vrc-u5-MYW">
@@ -536,6 +542,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Miscellaneous" id="sKM-PH-6EU">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="oVJ-Ys-Guk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tfg-ax-4SX">
+                            <connections>
+                                <segue destination="cKw-Fo-qgt" kind="presentation" id="30M-11-RK1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="oVJ-Ys-Guk" id="Fg4-zT-Mbs"/>
@@ -545,11 +556,76 @@
             </objects>
             <point key="canvasLocation" x="1159" y="-421"/>
         </scene>
+        <!--Misc Post Controller-->
+        <scene sceneID="Qnn-OZ-Ngq">
+            <objects>
+                <tableViewController title="Misc Post Controller" id="6Aa-Nv-h5I" customClass="MiscPostTableViewController" customModule="STEP_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="325" sectionHeaderHeight="22" sectionFooterHeight="22" id="hyf-iy-Tck">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="K5N-86-9t6">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="325" id="Xtv-fZ-IwG">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xtv-fZ-IwG" id="dQ1-B4-l8Z">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF3-ux-e07">
+                                                    <rect key="frame" x="8" y="8" width="92.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2b-9S-JU0">
+                                                    <rect key="frame" x="8" y="36" width="584" height="280.5"/>
+                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eF3-ux-e07" firstAttribute="leading" secondItem="dQ1-B4-l8Z" secondAttribute="leadingMargin" id="26R-Wb-U7G"/>
+                                                <constraint firstItem="M2b-9S-JU0" firstAttribute="trailing" secondItem="dQ1-B4-l8Z" secondAttribute="trailingMargin" id="3Ln-YP-Oj1"/>
+                                                <constraint firstItem="M2b-9S-JU0" firstAttribute="leading" secondItem="dQ1-B4-l8Z" secondAttribute="leadingMargin" id="HGN-e4-fU6"/>
+                                                <constraint firstItem="M2b-9S-JU0" firstAttribute="top" secondItem="eF3-ux-e07" secondAttribute="bottom" constant="8" id="K6V-Uz-YHw"/>
+                                                <constraint firstItem="M2b-9S-JU0" firstAttribute="bottom" secondItem="dQ1-B4-l8Z" secondAttribute="bottomMargin" id="cEo-dV-vRg"/>
+                                                <constraint firstItem="eF3-ux-e07" firstAttribute="top" secondItem="dQ1-B4-l8Z" secondAttribute="topMargin" id="hv4-eJ-u75"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="6Aa-Nv-h5I" id="qhr-wy-tyf"/>
+                            <outlet property="delegate" destination="6Aa-Nv-h5I" id="BRn-GD-L4S"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Miscellaneous Post" id="1E7-5z-l2N">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="M1U-vs-9da">
+                            <connections>
+                                <segue destination="kQU-4m-YvJ" kind="unwind" identifier="unwindToAnnouncementScreen" unwindAction="unwindToAnnouncementScreen:" id="YYj-Sj-6mQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="tyc-sE-dw8">
+                            <connections>
+                                <action selector="postMisc" destination="6Aa-Nv-h5I" id="pSR-QO-Md5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7nb-se-0S2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kQU-4m-YvJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2785" y="-421"/>
+        </scene>
         <!--Miscellaneous-->
         <scene sceneID="f7Y-4o-05a">
             <objects>
                 <navigationController id="LCf-Ll-ofZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Miscellaneous" image="megaphone" id="jyZ-j7-Soy"/>
+                    <tabBarItem key="tabBarItem" title="Miscellaneous" image="message-7" id="jyZ-j7-Soy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F1n-Ae-acX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -762,6 +838,24 @@
             </objects>
             <point key="canvasLocation" x="1817" y="1863"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DM5-m4-fe5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cKw-Fo-qgt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RtO-Wy-udE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Aa-Nv-h5I" kind="relationship" relationship="rootViewController" id="Bv6-bu-d9a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJx-HO-p2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037" y="-421"/>
+        </scene>
     </scenes>
     <resources>
         <image name="STEPAppLogoAsmallx" width="1071" height="1071"/>
@@ -773,6 +867,7 @@
         <image name="man-7" width="29" height="30"/>
         <image name="megaphone" width="30" height="30"/>
         <image name="menu" width="22" height="22"/>
+        <image name="message-7" width="30" height="30"/>
         <image name="paper-piece-7" width="30" height="30"/>
         <image name="urgent" width="240" height="202"/>
     </resources>

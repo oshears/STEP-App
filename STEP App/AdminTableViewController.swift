@@ -79,6 +79,8 @@ class AdminTableViewController: UITableViewController {
         else{
             logInOut.text = "Admin Login"
         }
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
 
@@ -162,9 +164,9 @@ class AdminTableViewController: UITableViewController {
         
         
     }
-    /*@IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
         
-    }*/
+    }
     
 
     

@@ -36,6 +36,9 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         self.loadAnnouncementData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnouncementData", name: "reloadAnnouncements", object: nil)
         
+        //Change Separator Color
+        self.tableView.separatorColor = UIColor.clearColor()
+        
         //Side Menu
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -140,6 +143,18 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         return cell
     }
     
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, 300, 90))
+        whiteRoundedCornerView.backgroundColor = UIColor.whiteColor()
+        whiteRoundedCornerView.layer.masksToBounds = false
+        whiteRoundedCornerView.layer.cornerRadius = 3
+        whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(-1, 1)
+        whiteRoundedCornerView.layer.shadowOpacity = 0.5
+        cell.contentView.addSubview(whiteRoundedCornerView)
+        cell.contentView.sendSubviewToBack(whiteRoundedCornerView)
+        
+    }
+    
     @IBAction func loadAnnouncementData(){
             announcementList.removeAllObjects()
             var findAnnouncements:PFQuery = PFQuery(className: "Announcement")
@@ -197,6 +212,9 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
             var vc:AnnouncementConentTableViewController = AnnouncementConentTableViewController?
             prepareForSegue(UIStoryboardSegue("detailedAnnouncement",source:self,destination:vc,performHandler:nil), self)
         }*/
+        
+    }
+    @IBAction func unwindToAnnouncementScreen(segue:UIStoryboardSegue) {
         
     }
     

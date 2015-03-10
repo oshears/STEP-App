@@ -34,8 +34,6 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
         announcementContent.layer.borderWidth = 0.5
         announcementContent.layer.cornerRadius = 5
         announcementContent.delegate = self
-        announcementContent.becomeFirstResponder()
-        
         announcementTitle.becomeFirstResponder()
     }
 
@@ -87,10 +85,8 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
         }
         println("Done uploading announcement")
         
+        performSegueWithIdentifier("unwindToHomeScreen", sender: self)
         
-        //performSegueWithIdentifier("unwindToHomeScreen", sender: self)
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     @IBAction func updateAnnouncementType(sender: AnyObject){

@@ -26,7 +26,6 @@
 		80AF321C1AAD25E3006C94CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF321B1AAD25E3006C94CE /* SystemConfiguration.framework */; };
 		80AF321E1AAD25EA006C94CE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF321D1AAD25EA006C94CE /* libz.dylib */; };
 		80AF32201AAD25EF006C94CE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */; };
-		80AF32341AADD551006C94CE /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32331AADD551006C94CE /* AnnouncementsViewController.swift */; };
 		80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80AF326D1AADF164006C94CE /* SWRevealViewController.m */; };
 		80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */; };
 		80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */; };
@@ -36,7 +35,7 @@
 		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */; };
 		80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */; };
 		80D663911AAE805900433C79 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D663901AAE805900433C79 /* Announcement.swift */; };
-		80D663991AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D663981AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift */; };
+		80DD6E211AAF1132001D4479 /* MiscPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +72,6 @@
 		80AF321B1AAD25E3006C94CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		80AF321D1AAD25EA006C94CE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		80AF32331AADD551006C94CE /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
 		80AF326C1AADF164006C94CE /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		80AF326D1AADF164006C94CE /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +83,7 @@
 		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentViewController.swift; sourceTree = "<group>"; };
 		80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementsTableViewController.swift; sourceTree = "<group>"; };
 		80D663901AAE805900433C79 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
-		80D663981AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailCellTableViewCell.swift; sourceTree = "<group>"; };
+		80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscPostTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +117,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		804B23891AAF1BE80008EE81 /* Announcements */ = {
+			isa = PBXGroup;
+			children = (
+				80AF32031AAD1E4A006C94CE /* AnnouncementsTableViewController.swift */,
+				80AF32051AAD21CE006C94CE /* AnnoucementTableViewCell.swift */,
+				80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */,
+				80D663901AAE805900433C79 /* Announcement.swift */,
+				80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */,
+				80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */,
+			);
+			name = Announcements;
+			sourceTree = "<group>";
+		};
+		804B238A1AAF1C190008EE81 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */,
+				80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */,
+				80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */,
+			);
+			name = Admin;
+			sourceTree = "<group>";
+		};
 		80AF317A1AAC8E08006C94CE = {
 			isa = PBXGroup;
 			children = (
@@ -145,20 +166,12 @@
 				80AF31881AAC8E08006C94CE /* AppDelegate.swift */,
 				80AF31861AAC8E08006C94CE /* Supporting Files */,
 				80AF32711AADFE38006C94CE /* SWRevealView */,
-				80AF318F1AAC8E08006C94CE /* Main.storyboard */,
-				80AF31921AAC8E08006C94CE /* Images.xcassets */,
 				80AF31941AAC8E08006C94CE /* LaunchScreen.xib */,
 				80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */,
-				80AF32031AAD1E4A006C94CE /* AnnouncementsTableViewController.swift */,
-				80AF32051AAD21CE006C94CE /* AnnoucementTableViewCell.swift */,
-				80AF32331AADD551006C94CE /* AnnouncementsViewController.swift */,
-				80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */,
-				80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */,
-				80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */,
-				80D6638C1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift */,
-				80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */,
-				80D663901AAE805900433C79 /* Announcement.swift */,
-				80D663981AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift */,
+				80AF31921AAC8E08006C94CE /* Images.xcassets */,
+				80AF318F1AAC8E08006C94CE /* Main.storyboard */,
+				804B238A1AAF1C190008EE81 /* Admin */,
+				804B23891AAF1BE80008EE81 /* Announcements */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -323,13 +336,12 @@
 				80AF32041AAD1E4A006C94CE /* AnnouncementsTableViewController.swift in Sources */,
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
 				80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */,
-				80AF32341AADD551006C94CE /* AnnouncementsViewController.swift in Sources */,
+				80DD6E211AAF1132001D4479 /* MiscPostTableViewController.swift in Sources */,
 				80AF32061AAD21CE006C94CE /* AnnoucementTableViewCell.swift in Sources */,
 				80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */,
 				80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */,
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,
 				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
-				80D663991AAE920A00433C79 /* AnnouncementDetailCellTableViewCell.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentViewController.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,
 			);
