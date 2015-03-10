@@ -30,6 +30,8 @@ class AnnoucementTableViewCell: UITableViewCell {
         self.contentView.addSubview(whiteRoundedCornerView)
         self.contentView.sendSubviewToBack(whiteRoundedCornerView)
         
+        self.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

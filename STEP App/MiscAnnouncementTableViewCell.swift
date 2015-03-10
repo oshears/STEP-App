@@ -12,15 +12,18 @@ class MiscAnnouncementTableViewCell: UITableViewCell {
 
     @IBOutlet weak var announcementContent: UILabel!
     @IBOutlet weak var announcementTime: UILabel!
+    
+    var cellSize:CGFloat = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         var screenRect:CGRect = UIScreen.mainScreen().bounds
         
+        println(announcementContent.frame.height)
         
-        
-        var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 25, self.contentView.))
+        var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 25, self.cellSize))
         whiteRoundedCornerView.backgroundColor = UIColor.whiteColor()
         whiteRoundedCornerView.layer.masksToBounds = false
         whiteRoundedCornerView.layer.cornerRadius = 3

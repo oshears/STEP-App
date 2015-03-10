@@ -71,9 +71,9 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         
     }
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MiscAnnouncementTableViewCell
-        
         
         // Configure the cell...
         cell.announcementTime.alpha = 0
@@ -94,6 +94,12 @@ class MiscAnnouncementsTableViewController: UITableViewController {
             cell.announcementContent.alpha = 1
         })
         
+        //cell.cellSize = tableView(self.tableView, heightForRowAtIndexPath: indexPath)
+        
+        
+        cell.cellSize = cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+        
+            
         return cell
     }
 
