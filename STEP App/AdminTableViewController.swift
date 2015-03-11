@@ -75,7 +75,7 @@ class AdminTableViewController: UITableViewController {
             }
         }
         if PFUser.currentUser() != nil{
-            logInOut.text = "Logut out of \(PFUser.currentUser().username)"
+            logInOut.text = "Logout of \(PFUser.currentUser().username)"
         }
         else{
             logInOut.text = "Admin Login"
