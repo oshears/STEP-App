@@ -21,7 +21,7 @@ class AnnoucementTableViewCell: UITableViewCell {
         var screenRect:CGRect = UIScreen.mainScreen().bounds
         
         
-        var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 25, 90))
+        var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 20, 90))
         whiteRoundedCornerView.backgroundColor = UIColor.whiteColor()
         whiteRoundedCornerView.layer.masksToBounds = false
         whiteRoundedCornerView.layer.cornerRadius = 3
