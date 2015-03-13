@@ -46,6 +46,13 @@ class MiscAnnouncementsTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        // Pull To Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.whiteColor()
+        refreshControl?.tintColor = UIColor.grayColor()
+        refreshControl?.addTarget(self, action: "loadAnnouncementData", forControlEvents:
+        UIControlEvents.ValueChanged)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,8 +61,6 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    
-    
     
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,6 +79,10 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MiscAnnouncementTableViewCell
+        
+        if (indexPath.row > miscAnnouncementList.count){
+            return cell
+        }
         
         // Configure the cell...
         cell.announcementTime.alpha = 0
@@ -115,6 +124,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
                     let announcement:PFObject = object as PFObject
                     self.miscAnnouncementList.addObject(announcement)
                 }
+            
                 let array:NSArray = self.miscAnnouncementList.reverseObjectEnumerator().allObjects
                 self.miscAnnouncementList = NSMutableArray(array: array)
                 self.tableView.reloadData()
@@ -124,6 +134,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
             }
             
         })
+        self.refreshControl?.endRefreshing()
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

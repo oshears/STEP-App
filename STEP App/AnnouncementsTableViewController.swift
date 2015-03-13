@@ -45,6 +45,13 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        // Pull To Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.whiteColor()
+        refreshControl?.tintColor = UIColor.grayColor()
+        refreshControl?.addTarget(self, action: "loadAnnouncementData", forControlEvents:
+        UIControlEvents.ValueChanged)
 
         
     }
@@ -81,10 +88,15 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as AnnoucementTableViewCell
         
+        if (indexPath.row > announcementList.count){
+            return cell
+        }
+        
         // Configure the cell...
         cell.announcementImage.alpha = 0
         cell.announcementTime.alpha = 0
         cell.announcementTitle.alpha = 0
+        
         
         
         let announcement:PFObject = self.announcementList.objectAtIndex(indexPath.row) as PFObject
@@ -164,6 +176,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                 }
                 
             })
+            self.refreshControl?.endRefreshing()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
