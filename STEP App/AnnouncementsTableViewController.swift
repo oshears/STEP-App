@@ -11,6 +11,7 @@ import UIKit
 class AnnouncementsTableViewController: UITableViewController, UINavigationControllerDelegate {
 
     var announcementList:NSMutableArray = NSMutableArray()
+    var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -48,11 +49,18 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         
         // Pull To Refresh Control
         refreshControl = UIRefreshControl()
-        refreshControl?.backgroundColor = UIColor.whiteColor()
+        refreshControl?.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
         refreshControl?.tintColor = UIColor.grayColor()
         refreshControl?.addTarget(self, action: "loadAnnouncementData", forControlEvents:
         UIControlEvents.ValueChanged)
 
+        
+        // Configure the activity indicator and start animating
+        spinner.activityIndicatorViewStyle = .Gray
+        spinner.center = self.view.center
+        spinner.hidesWhenStopped = true
+        self.parentViewController?.view.addSubview(spinner)
+        spinner.startAnimating()
         
     }
     
@@ -101,30 +109,6 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         
         let announcement:PFObject = self.announcementList.objectAtIndex(indexPath.row) as PFObject
         cell.announcementTitle.text = announcement.objectForKey("title") as? String
-        //println("Announcement! - \(cell.announcementTitle.text)")
-        /*
-        var findPoster:PFQuery = PFUser.query()
-        findSweeter.whereKey("objectId", equalTo: sweet.objectForKey("sweeter").objectId)
-        findSweeter.findObjectsInBackgroundWithBlock{
-            (objects:[AnyObject]!,error:NSError!)->Void in
-            if error == nil{
-                
-                let user:PFUser = (objects as NSArray).lastObject as PFUser
-                cell.sweetUserLabel.text = user.username
-                
-                //Profile Image
-                let profileImage:PFFile = user["profileImage"] as PFFile
-                
-                profileImage.getDataInBackgroundWithBlock({
-                    (imageData:NSData!,error:NSError!)->Void in
-                    if (error==nil){
-                        let image:UIImage = UIImage(data:imageData)!
-                        cell.profileImageView.image = image
-                    }
-                })
-                
-            }
-        }*/
         
         var dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
@@ -143,6 +127,12 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                 }
             }
         }
+        if self.spinner.isAnimating() {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.spinner.stopAnimating()
+            })
+        }
+
         
         
         

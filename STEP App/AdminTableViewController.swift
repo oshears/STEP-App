@@ -36,7 +36,7 @@ class AdminTableViewController: UITableViewController {
     }
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() != nil{
-            logInOut.text = "Logut out of \(PFUser.currentUser().username)"
+            logInOut.text = "Logout of \(PFUser.currentUser().username)"
         }
         else{
             logInOut.text = "Admin Login"
@@ -149,7 +149,7 @@ class AdminTableViewController: UITableViewController {
                     self.presentViewController(loginAlert,animated: true, completion: nil)
                     
                     if PFUser.currentUser() != nil{
-                        self.logInOut.text = "Logut out of \(PFUser.currentUser().username)"
+                        self.logInOut.text = "Logout out of \(PFUser.currentUser().username)"
                     }
                     else{
                         self.logInOut.text = "Admin Login"

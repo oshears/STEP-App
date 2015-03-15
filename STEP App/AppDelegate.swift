@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Initialize Parse
         Parse.enableLocalDatastore()
-        Parse.setApplicationId("QaWUilnbC0lQoBcjrYXkEos4vOZYmCxoDyEXYAba", clientKey: "6kM74pku4lgflvu9HQbequLoRjqJ3WA78Ci6l4VC")
+        Parse.setApplicationId("NU52KuQGosFJb0ZBDebqcjtJaqwS1QRP7jaknnVB", clientKey: "hgw0WhEQ5fGSCa6n8SQ61YchqidnKTf0YVBOObLE")
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(nil, block: nil)
 
                 

@@ -12,7 +12,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="df7-f4-VtU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="y5J-ud-iNO" customClass="AnnoucementTableViewCell" customModule="STEP_App" customModuleProvider="target">
@@ -509,7 +509,7 @@
             </objects>
             <point key="canvasLocation" x="2221" y="-1514"/>
         </scene>
-        <!--Miscellaneous-->
+        <!--Miscellaneous Announcements-->
         <scene sceneID="Vrc-u5-MYW">
             <objects>
                 <tableViewController id="0gj-LB-H47" customClass="MiscAnnouncementsTableViewController" customModule="STEP_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -559,7 +559,7 @@
                             <outlet property="delegate" destination="0gj-LB-H47" id="Rb2-NH-eHs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Miscellaneous" id="sKM-PH-6EU">
+                    <navigationItem key="navigationItem" title="Miscellaneous Announcements" id="sKM-PH-6EU">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="oVJ-Ys-Guk"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tfg-ax-4SX">
                             <connections>

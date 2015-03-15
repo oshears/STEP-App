@@ -66,40 +66,45 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
     
     
     @IBAction func postAnnouncement(sender: AnyObject) {
-        var announcement:PFObject = PFObject(className: "Announcement")
-        announcement["title"] = announcementTitle.text
-        announcement["content"] = announcementContent.text
-        announcement["type"] = announcementType
-        announcement["hasImage"] = announcementHasImage
-        println("New Announcement with image of \(announcementType)")
+        var notBlank = announcementTitle.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && announcementContent.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
+        if notBlank{
+            var announcement:PFObject = PFObject(className: "Announcement")
+            announcement["title"] = announcementTitle.text
+            announcement["content"] = announcementContent.text
+            announcement["type"] = announcementType
+            announcement["hasImage"] = announcementHasImage
+            println("New Announcement with image of \(announcementType)")
         
-        //Create a check here to determine if PFUser is nil or not
-        if PFUser.currentUser() != nil{
-            announcement["poster"] = PFUser.currentUser()
-            announcement.saveInBackgroundWithTarget(nil, selector: nil)
-            var push:PFPush = PFPush()
-            //push.setChannel("Reload")
+            if PFUser.currentUser() != nil{
+                announcement["poster"] = PFUser.currentUser()
+                announcement.saveInBackgroundWithTarget(nil, selector: nil)
+                var push:PFPush = PFPush()
+                //push.setChannel("Reload")
             
-            //Custom sound, badge app icon, alert message?
-            var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":""]
+                //Custom sound, badge app icon, alert message?
+                var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":""]
             
-            push.setData(data)
+                push.setData(data)
             
-            //Send push notification
-            var pushQuery:PFQuery = PFInstallation.query()
-            pushQuery.whereKey("channels",equalTo: "Reload")
-            push.setQuery(pushQuery)
-            push.setMessage(announcementTitle.text)
+                //Send push notification
+                var pushQuery:PFQuery = PFInstallation.query()
+                pushQuery.whereKey("channels",equalTo: "Reload")
+                push.setQuery(pushQuery)
+                push.setMessage(announcementTitle.text)
             
             
-            push.sendPushInBackgroundWithTarget(nil, selector: nil)
+                push.sendPushInBackgroundWithTarget(nil, selector: nil)
             
+            }
+        
+            performSegueWithIdentifier("unwindToHomeScreen", sender: self)
+        
         }
-        println("Done uploading announcement")
-        
-        performSegueWithIdentifier("unwindToHomeScreen", sender: self)
-        
-        
+        else{
+            var errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting an announcement.", preferredStyle: UIAlertControllerStyle.Alert)
+            errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(errorAlert,animated: true, completion: nil)
+        }
     }
     @IBAction func updateAnnouncementType(sender: AnyObject){
         let buttonClicked = sender as UIButton

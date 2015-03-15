@@ -9,6 +9,7 @@
 import UIKit
 
 class MiscPostTableViewController: UITableViewController, UINavigationControllerDelegate, UITextViewDelegate {
+    
 
     @IBOutlet weak var announcementContent: UITextView!
     override func viewDidLoad() {
@@ -37,26 +38,28 @@ class MiscPostTableViewController: UITableViewController, UINavigationController
 
 
     @IBAction func postMisc(){
+        var notBlank = announcementContent.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
+        if notBlank{
+            var announcement:PFObject = PFObject(className: "MiscAnnouncement")
+            announcement["content"] = announcementContent.text
         
-        var announcement:PFObject = PFObject(className: "MiscAnnouncement")
-        announcement["content"] = announcementContent.text
-        
-        //Create a check here to determine if PFUser is nil or not
-        announcement.saveInBackgroundWithTarget(nil, selector: nil)
-        var push:PFPush = PFPush()
-        push.setChannel("Reload")
+            //Create a check here to determine if PFUser is nil or not
+            announcement.saveInBackgroundWithTarget(nil, selector: nil)
+            var push:PFPush = PFPush()
+            push.setChannel("Reload")
             
-        //Custom sound, badge app icon, alert message?
-        var data:NSDictionary = ["alert":"","badge":"0","content-available":"1","sound":""]
-        push.setData(data)
-        push.sendPushInBackgroundWithTarget(nil, selector: nil)
+            //Custom sound, badge app icon, alert message?
+            var data:NSDictionary = ["alert":"","badge":"0","content-available":"1","sound":""]
+            push.setData(data)
+            push.sendPushInBackgroundWithTarget(nil, selector: nil)
             
-        
-        println("Done uploading misc announcement")
-
-        
-        
-        performSegueWithIdentifier("unwindToAnnouncementScreen", sender: self)
+            performSegueWithIdentifier("unwindToAnnouncementScreen", sender: self)
+        }
+        else{
+            var errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting an announcement.", preferredStyle: UIAlertControllerStyle.Alert)
+            errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(errorAlert,animated: true, completion: nil)
+        }
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

@@ -11,6 +11,8 @@ import UIKit
 class MiscAnnouncementsTableViewController: UITableViewController {
 
     var miscAnnouncementList:NSMutableArray = NSMutableArray()
+    var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
+
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -48,10 +50,17 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         
         // Pull To Refresh Control
         refreshControl = UIRefreshControl()
-        refreshControl?.backgroundColor = UIColor.whiteColor()
+        refreshControl?.backgroundColor = UIColor(red: 240/255, green: 242/255, blue: 243/255, alpha: 1)
         refreshControl?.tintColor = UIColor.grayColor()
         refreshControl?.addTarget(self, action: "loadAnnouncementData", forControlEvents:
         UIControlEvents.ValueChanged)
+        
+        // Configure the activity indicator and start animating
+        spinner.activityIndicatorViewStyle = .Gray
+        spinner.center = self.view.center
+        spinner.hidesWhenStopped = true
+        self.parentViewController?.view.addSubview(spinner)
+        spinner.startAnimating()
         
     }
 
@@ -96,6 +105,11 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
         cell.announcementTime.text = dataFormatter.stringFromDate(announcement.createdAt)
         
+        if self.spinner.isAnimating() {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.spinner.stopAnimating()
+            })
+        }
         
         
         UIView.animateWithDuration(0.5, animations: {
@@ -139,60 +153,5 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
