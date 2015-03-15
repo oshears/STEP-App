@@ -32,6 +32,7 @@
 		80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */; };
 		80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */; };
 		80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */; };
+		80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */; };
 		80C2E8DF1AAEAA47000C4CA6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */; };
 		80C2E8E01AAEAA47000C4CA6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */; };
 		80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */; };
@@ -83,6 +84,7 @@
 		80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAnnouncementTableViewController.swift; sourceTree = "<group>"; };
 		80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEP App-Bridging-Header.h"; sourceTree = "<group>"; };
+		80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.6.4/Bolts.framework"; sourceTree = "<group>"; };
 		80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.6.4/Parse.framework"; sourceTree = "<group>"; };
 		80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */,
+				80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				80D663911AAE805900433C79 /* Announcement.swift in Sources */,
 				80AF32041AAD1E4A006C94CE /* AnnouncementsTableViewController.swift in Sources */,
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
+				80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */,
 				8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */,
 				8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */,
 				80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */,

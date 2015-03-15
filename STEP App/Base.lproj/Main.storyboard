@@ -874,43 +874,90 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="131" id="5gr-2I-gek">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="131" id="5gr-2I-gek" customClass="CalendarTableViewCell" customModule="STEP_App" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5gr-2I-gek" id="ZjJ-mA-veT">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAX-g7-lAW">
-                                            <rect key="frame" x="8" y="38" width="91" height="85"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="85"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="June" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-e8-3kO">
-                                            <rect key="frame" x="8" y="8" width="91" height="31"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="32"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:00am - Class #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQ2-gv-OYY">
-                                            <rect key="frame" x="160" y="8" width="260" height="31"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00am - Class #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQ2-gv-OYY">
+                                            <rect key="frame" x="160" y="8" width="140" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2:00pm - Creating Community Seminar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmf-dv-kV4">
-                                            <rect key="frame" x="160" y="84" width="301" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:00pm - Creating Community Seminar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmf-dv-kV4">
+                                            <rect key="frame" x="160" y="81" width="300.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:00pm - Class #2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34a-b0-hlx">
-                                            <rect key="frame" x="160" y="47" width="151" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00pm - Class #2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34a-b0-hlx">
+                                            <rect key="frame" x="160" y="44" width="150.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWI-dk-skq">
+                                            <rect key="frame" x="8" y="39" width="117" height="84"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAX-g7-lAW">
+                                                    <rect key="frame" x="13" y="-9" width="91" height="102"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="85"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="vAX-g7-lAW" secondAttribute="centerX" id="Gz0-tn-vXX"/>
+                                                <constraint firstAttribute="centerY" secondItem="vAX-g7-lAW" secondAttribute="centerY" id="Scz-RM-oGa"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bq-bH-oUP">
+                                            <rect key="frame" x="8" y="8" width="117" height="31"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-e8-3kO">
+                                                    <rect key="frame" x="27" y="-3.5" width="63.5" height="38.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="32"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="cGS-e8-3kO" secondAttribute="centerY" id="GkP-lc-kQh"/>
+                                                <constraint firstAttribute="height" constant="31" id="VGG-Yj-5hl"/>
+                                                <constraint firstAttribute="width" constant="117" id="Yez-1N-8rk"/>
+                                                <constraint firstAttribute="centerX" secondItem="cGS-e8-3kO" secondAttribute="centerX" id="gCY-Os-Rl1"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="34a-b0-hlx" firstAttribute="leading" secondItem="MQ2-gv-OYY" secondAttribute="leading" id="3Kd-RD-ysD"/>
+                                        <constraint firstItem="vmf-dv-kV4" firstAttribute="leading" secondItem="TWI-dk-skq" secondAttribute="trailing" constant="35" id="CX2-fP-s3Q"/>
+                                        <constraint firstItem="TWI-dk-skq" firstAttribute="bottom" secondItem="ZjJ-mA-veT" secondAttribute="bottomMargin" id="D3o-GS-yvd"/>
+                                        <constraint firstItem="TWI-dk-skq" firstAttribute="top" secondItem="4Bq-bH-oUP" secondAttribute="bottom" id="Ee2-EI-DDH"/>
+                                        <constraint firstItem="4Bq-bH-oUP" firstAttribute="leading" secondItem="ZjJ-mA-veT" secondAttribute="leadingMargin" id="GOD-UA-Jwx"/>
+                                        <constraint firstItem="4Bq-bH-oUP" firstAttribute="top" secondItem="MQ2-gv-OYY" secondAttribute="top" id="IF3-0C-3Qj"/>
+                                        <constraint firstItem="34a-b0-hlx" firstAttribute="leading" secondItem="TWI-dk-skq" secondAttribute="trailing" constant="35" id="In2-H2-mTP"/>
+                                        <constraint firstItem="4Bq-bH-oUP" firstAttribute="width" secondItem="TWI-dk-skq" secondAttribute="width" id="UOK-hf-WZy"/>
+                                        <constraint firstItem="vmf-dv-kV4" firstAttribute="top" secondItem="34a-b0-hlx" secondAttribute="bottom" constant="16" id="Y3w-KO-5t3"/>
+                                        <constraint firstItem="34a-b0-hlx" firstAttribute="leading" secondItem="vmf-dv-kV4" secondAttribute="leading" id="YnQ-Xe-BbO"/>
+                                        <constraint firstItem="TWI-dk-skq" firstAttribute="leading" secondItem="ZjJ-mA-veT" secondAttribute="leadingMargin" id="eT5-eN-job"/>
+                                        <constraint firstItem="4Bq-bH-oUP" firstAttribute="trailing" secondItem="TWI-dk-skq" secondAttribute="trailing" id="fs2-KW-6zM"/>
+                                        <constraint firstItem="4Bq-bH-oUP" firstAttribute="top" secondItem="ZjJ-mA-veT" secondAttribute="topMargin" id="hIv-aZ-lSr"/>
+                                        <constraint firstItem="34a-b0-hlx" firstAttribute="top" secondItem="MQ2-gv-OYY" secondAttribute="bottom" constant="16" id="rhR-vs-1vN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TWI-dk-skq" secondAttribute="trailing" constant="467" id="s2q-SM-cK9"/>
+                                        <constraint firstItem="MQ2-gv-OYY" firstAttribute="leading" secondItem="4Bq-bH-oUP" secondAttribute="trailing" constant="35" id="xzY-5T-VCk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="vAX-g7-lAW" id="hDw-Pk-R3P"/>
+                                    <outlet property="mainActivity1" destination="MQ2-gv-OYY" id="fPa-KO-KcM"/>
+                                    <outlet property="mainActivity2" destination="34a-b0-hlx" id="FS8-D3-XYb"/>
+                                    <outlet property="mainActivity3" destination="vmf-dv-kV4" id="KAY-wr-lfG"/>
+                                    <outlet property="monthLabel" destination="cGS-e8-3kO" id="ZlB-EA-m7e"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
