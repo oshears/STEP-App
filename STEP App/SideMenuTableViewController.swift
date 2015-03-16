@@ -39,20 +39,11 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        (indexPath.row == 0) ? tableView.deselectRowAtIndexPath(indexPath, animated: false) : tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
 
     
-    /*override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println("Is this me")
-        let cell = tableView.dequeueReusableCellWithIdentifier("MenuCell", forIndexPath: indexPath) as UITableViewCell
-
-        println("NO!")
-        // Configure the cell...
-
-        return cell
-    }*/
     /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 4{
             if !((PFUser.currentUser()) != nil){

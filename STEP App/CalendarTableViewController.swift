@@ -26,6 +26,10 @@ class CalendarTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        // Self Sizing Cells
+        self.tableView.estimatedRowHeight = 131.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
 
     }
 
@@ -45,7 +49,7 @@ class CalendarTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return 10
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

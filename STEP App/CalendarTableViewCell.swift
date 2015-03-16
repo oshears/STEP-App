@@ -12,13 +12,16 @@ class CalendarTableViewCell: UITableViewCell {
 
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var fulldateLabel: UILabel!
     @IBOutlet weak var mainActivity1: UILabel!
     @IBOutlet weak var mainActivity2: UILabel!
     @IBOutlet weak var mainActivity3: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = UITableViewCellSelectionStyle.Gray
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

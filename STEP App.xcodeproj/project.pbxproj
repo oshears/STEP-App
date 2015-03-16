@@ -40,6 +40,7 @@
 		80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */; };
 		80D663911AAE805900433C79 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D663901AAE805900433C79 /* Announcement.swift */; };
 		80DD6E211AAF1132001D4479 /* MiscPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */; };
+		80F5FAF21AB7971200295D23 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		80D6638E1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementsTableViewController.swift; sourceTree = "<group>"; };
 		80D663901AAE805900433C79 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscPostTableViewController.swift; sourceTree = "<group>"; };
+		80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */,
+				80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */,
 				80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */,
+				80F5FAF21AB7971200295D23 /* PeopleTableViewCell.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
