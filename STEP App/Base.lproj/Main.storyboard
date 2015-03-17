@@ -208,7 +208,7 @@
                         <sections>
                             <tableViewSection id="qf1-ij-ER3">
                                 <cells>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenAnnounceCell" rowHeight="94" id="zcq-Nb-0Ho">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenAnnounceCell" rowHeight="94" id="zcq-Nb-0Ho">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zcq-Nb-0Ho" id="cQn-GX-CLF">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -239,7 +239,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenAnnounceCell" rowHeight="197" id="w5p-hM-5yr">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenAnnounceCell" rowHeight="197" id="w5p-hM-5yr">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w5p-hM-5yr" id="6Bh-Lc-Qfe">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -272,7 +272,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenAnnounceCell" rowHeight="183" id="azU-JE-VyT">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenAnnounceCell" rowHeight="183" id="azU-JE-VyT">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="azU-JE-VyT" id="rpr-Lz-fjc">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -587,7 +587,7 @@
                         <sections>
                             <tableViewSection id="K5N-86-9t6">
                                 <cells>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="325" id="Xtv-fZ-IwG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="325" id="Xtv-fZ-IwG">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xtv-fZ-IwG" id="dQ1-B4-l8Z">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1062,19 +1062,19 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNT-5S-87h">
-                                            <rect key="frame" x="150" y="8" width="409" height="30"/>
+                                            <rect key="frame" x="150" y="8" width="409" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Staff Member" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wi3-kM-SKk">
-                                            <rect key="frame" x="150" y="46" width="409" height="20.5"/>
+                                            <rect key="frame" x="150" y="50" width="409" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Psychology" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKq-pe-RFd">
-                                            <rect key="frame" x="150" y="74" width="409" height="20.5"/>
+                                            <rect key="frame" x="150" y="83" width="409" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1085,7 +1085,7 @@
                                         <constraint firstItem="mNT-5S-87h" firstAttribute="trailing" secondItem="AKq-pe-RFd" secondAttribute="trailing" id="17z-t5-3MF"/>
                                         <constraint firstItem="mNT-5S-87h" firstAttribute="leading" secondItem="KhQ-cC-jam" secondAttribute="trailing" constant="8" id="6HM-ov-4mU"/>
                                         <constraint firstItem="AKq-pe-RFd" firstAttribute="top" secondItem="Wi3-kM-SKk" secondAttribute="bottom" constant="8" id="FOW-JX-rvc"/>
-                                        <constraint firstItem="Wi3-kM-SKk" firstAttribute="top" secondItem="mNT-5S-87h" secondAttribute="bottom" constant="8" id="Fnb-6c-Z7Y"/>
+                                        <constraint firstItem="Wi3-kM-SKk" firstAttribute="top" secondItem="mNT-5S-87h" secondAttribute="bottom" constant="14" id="Fnb-6c-Z7Y"/>
                                         <constraint firstItem="KhQ-cC-jam" firstAttribute="top" secondItem="XAu-1t-wad" secondAttribute="topMargin" id="HJi-H5-CNN"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="mNT-5S-87h" secondAttribute="trailing" id="LL2-6Z-La3"/>
                                         <constraint firstItem="mNT-5S-87h" firstAttribute="trailing" secondItem="Wi3-kM-SKk" secondAttribute="trailing" id="Nhy-Ii-Oaf"/>

@@ -34,6 +34,8 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
         
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
