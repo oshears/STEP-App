@@ -21,14 +21,14 @@ class AnnoucementTableViewCell: UITableViewCell {
         var screenRect:CGRect = UIScreen.mainScreen().bounds
         
         
-        var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 20, 90))
+        /*var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 20, 90))
         whiteRoundedCornerView.backgroundColor = UIColor.whiteColor()
         whiteRoundedCornerView.layer.masksToBounds = false
         whiteRoundedCornerView.layer.cornerRadius = 3
         whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(-1, 1)
         whiteRoundedCornerView.layer.shadowOpacity = 0.5
         self.contentView.addSubview(whiteRoundedCornerView)
-        self.contentView.sendSubviewToBack(whiteRoundedCornerView)
+        self.contentView.sendSubviewToBack(whiteRoundedCornerView)*/
         
         self.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
         
