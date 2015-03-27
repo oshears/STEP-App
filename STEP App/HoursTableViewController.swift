@@ -12,6 +12,11 @@ class HoursTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    var eateries:[Eatery] =
+    [
+        Eatery(title:"Chick fil A",weekHours:"Monday - Friday: 11:00 am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"chickfila")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,29 +32,25 @@ class HoursTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        // Self Sizing Cells
+        self.tableView.estimatedRowHeight = 150.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+
+        
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 1
-    }
-
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("HoursCell", forIndexPath: indexPath) as HoursTableViewCell
-
-        // Configure the cell...
-
-        return cell
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
 

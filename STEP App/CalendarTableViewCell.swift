@@ -16,6 +16,8 @@ class CalendarTableViewCell: UITableViewCell {
     @IBOutlet weak var mainActivity1: UILabel!
     @IBOutlet weak var mainActivity2: UILabel!
     @IBOutlet weak var mainActivity3: UILabel!
+    @IBOutlet weak var dayLabelView: UIView!
+    @IBOutlet weak var monthLabelView: UIView!
     
     
     override func awakeFromNib() {

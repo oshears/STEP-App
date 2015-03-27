@@ -966,7 +966,7 @@
                                             <rect key="frame" x="8" y="39" width="117" height="84"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAX-g7-lAW">
-                                                    <rect key="frame" x="13" y="-9" width="91" height="102"/>
+                                                    <rect key="frame" x="13" y="0.0" width="91" height="102"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="85"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -977,8 +977,19 @@
                                                 <constraint firstAttribute="centerX" secondItem="vAX-g7-lAW" secondAttribute="centerX" id="6jD-EX-p9z"/>
                                                 <constraint firstAttribute="height" constant="84" id="BhU-8s-8jt"/>
                                                 <constraint firstAttribute="width" constant="117" id="Jag-II-BQ8"/>
-                                                <constraint firstAttribute="centerY" secondItem="vAX-g7-lAW" secondAttribute="centerY" id="tTM-h5-TLR"/>
+                                                <constraint firstAttribute="centerY" secondItem="vAX-g7-lAW" secondAttribute="centerY" constant="-9" id="tTM-h5-TLR"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                    <real key="value" value="0.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOffset">
+                                                    <integer key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bq-bH-oUP">
                                             <rect key="frame" x="8" y="8" width="117" height="31"/>
@@ -998,7 +1009,15 @@
                                                 <constraint firstAttribute="centerY" secondItem="cGS-e8-3kO" secondAttribute="centerY" id="fH9-YC-SpV"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                    <real key="value" value="0.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOffset">
+                                                    <integer key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, June 23rd, 2015" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh8-Rs-jeg">
@@ -1030,11 +1049,13 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dayLabel" destination="vAX-g7-lAW" id="hDw-Pk-R3P"/>
+                                    <outlet property="dayLabelView" destination="TWI-dk-skq" id="OtN-Xp-d1s"/>
                                     <outlet property="fulldateLabel" destination="sh8-Rs-jeg" id="GSs-uh-HBI"/>
                                     <outlet property="mainActivity1" destination="MQ2-gv-OYY" id="fPa-KO-KcM"/>
                                     <outlet property="mainActivity2" destination="34a-b0-hlx" id="FS8-D3-XYb"/>
                                     <outlet property="mainActivity3" destination="vmf-dv-kV4" id="KAY-wr-lfG"/>
                                     <outlet property="monthLabel" destination="cGS-e8-3kO" id="ZlB-EA-m7e"/>
+                                    <outlet property="monthLabelView" destination="4Bq-bH-oUP" id="en2-h8-48e"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1084,7 +1105,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wzn-Zc-veE" id="XAu-1t-wad">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PrimaryLogo_" translatesAutoresizingMaskIntoConstraints="NO" id="KhQ-cC-jam">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-7" translatesAutoresizingMaskIntoConstraints="NO" id="KhQ-cC-jam">
                                             <rect key="frame" x="8" y="8" width="134" height="134"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="134" id="Nxx-OW-suP"/>
@@ -1216,17 +1237,64 @@
                         <color key="backgroundColor" red="0.87058823529999996" green="0.87450980389999999" blue="0.88235294119999996" alpha="1" colorSpace="deviceRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.87058823529999996" green="0.87450980389999999" blue="0.88235294119999996" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HoursCell" rowHeight="150" id="LpS-K3-WsL" customClass="HoursTableViewCell" customModule="STEP_App" customModuleProvider="target">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HoursCell" rowHeight="150" id="LpS-K3-WsL" customClass="HoursTableViewCell" customModule="STEP_App" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LpS-K3-WsL" id="qLG-As-y63">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEk-iv-rwv">
                                             <rect key="frame" x="8" y="8" width="584" height="133.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chickfila" translatesAutoresizingMaskIntoConstraints="NO" id="NYA-8Z-xWs">
+                                                    <rect key="frame" x="8" y="8" width="117" height="117.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="117" id="3xf-kH-ekc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chick fil A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdk-xh-J7r">
+                                                    <rect key="frame" x="133" y="8" width="443" height="30"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIB-Jt-Fuj">
+                                                    <rect key="frame" x="133" y="46" width="47.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday - Friday: 11:00 am - 3:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaU-IL-y7b">
+                                                    <rect key="frame" x="133" y="75" width="443" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday - Sunday: Closed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFI-EN-dvX">
+                                                    <rect key="frame" x="133" y="103" width="443" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="jFI-EN-dvX" firstAttribute="top" secondItem="UaU-IL-y7b" secondAttribute="bottom" constant="8" id="307-Ba-io1"/>
+                                                <constraint firstAttribute="trailing" secondItem="jFI-EN-dvX" secondAttribute="trailing" constant="8" id="AzT-xa-YSt"/>
                                                 <constraint firstAttribute="width" constant="584" id="Ft7-IS-cRe"/>
+                                                <constraint firstAttribute="bottom" secondItem="jFI-EN-dvX" secondAttribute="bottom" constant="10" id="J8p-28-Tld"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xdk-xh-J7r" secondAttribute="trailing" constant="8" id="Jbk-1H-i47"/>
+                                                <constraint firstItem="NYA-8Z-xWs" firstAttribute="top" secondItem="SEk-iv-rwv" secondAttribute="top" constant="8" id="Lc9-zM-oSc"/>
+                                                <constraint firstItem="UaU-IL-y7b" firstAttribute="leading" secondItem="jFI-EN-dvX" secondAttribute="leading" id="Rxl-cv-j4D"/>
+                                                <constraint firstAttribute="trailing" secondItem="UaU-IL-y7b" secondAttribute="trailing" constant="8" id="Th3-TQ-Rqe"/>
+                                                <constraint firstItem="Xdk-xh-J7r" firstAttribute="top" secondItem="SEk-iv-rwv" secondAttribute="top" constant="8" id="Vss-iw-yRS"/>
+                                                <constraint firstItem="NYA-8Z-xWs" firstAttribute="leading" secondItem="SEk-iv-rwv" secondAttribute="leading" constant="8" id="YtR-4g-apE"/>
                                                 <constraint firstAttribute="height" constant="133.5" id="aiv-D1-43s"/>
+                                                <constraint firstAttribute="bottom" secondItem="NYA-8Z-xWs" secondAttribute="bottom" constant="8" id="c78-yd-O01"/>
+                                                <constraint firstItem="yIB-Jt-Fuj" firstAttribute="top" secondItem="Xdk-xh-J7r" secondAttribute="bottom" constant="8" id="eIH-kl-8vh"/>
+                                                <constraint firstItem="UaU-IL-y7b" firstAttribute="leading" secondItem="Xdk-xh-J7r" secondAttribute="leading" id="gqg-BI-M0w"/>
+                                                <constraint firstItem="UaU-IL-y7b" firstAttribute="leading" secondItem="yIB-Jt-Fuj" secondAttribute="leading" id="guX-bR-htc"/>
+                                                <constraint firstItem="Xdk-xh-J7r" firstAttribute="leading" secondItem="NYA-8Z-xWs" secondAttribute="trailing" constant="8" id="p4f-Lx-XPQ"/>
+                                                <constraint firstItem="UaU-IL-y7b" firstAttribute="top" secondItem="yIB-Jt-Fuj" secondAttribute="bottom" constant="8" id="yX6-bx-L0h"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1249,8 +1317,15 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.87058823529999996" green="0.87450980389999999" blue="0.88235294119999996" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="eateryImage" destination="NYA-8Z-xWs" id="uRN-Cp-atH"/>
+                                    <outlet property="eateryTitle" destination="Xdk-xh-J7r" id="iVU-Fw-EtZ"/>
+                                    <outlet property="eateryWeekHours" destination="UaU-IL-y7b" id="2cm-p7-gzV"/>
+                                    <outlet property="eateryWeekendHours" destination="jFI-EN-dvX" id="S2D-q3-Lzt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Y7g-6J-nHe" id="wXj-Hm-I8o"/>
                             <outlet property="delegate" destination="Y7g-6J-nHe" id="9ut-bQ-Sz8"/>
@@ -1265,7 +1340,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mEO-0m-oGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="1484"/>
+            <point key="canvasLocation" x="567" y="1483"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x9A-WM-VgZ">
@@ -1321,11 +1396,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PrimaryLogo_" width="5376" height="2647"/>
         <image name="STEPAppLogoAsmallx" width="512" height="513"/>
         <image name="bell-7" width="30" height="30"/>
         <image name="calendar-7" width="30" height="30"/>
         <image name="camera-7" width="30" height="30"/>
+        <image name="chickfila" width="281" height="281"/>
         <image name="clock-7" width="30" height="30"/>
         <image name="crown-7" width="30" height="30"/>
         <image name="lifebuoy-7" width="30" height="30"/>

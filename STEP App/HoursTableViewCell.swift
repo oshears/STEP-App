@@ -9,7 +9,12 @@
 import UIKit
 
 class HoursTableViewCell: UITableViewCell {
+    @IBOutlet weak var eateryImage: UIImageView!
+    @IBOutlet weak var eateryTitle: UILabel!
 
+    @IBOutlet weak var eateryWeekHours: UILabel!
+    @IBOutlet weak var eateryWeekendHours: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

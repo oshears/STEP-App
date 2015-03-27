@@ -49,7 +49,12 @@ class CalendarTableViewController: UITableViewController {
             UIControlEvents.ValueChanged)
         
         
-        
+        // Configure the activity indicator and start animating
+        spinner.activityIndicatorViewStyle = .Gray
+        spinner.center = self.view.center
+        spinner.hidesWhenStopped = true
+        self.parentViewController?.view.addSubview(spinner)
+        spinner.startAnimating()
 
     }
 
@@ -94,11 +99,12 @@ class CalendarTableViewController: UITableViewController {
         }
         
         // Configure the cell...
-        /*
-        cell.dayLabel.alpha = 0
-        cell..alpha = 0
-        cell.announcementTitle.alpha = 0
-        */
+        
+        cell.mainActivity1.alpha = 0
+        cell.mainActivity2.alpha = 0
+        cell.mainActivity3.alpha = 0
+        cell.dayLabelView.alpha = 0
+        cell.monthLabelView.alpha = 0
         
         
         let calendarDay:PFObject = self.calendarDayList.objectAtIndex(indexPath.row) as PFObject
@@ -124,23 +130,25 @@ class CalendarTableViewController: UITableViewController {
         //cell.dayLabel.text = calendarDay.objectForKey("date") as? String
         //cell.fulldateLabel.text = calendarDay.objectForKey("date") as? String
 
-        /*
+        
         if self.spinner.isAnimating() {
             dispatch_async(dispatch_get_main_queue(), {
                 self.spinner.stopAnimating()
             })
         }
-        */
         
         
         
-        /*
+        
+        
         UIView.animateWithDuration(0.5, animations: {
-            cell.announcementImage.alpha = 1
-            cell.announcementTime.alpha = 1
-            cell.announcementTitle.alpha = 1
+            cell.mainActivity1.alpha = 1
+            cell.mainActivity2.alpha = 1
+            cell.mainActivity3.alpha = 1
+            cell.dayLabelView.alpha = 1
+            cell.monthLabelView.alpha = 1
         })
-        */
+        
         
         return cell
 
