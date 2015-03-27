@@ -14,6 +14,10 @@ class AnnoucementTableViewCell: UITableViewCell {
     @IBOutlet weak var announcementImage: UIImageView!
     @IBOutlet weak var announcementTitle: UILabel!
     @IBOutlet weak var announcementTime: UILabel!
+    
+    
+    @IBOutlet weak var announcementViewStyle: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

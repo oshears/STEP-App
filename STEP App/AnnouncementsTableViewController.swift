@@ -13,6 +13,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     var announcementList:NSMutableArray = NSMutableArray()
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
     
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -111,6 +112,9 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         
         
         let announcement:PFObject = self.announcementList.objectAtIndex(indexPath.row) as PFObject
+        
+        
+        
         cell.announcementTitle.text = announcement.objectForKey("title") as? String
         
         var dataFormatter:NSDateFormatter = NSDateFormatter()
@@ -169,6 +173,10 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                 }
                 
             })
+            //Save to local datastore
+            PFObject.pinAllInBackground(announcementList, block: nil)
+            //Remove from local datastore
+            PFObject.unpinAllInBackground(announcementList, block: nil)
             self.refreshControl?.endRefreshing()
     }
     

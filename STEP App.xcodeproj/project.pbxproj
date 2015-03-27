@@ -177,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				80AF31851AAC8E08006C94CE /* STEP App */,
-				80EAEA241ABB80BB000F8229 /* Hours */,
 				80AF319E1AAC8E08006C94CE /* STEP AppTests */,
 				80AF31841AAC8E08006C94CE /* Products */,
 			);
@@ -208,6 +207,7 @@
 				804B238A1AAF1C190008EE81 /* Admin */,
 				8026B31F1AAF8BEE001DC66A /* People */,
 				8026B31A1AAF60A7001DC66A /* Calendar */,
+				80EAEA241ABB80BB000F8229 /* Hours */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -274,7 +274,6 @@
 				80EAEA271ABB80FC000F8229 /* HoursTableViewController.swift */,
 			);
 			name = Hours;
-			path = "STEP App";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

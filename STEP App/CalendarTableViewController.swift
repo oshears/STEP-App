@@ -40,6 +40,16 @@ class CalendarTableViewController: UITableViewController {
         
         //Load Announcements
         self.loadCalendarDays()
+        
+        // Pull To Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
+        refreshControl?.tintColor = UIColor.grayColor()
+        refreshControl?.addTarget(self, action: "loadCalendarDays", forControlEvents:
+            UIControlEvents.ValueChanged)
+        
+        
+        
 
     }
 
@@ -47,6 +57,23 @@ class CalendarTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        /*
+        
+        Below is an unfinished implimentation of the autonomous scolling to a specific date
+        
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        NSCalendarUnit.CalendarUnitMonth
+        let components = calendar.components
+        
+        var indexPathForRow:NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        tableView.scrollToRowAtIndexPath( indexPathForRow, atScrollPosition: UITableViewScrollPosition.Middle, animated: false)
+        */
+        
+    }
+    
 
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,14 +103,34 @@ class CalendarTableViewController: UITableViewController {
         
         let calendarDay:PFObject = self.calendarDayList.objectAtIndex(indexPath.row) as PFObject
         cell.mainActivity1.text = calendarDay.objectForKey("main_activity_1") as? String
+        if (cell.mainActivity1.text == ""){ cell.mainActivity1.text = " "}
         cell.mainActivity2.text = calendarDay.objectForKey("main_activity_2") as? String
+        if (cell.mainActivity2.text == ""){ cell.mainActivity2.text = " "}
         cell.mainActivity3.text = calendarDay.objectForKey("main_activity_3") as? String
+        if (cell.mainActivity3.text == ""){ cell.mainActivity3.text = " "}
+        
+        var calendarDate = calendarDay.objectForKey("date") as NSDate
+        var dataFormatter:NSDateFormatter = NSDateFormatter()
+        dataFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        
+        dataFormatter.dateFormat = "EEEE, MMMM dd, YYYY"
+        cell.fulldateLabel.text = dataFormatter.stringFromDate(calendarDate)
+        dataFormatter.dateFormat = "dd"
+        cell.dayLabel.text = dataFormatter.stringFromDate(calendarDate)
+        dataFormatter.dateFormat = "MMMM"
+        cell.monthLabel.text = dataFormatter.stringFromDate(calendarDate)
+        
+        //cell.monthLabel.text = calendarDay.objectForKey("date") as? String
+        //cell.dayLabel.text = calendarDay.objectForKey("date") as? String
+        //cell.fulldateLabel.text = calendarDay.objectForKey("date") as? String
 
-        /*if self.spinner.isAnimating() {
+        /*
+        if self.spinner.isAnimating() {
             dispatch_async(dispatch_get_main_queue(), {
                 self.spinner.stopAnimating()
             })
-        }*/
+        }
+        */
         
         
         
@@ -103,6 +150,7 @@ class CalendarTableViewController: UITableViewController {
     @IBAction func loadCalendarDays(){
         calendarDayList.removeAllObjects()
         var findCalendarDays:PFQuery = PFQuery(className: "CalendarDay")
+        findCalendarDays.orderByDescending("date")
         findCalendarDays.findObjectsInBackgroundWithBlock({
             (objects:[AnyObject]!,error:NSError!)->Void in
             

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6pg-Wf-XPV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6pg-Wf-XPV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -53,7 +53,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="5nA-Jc-VdC" secondAttribute="trailing" id="Dyf-jG-i9V"/>
                                                 <constraint firstItem="ZIa-e6-mYI" firstAttribute="top" secondItem="T8e-8F-0Bc" secondAttribute="top" constant="8" id="K0y-Lo-5MU"/>
                                                 <constraint firstItem="PSg-PY-RGy" firstAttribute="top" secondItem="T8e-8F-0Bc" secondAttribute="top" constant="8" id="Qqm-Fy-SA9"/>
-                                                <constraint firstAttribute="height" constant="94.5" id="anr-CO-8qU"/>
+                                                <constraint firstAttribute="height" constant="94.5" id="jhS-cF-Pef"/>
                                                 <constraint firstItem="5nA-Jc-VdC" firstAttribute="top" secondItem="PSg-PY-RGy" secondAttribute="bottom" constant="20" id="lQv-oc-afM"/>
                                                 <constraint firstItem="PSg-PY-RGy" firstAttribute="leading" secondItem="ZIa-e6-mYI" secondAttribute="trailing" constant="8" id="ttx-9D-f5g"/>
                                             </constraints>
@@ -87,6 +87,7 @@
                                     <outlet property="announcementImage" destination="ZIa-e6-mYI" id="pas-sk-Yl6"/>
                                     <outlet property="announcementTime" destination="5nA-Jc-VdC" id="3Gq-qA-q3v"/>
                                     <outlet property="announcementTitle" destination="PSg-PY-RGy" id="hBs-f6-4Dq"/>
+                                    <outlet property="announcementViewStyle" destination="T8e-8F-0Bc" id="7nZ-Yn-QAo"/>
                                     <segue destination="eBd-iG-yqg" kind="show" identifier="detailedAnnouncement" id="T0a-53-lmo"/>
                                 </connections>
                             </tableViewCell>
@@ -996,6 +997,9 @@
                                                 <constraint firstAttribute="height" constant="31" id="L8N-nq-7WH"/>
                                                 <constraint firstAttribute="centerY" secondItem="cGS-e8-3kO" secondAttribute="centerY" id="fH9-YC-SpV"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, June 23rd, 2015" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh8-Rs-jeg">
                                             <rect key="frame" x="133" y="8" width="426" height="14.5"/>
