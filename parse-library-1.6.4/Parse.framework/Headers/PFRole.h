@@ -98,6 +98,15 @@ PF_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) PFRelation *roles;
 
+///--------------------------------------
+/// @name Querying for Roles
+///--------------------------------------
+
+/*!
+ @abstract Creates a <PFQuery> for `PFRole` objects.
+ */
++ (PF_NULLABLE PFQuery *)query;
+
 @end
 
 PF_ASSUME_NONNULL_END
