@@ -87,7 +87,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MiscAnnouncementTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MiscAnnouncementTableViewCell
         
         if (indexPath.row > miscAnnouncementList.count){
             return cell
@@ -98,12 +98,12 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         cell.announcementContent.alpha = 0
         
         
-        let announcement:PFObject = self.miscAnnouncementList.objectAtIndex(indexPath.row) as PFObject
+        let announcement:PFObject = self.miscAnnouncementList.objectAtIndex(indexPath.row) as! PFObject
         cell.announcementContent.text = announcement.objectForKey("content") as? String
         
         var dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
-        cell.announcementTime.text = dataFormatter.stringFromDate(announcement.createdAt)
+        cell.announcementTime.text = dataFormatter.stringFromDate(announcement.createdAt!)
         
         if self.spinner.isAnimating() {
             dispatch_async(dispatch_get_main_queue(), {
@@ -130,6 +130,8 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     @IBAction func loadAnnouncementData(){
         miscAnnouncementList.removeAllObjects()
         var findAnnouncements:PFQuery = PFQuery(className: "MiscAnnouncement")
+        //FindAnnouncements.findObjectsInBackgroundWithBlock
+        /*
         findAnnouncements.findObjectsInBackgroundWithBlock({
             (objects:[AnyObject]!,error:NSError!)->Void in
             
@@ -146,8 +148,23 @@ class MiscAnnouncementsTableViewController: UITableViewController {
             else{
                 println("Failed to retrieve announcements from database")
             }
-            
-        })
+        })*/
+        findAnnouncements.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]?,error:NSError?)-> Void in
+            if error == nil{
+                for object in objects! {
+                    let announcement:PFObject = object as! PFObject
+                    self.miscAnnouncementList.addObject(announcement)
+                }
+                
+                let array:NSArray = self.miscAnnouncementList.reverseObjectEnumerator().allObjects
+                self.miscAnnouncementList = NSMutableArray(array: array)
+                self.tableView.reloadData()
+            }
+            else{
+                println("Failed to retrieve announcements from database")
+            }
+        }
         self.refreshControl?.endRefreshing()
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

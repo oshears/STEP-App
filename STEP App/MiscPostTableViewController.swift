@@ -50,7 +50,7 @@ class MiscPostTableViewController: UITableViewController, UINavigationController
             
             //Custom sound, badge app icon, alert message?
             var data:NSDictionary = ["alert":"","badge":"0","content-available":"1","sound":""]
-            push.setData(data)
+            push.setData(data as [NSObject : AnyObject])
             push.sendPushInBackgroundWithTarget(nil, selector: nil)
             
             performSegueWithIdentifier("unwindToAnnouncementScreen", sender: self)

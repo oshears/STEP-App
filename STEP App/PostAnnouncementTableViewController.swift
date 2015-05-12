@@ -60,7 +60,7 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
         return 3
     }
     
-    func navigationController(navigationController: UINavigationController!, willShowViewController viewController: UIViewController!, animated: Bool) {
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
     }
     
@@ -84,10 +84,10 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
                 //Custom sound, badge app icon, alert message?
                 var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":""]
             
-                push.setData(data)
+                push.setData(data as [NSObject : AnyObject])
             
                 //Send push notification
-                var pushQuery:PFQuery = PFInstallation.query()
+                var pushQuery:PFQuery = PFInstallation.query()!
                 pushQuery.whereKey("channels",equalTo: "Reload")
                 push.setQuery(pushQuery)
                 push.setMessage(announcementTitle.text)
@@ -107,7 +107,7 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
         }
     }
     @IBAction func updateAnnouncementType(sender: AnyObject){
-        let buttonClicked = sender as UIButton
+        let buttonClicked = sender as! UIButton
         
         if buttonClicked == generalButton {
             announcementType = 0

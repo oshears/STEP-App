@@ -92,13 +92,13 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         return announcementList.count
     }
     
-    func navigationController(navigationController: UINavigationController!, willShowViewController viewController: UIViewController!, animated: Bool) {
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as AnnoucementTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! AnnoucementTableViewCell
         
         if (indexPath.row > announcementList.count){
             return cell
@@ -111,7 +111,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         
         
         
-        let announcement:PFObject = self.announcementList.objectAtIndex(indexPath.row) as PFObject
+        let announcement:PFObject = self.announcementList.objectAtIndex(indexPath.row) as! PFObject
         
         
         
@@ -119,7 +119,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         
         var dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
-        cell.announcementTime.text = dataFormatter.stringFromDate(announcement.createdAt)
+        cell.announcementTime.text = dataFormatter.stringFromDate(announcement.createdAt!)
         
         if announcement.objectForKey("type") != nil{
             if announcement.objectForKey("type") as? Int != nil{
@@ -156,6 +156,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     @IBAction func loadAnnouncementData(){
             announcementList.removeAllObjects()
             var findAnnouncements:PFQuery = PFQuery(className: "Announcement")
+            /*
             findAnnouncements.findObjectsInBackgroundWithBlock({
                 (objects:[AnyObject]!,error:NSError!)->Void in
                 
@@ -172,11 +173,28 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                     println("Failed to retrieve announcements from database")
                 }
                 
-            })
+            })*/
+        findAnnouncements.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]?,error:NSError?)-> Void in
+                if error == nil{
+                    for object in objects!{
+                        let announcement:PFObject = object as! PFObject
+                        self.announcementList.addObject(announcement)
+                    }
+                    let array:NSArray = self.announcementList.reverseObjectEnumerator().allObjects
+                    self.announcementList = NSMutableArray(array: array)
+                    self.tableView.reloadData()
+                }
+                else{
+                    println("Failed to retrieve announcements from database")
+                }
+            }
+        
+    
             //Save to local datastore
-            PFObject.pinAllInBackground(announcementList, block: nil)
+            PFObject.pinAllInBackground(announcementList as [AnyObject], block: nil)
             //Remove from local datastore
-            PFObject.unpinAllInBackground(announcementList, block: nil)
+            PFObject.unpinAllInBackground(announcementList as [AnyObject], block: nil)
             self.refreshControl?.endRefreshing()
     }
     
@@ -185,16 +203,16 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
             if let row = tableView.indexPathForSelectedRow()?.row {
                 
                 //var retrievedAnnouncement:PFObject = announcementList[row] as PFObject
-                let announcement:PFObject = self.announcementList.objectAtIndex(row) as PFObject
-                var title:String = announcement.objectForKey("title") as String
-                var content:String = announcement.objectForKey("content") as String
+                let announcement:PFObject = self.announcementList.objectAtIndex(row) as! PFObject
+                var title:String = announcement.objectForKey("title") as! String
+                var content:String = announcement.objectForKey("content") as! String
                 
                 var dataFormatter:NSDateFormatter = NSDateFormatter()
                 dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
-                var postDate:String = dataFormatter.stringFromDate(announcement.createdAt)
+                var postDate:String = dataFormatter.stringFromDate(announcement.createdAt!)
                 
                 
-                let destinationController = segue.destinationViewController as AnnouncementConentTableViewController
+                let destinationController = segue.destinationViewController as! AnnouncementConentTableViewController
                 
                 
                 destinationController.announcement = Announcement(title: title, content: content, postDate: postDate)

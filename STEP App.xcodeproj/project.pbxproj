@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */; };
 		8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */; };
+		80459D581B02A68D00BFA30C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D561B02A68D00BFA30C /* Bolts.framework */; };
+		80459D591B02A68D00BFA30C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D561B02A68D00BFA30C /* Bolts.framework */; };
+		80459D5A1B02A68D00BFA30C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D571B02A68D00BFA30C /* Parse.framework */; };
+		80459D5B1B02A68D00BFA30C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D571B02A68D00BFA30C /* Parse.framework */; };
 		80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF31881AAC8E08006C94CE /* AppDelegate.swift */; };
 		80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */; };
 		80AF31911AAC8E08006C94CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AF318F1AAC8E08006C94CE /* Main.storyboard */; };
@@ -33,8 +37,6 @@
 		80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */; };
 		80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */; };
 		80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */; };
-		80C2E8DF1AAEAA47000C4CA6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */; };
-		80C2E8E01AAEAA47000C4CA6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */; };
 		80C993501AC6187100C2A1D6 /* Eatery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C9934F1AC6187100C2A1D6 /* Eatery.swift */; };
 		80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */; };
 		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */; };
@@ -59,6 +61,8 @@
 /* Begin PBXFileReference section */
 		8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
+		80459D561B02A68D00BFA30C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
+		80459D571B02A68D00BFA30C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
 		80AF31831AAC8E08006C94CE /* STEP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AF31871AAC8E08006C94CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AF31881AAC8E08006C94CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,8 +93,6 @@
 		80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAnnouncementTableViewController.swift; sourceTree = "<group>"; };
 		80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEP App-Bridging-Header.h"; sourceTree = "<group>"; };
 		80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
-		80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.6.4/Bolts.framework"; sourceTree = "<group>"; };
-		80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.6.4/Parse.framework"; sourceTree = "<group>"; };
 		80C9934F1AC6187100C2A1D6 /* Eatery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eatery.swift; sourceTree = "<group>"; };
 		80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentTableViewController.swift; sourceTree = "<group>"; };
@@ -107,13 +109,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C2E8DF1AAEAA47000C4CA6 /* Bolts.framework in Frameworks */,
-				80C2E8E01AAEAA47000C4CA6 /* Parse.framework in Frameworks */,
 				80AF32201AAD25EF006C94CE /* libsqlite3.dylib in Frameworks */,
 				80AF321E1AAD25EA006C94CE /* libz.dylib in Frameworks */,
 				80AF321C1AAD25E3006C94CE /* SystemConfiguration.framework in Frameworks */,
+				80459D581B02A68D00BFA30C /* Bolts.framework in Frameworks */,
 				80AF321A1AAD25D8006C94CE /* StoreKit.framework in Frameworks */,
 				80AF32181AAD25D4006C94CE /* Security.framework in Frameworks */,
+				80459D5A1B02A68D00BFA30C /* Parse.framework in Frameworks */,
 				80AF32161AAD25CF006C94CE /* QuartzCore.framework in Frameworks */,
 				80AF32141AAD25CA006C94CE /* MobileCoreServices.framework in Frameworks */,
 				80AF32121AAD25C4006C94CE /* CoreLocation.framework in Frameworks */,
@@ -127,6 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80459D5B1B02A68D00BFA30C /* Parse.framework in Frameworks */,
+				80459D591B02A68D00BFA30C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,8 +246,8 @@
 		80AF32211AAD2611006C94CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				80C2E8DD1AAEAA47000C4CA6 /* Bolts.framework */,
-				80C2E8DE1AAEAA47000C4CA6 /* Parse.framework */,
+				80459D561B02A68D00BFA30C /* Bolts.framework */,
+				80459D571B02A68D00BFA30C /* Parse.framework */,
 				80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */,
 				80AF321D1AAD25EA006C94CE /* libz.dylib */,
 				80AF321B1AAD25E3006C94CE /* SystemConfiguration.framework */,
@@ -529,7 +533,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library-1.6.4";
+				FRAMEWORK_SEARCH_PATHS = "/Users/Osaze/Downloads/parse-library-1.7.2";
 				INFOPLIST_FILE = "STEP App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,7 +550,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library-1.6.4";
+				FRAMEWORK_SEARCH_PATHS = "/Users/Osaze/Downloads/parse-library-1.7.2";
 				INFOPLIST_FILE = "STEP App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -562,6 +566,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"/Users/Osaze/Downloads/parse-library-1.7.2",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -581,6 +586,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"/Users/Osaze/Downloads/parse-library-1.7.2",
 				);
 				INFOPLIST_FILE = "STEP AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -92,7 +92,7 @@ class CalendarTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CalendarCell", forIndexPath: indexPath) as CalendarTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CalendarCell", forIndexPath: indexPath) as! CalendarTableViewCell
         
         if (indexPath.row > calendarDayList.count){
             return cell
@@ -107,7 +107,7 @@ class CalendarTableViewController: UITableViewController {
         cell.monthLabelView.alpha = 0
         
         
-        let calendarDay:PFObject = self.calendarDayList.objectAtIndex(indexPath.row) as PFObject
+        let calendarDay:PFObject = self.calendarDayList.objectAtIndex(indexPath.row) as! PFObject
         cell.mainActivity1.text = calendarDay.objectForKey("main_activity_1") as? String
         if (cell.mainActivity1.text == ""){ cell.mainActivity1.text = " "}
         cell.mainActivity2.text = calendarDay.objectForKey("main_activity_2") as? String
@@ -115,7 +115,7 @@ class CalendarTableViewController: UITableViewController {
         cell.mainActivity3.text = calendarDay.objectForKey("main_activity_3") as? String
         if (cell.mainActivity3.text == ""){ cell.mainActivity3.text = " "}
         
-        var calendarDate = calendarDay.objectForKey("date") as NSDate
+        var calendarDate = calendarDay.objectForKey("date") as! NSDate
         var dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
         
@@ -159,6 +159,7 @@ class CalendarTableViewController: UITableViewController {
         calendarDayList.removeAllObjects()
         var findCalendarDays:PFQuery = PFQuery(className: "CalendarDay")
         findCalendarDays.orderByDescending("date")
+        /*
         findCalendarDays.findObjectsInBackgroundWithBlock({
             (objects:[AnyObject]!,error:NSError!)->Void in
             
@@ -175,7 +176,22 @@ class CalendarTableViewController: UITableViewController {
                 println("Failed to retrieve announcements from database")
             }
             
-        })
+        })*/
+        findCalendarDays.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]?,error:NSError?)-> Void in
+            if error == nil{
+                for object in objects! {
+                    let calendarDay:PFObject = object as! PFObject
+                    self.calendarDayList.addObject(calendarDay)
+                }
+                let array:NSArray = self.calendarDayList.reverseObjectEnumerator().allObjects
+                self.calendarDayList = NSMutableArray(array: array)
+                self.tableView.reloadData()
+            }
+            else{
+                println("Failed to retrieve announcements from database")
+            }
+        }
         self.refreshControl?.endRefreshing()
     
     }

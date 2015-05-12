@@ -36,7 +36,7 @@ class AdminTableViewController: UITableViewController {
     }
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() != nil{
-            logInOut.text = "Logout of \(PFUser.currentUser().username)"
+            logInOut.text = "Logout of \(PFUser.currentUser()!.username)"
         }
         else{
             logInOut.text = "Admin Login"
@@ -63,7 +63,7 @@ class AdminTableViewController: UITableViewController {
             }
         }
         if PFUser.currentUser() != nil{
-            logInOut.text = "Logout of \(PFUser.currentUser().username)"
+            logInOut.text = "Logout of \(PFUser.currentUser()!.username)"
         }
         else{
             logInOut.text = "Admin Login"
@@ -107,10 +107,11 @@ class AdminTableViewController: UITableViewController {
         loginAlert.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default, handler: {
             alertAction in
             let textFields:NSArray = loginAlert.textFields as NSArray!
-            let usernameTextfield:UITextField = textFields.objectAtIndex(0) as UITextField
-            let passwordTextField:UITextField = textFields.objectAtIndex(1) as UITextField
-            PFUser.logInWithUsernameInBackground(usernameTextfield.text, password: passwordTextField.text){
-                (user:PFUser!,error:NSError!)->Void in
+            let usernameTextfield:UITextField = textFields.objectAtIndex(0) as! UITextField
+            let passwordTextField:UITextField = textFields.objectAtIndex(1) as! UITextField
+        
+            PFUser.logInWithUsernameInBackground(usernameTextfield.text!, password: passwordTextField.text!){
+                (user:PFUser?,error:NSError?)->Void in
                 println("User info exits?: \(user)")
                 if (user != nil){
                     println("login successful")
@@ -132,12 +133,12 @@ class AdminTableViewController: UITableViewController {
                     
                 }
                 else{
-                    var loginAlert:UIAlertController = UIAlertController(title: "Hello \(PFUser.currentUser().username)", message:"Successfully logged in as \(PFUser.currentUser().username)",preferredStyle: .Alert)
+                    var loginAlert:UIAlertController = UIAlertController(title: "Hello \(PFUser.currentUser()!.username)", message:"Successfully logged in as \(PFUser.currentUser()!.username)",preferredStyle: .Alert)
                     loginAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                     self.presentViewController(loginAlert,animated: true, completion: nil)
                     
                     if PFUser.currentUser() != nil{
-                        self.logInOut.text = "Logout out of \(PFUser.currentUser().username)"
+                        self.logInOut.text = "Logout out of \(PFUser.currentUser()!.username)"
                     }
                     else{
                         self.logInOut.text = "Admin Login"
