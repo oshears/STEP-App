@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */; };
 		8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */; };
-		80459D581B02A68D00BFA30C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D561B02A68D00BFA30C /* Bolts.framework */; };
-		80459D591B02A68D00BFA30C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D561B02A68D00BFA30C /* Bolts.framework */; };
-		80459D5A1B02A68D00BFA30C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D571B02A68D00BFA30C /* Parse.framework */; };
-		80459D5B1B02A68D00BFA30C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D571B02A68D00BFA30C /* Parse.framework */; };
+		80459D611B02C0D500BFA30C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D5F1B02C0D500BFA30C /* Bolts.framework */; };
+		80459D621B02C0D500BFA30C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D5F1B02C0D500BFA30C /* Bolts.framework */; };
+		80459D631B02C0D500BFA30C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D601B02C0D500BFA30C /* Parse.framework */; };
+		80459D641B02C0D500BFA30C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D601B02C0D500BFA30C /* Parse.framework */; };
+		80459D661B02C37E00BFA30C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80459D651B02C37E00BFA30C /* Person.swift */; };
+		80459D671B02C37E00BFA30C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80459D651B02C37E00BFA30C /* Person.swift */; };
 		80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF31881AAC8E08006C94CE /* AppDelegate.swift */; };
 		80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */; };
 		80AF31911AAC8E08006C94CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AF318F1AAC8E08006C94CE /* Main.storyboard */; };
@@ -61,8 +63,9 @@
 /* Begin PBXFileReference section */
 		8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
-		80459D561B02A68D00BFA30C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
-		80459D571B02A68D00BFA30C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
+		80459D5F1B02C0D500BFA30C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
+		80459D601B02C0D500BFA30C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
+		80459D651B02C37E00BFA30C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		80AF31831AAC8E08006C94CE /* STEP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AF31871AAC8E08006C94CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AF31881AAC8E08006C94CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,10 +115,10 @@
 				80AF32201AAD25EF006C94CE /* libsqlite3.dylib in Frameworks */,
 				80AF321E1AAD25EA006C94CE /* libz.dylib in Frameworks */,
 				80AF321C1AAD25E3006C94CE /* SystemConfiguration.framework in Frameworks */,
-				80459D581B02A68D00BFA30C /* Bolts.framework in Frameworks */,
+				80459D611B02C0D500BFA30C /* Bolts.framework in Frameworks */,
 				80AF321A1AAD25D8006C94CE /* StoreKit.framework in Frameworks */,
 				80AF32181AAD25D4006C94CE /* Security.framework in Frameworks */,
-				80459D5A1B02A68D00BFA30C /* Parse.framework in Frameworks */,
+				80459D631B02C0D500BFA30C /* Parse.framework in Frameworks */,
 				80AF32161AAD25CF006C94CE /* QuartzCore.framework in Frameworks */,
 				80AF32141AAD25CA006C94CE /* MobileCoreServices.framework in Frameworks */,
 				80AF32121AAD25C4006C94CE /* CoreLocation.framework in Frameworks */,
@@ -129,8 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80459D5B1B02A68D00BFA30C /* Parse.framework in Frameworks */,
-				80459D591B02A68D00BFA30C /* Bolts.framework in Frameworks */,
+				80459D641B02C0D500BFA30C /* Parse.framework in Frameworks */,
+				80459D621B02C0D500BFA30C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +154,7 @@
 			children = (
 				8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */,
 				80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */,
+				80459D651B02C37E00BFA30C /* Person.swift */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -246,8 +250,8 @@
 		80AF32211AAD2611006C94CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				80459D561B02A68D00BFA30C /* Bolts.framework */,
-				80459D571B02A68D00BFA30C /* Parse.framework */,
+				80459D5F1B02C0D500BFA30C /* Bolts.framework */,
+				80459D601B02C0D500BFA30C /* Parse.framework */,
 				80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */,
 				80AF321D1AAD25EA006C94CE /* libz.dylib */,
 				80AF321B1AAD25E3006C94CE /* SystemConfiguration.framework */,
@@ -402,6 +406,7 @@
 				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */,
 				80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */,
+				80459D661B02C37E00BFA30C /* Person.swift in Sources */,
 				80F5FAF21AB7971200295D23 /* PeopleTableViewCell.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,
 			);
@@ -411,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80459D671B02C37E00BFA30C /* Person.swift in Sources */,
 				80AF31A21AAC8E08006C94CE /* STEP_AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +539,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "/Users/Osaze/Downloads/parse-library-1.7.2";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library-1.7.2";
 				INFOPLIST_FILE = "STEP App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,7 +556,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "/Users/Osaze/Downloads/parse-library-1.7.2";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library-1.7.2";
 				INFOPLIST_FILE = "STEP App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,8 +571,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"/Users/Osaze/Downloads/parse-library-1.7.2",
+					"$(PROJECT_DIR)/parse-library-1.7.2",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -585,8 +590,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"/Users/Osaze/Downloads/parse-library-1.7.2",
+					"$(PROJECT_DIR)/parse-library-1.7.2",
 				);
 				INFOPLIST_FILE = "STEP AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

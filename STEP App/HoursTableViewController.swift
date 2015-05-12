@@ -41,6 +41,29 @@ class HoursTableViewController: UITableViewController {
     }
     
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of rows in the section.
+        return self.eateries.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "HoursCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! HoursTableViewCell
+        
+        // Configure the cell...
+        let eatery = eateries[indexPath.row]
+        cell.eateryTitle.text = eatery.title
+        cell.eateryImage.image = UIImage(named:eatery.image)
+        cell.eateryWeekHours.text = eatery.weekHours
+        cell.eateryWeekendHours.text = eatery.weekendHours
+        
+        // Circular image
+        cell.eateryImage.layer.cornerRadius = cell.eateryImage.frame.size.width / 2
+        cell.eateryImage.clipsToBounds = true
+        
+        return cell
+    }
     
 
     override func didReceiveMemoryWarning() {
