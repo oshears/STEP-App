@@ -12,8 +12,6 @@ class PeopleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var occupationLabel: UILabel!
-    @IBOutlet weak var majorLabel: UILabel!
-
     @IBOutlet weak var profileImge: UIImageView!
     
     override func awakeFromNib() {

@@ -15,6 +15,8 @@
 		80459D641B02C0D500BFA30C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D601B02C0D500BFA30C /* Parse.framework */; };
 		80459D661B02C37E00BFA30C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80459D651B02C37E00BFA30C /* Person.swift */; };
 		80459D671B02C37E00BFA30C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80459D651B02C37E00BFA30C /* Person.swift */; };
+		8090C29E1B03E43100B703F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8090C29D1B03E43100B703F4 /* MapKit.framework */; };
+		8090C2A11B03E60F00B703F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090C2A01B03E60F00B703F4 /* MapViewController.swift */; };
 		80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF31881AAC8E08006C94CE /* AppDelegate.swift */; };
 		80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */; };
 		80AF31911AAC8E08006C94CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AF318F1AAC8E08006C94CE /* Main.storyboard */; };
@@ -47,6 +49,7 @@
 		80DD6E211AAF1132001D4479 /* MiscPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */; };
 		80EAEA261ABB80E7000F8229 /* HoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EAEA251ABB80E7000F8229 /* HoursTableViewCell.swift */; };
 		80EAEA281ABB80FC000F8229 /* HoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EAEA271ABB80FC000F8229 /* HoursTableViewController.swift */; };
+		80F21A581B13639300070B96 /* DetailPersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F21A571B13639300070B96 /* DetailPersonTableViewController.swift */; };
 		80F5FAF21AB7971200295D23 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,8 @@
 		80459D5F1B02C0D500BFA30C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
 		80459D601B02C0D500BFA30C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
 		80459D651B02C37E00BFA30C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8090C29D1B03E43100B703F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8090C2A01B03E60F00B703F4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		80AF31831AAC8E08006C94CE /* STEP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AF31871AAC8E08006C94CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AF31881AAC8E08006C94CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 		80DD6E201AAF1132001D4479 /* MiscPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscPostTableViewController.swift; sourceTree = "<group>"; };
 		80EAEA251ABB80E7000F8229 /* HoursTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoursTableViewCell.swift; sourceTree = "<group>"; };
 		80EAEA271ABB80FC000F8229 /* HoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoursTableViewController.swift; sourceTree = "<group>"; };
+		80F21A571B13639300070B96 /* DetailPersonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPersonTableViewController.swift; sourceTree = "<group>"; };
 		80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +122,7 @@
 				80AF321E1AAD25EA006C94CE /* libz.dylib in Frameworks */,
 				80AF321C1AAD25E3006C94CE /* SystemConfiguration.framework in Frameworks */,
 				80459D611B02C0D500BFA30C /* Bolts.framework in Frameworks */,
+				8090C29E1B03E43100B703F4 /* MapKit.framework in Frameworks */,
 				80AF321A1AAD25D8006C94CE /* StoreKit.framework in Frameworks */,
 				80AF32181AAD25D4006C94CE /* Security.framework in Frameworks */,
 				80459D631B02C0D500BFA30C /* Parse.framework in Frameworks */,
@@ -155,6 +162,7 @@
 				8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */,
 				80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */,
 				80459D651B02C37E00BFA30C /* Person.swift */,
+				80F21A571B13639300070B96 /* DetailPersonTableViewController.swift */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -181,6 +189,14 @@
 				80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */,
 			);
 			name = Admin;
+			sourceTree = "<group>";
+		};
+		8090C29F1B03E5C700B703F4 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8090C2A01B03E60F00B703F4 /* MapViewController.swift */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		80AF317A1AAC8E08006C94CE = {
@@ -218,6 +234,7 @@
 				8026B31F1AAF8BEE001DC66A /* People */,
 				8026B31A1AAF60A7001DC66A /* Calendar */,
 				80EAEA241ABB80BB000F8229 /* Hours */,
+				8090C29F1B03E5C700B703F4 /* Map */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -250,6 +267,7 @@
 		80AF32211AAD2611006C94CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8090C29D1B03E43100B703F4 /* MapKit.framework */,
 				80459D5F1B02C0D500BFA30C /* Bolts.framework */,
 				80459D601B02C0D500BFA30C /* Parse.framework */,
 				80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */,
@@ -337,6 +355,11 @@
 					80AF31821AAC8E08006C94CE = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 75DR37G5C2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					80AF319A1AAC8E08006C94CE = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -389,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80D663911AAE805900433C79 /* Announcement.swift in Sources */,
+				80F21A581B13639300070B96 /* DetailPersonTableViewController.swift in Sources */,
 				80AF32041AAD1E4A006C94CE /* AnnouncementsTableViewController.swift in Sources */,
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
 				80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */,
@@ -399,6 +423,7 @@
 				80DD6E211AAF1132001D4479 /* MiscPostTableViewController.swift in Sources */,
 				80AF32061AAD21CE006C94CE /* AnnoucementTableViewCell.swift in Sources */,
 				80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */,
+				8090C2A11B03E60F00B703F4 /* MapViewController.swift in Sources */,
 				80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */,
 				80EAEA261ABB80E7000F8229 /* HoursTableViewCell.swift in Sources */,
 				80C993501AC6187100C2A1D6 /* Eatery.swift in Sources */,

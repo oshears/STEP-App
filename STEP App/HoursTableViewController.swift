@@ -14,7 +14,9 @@ class HoursTableViewController: UITableViewController {
     
     var eateries:[Eatery] =
     [
-        Eatery(title:"Chick fil A",weekHours:"Monday - Friday: 11:00 am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"chickfila")
+        Eatery(title:"Chick fil A",weekHours:"Monday - Friday: 11:00 am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"chickfila"),
+        Eatery(title:"Einstein's Bagels",weekHours:"Monday - Friday: 11:00 am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"einstein"),
+        Eatery(title:"Subway",weekHours:"Monday - Friday: 11:00 am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"subway")
     ]
     
     override func viewDidLoad() {
