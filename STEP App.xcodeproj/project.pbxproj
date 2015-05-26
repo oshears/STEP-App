@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801476D41B14C90000B2071B /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801476D31B14C90000B2071B /* VCMapView.swift */; };
 		8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */; };
 		8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */; };
 		80459D611B02C0D500BFA30C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D5F1B02C0D500BFA30C /* Bolts.framework */; };
@@ -50,6 +51,7 @@
 		80EAEA261ABB80E7000F8229 /* HoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EAEA251ABB80E7000F8229 /* HoursTableViewCell.swift */; };
 		80EAEA281ABB80FC000F8229 /* HoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EAEA271ABB80FC000F8229 /* HoursTableViewController.swift */; };
 		80F21A581B13639300070B96 /* DetailPersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F21A571B13639300070B96 /* DetailPersonTableViewController.swift */; };
+		80F21A5A1B13742C00070B96 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F21A591B13742C00070B96 /* Place.swift */; };
 		80F5FAF21AB7971200295D23 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		801476D31B14C90000B2071B /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 		8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewController.swift; sourceTree = "<group>"; };
 		8026B31D1AAF8BE9001DC66A /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
 		80459D5F1B02C0D500BFA30C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		80EAEA251ABB80E7000F8229 /* HoursTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoursTableViewCell.swift; sourceTree = "<group>"; };
 		80EAEA271ABB80FC000F8229 /* HoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoursTableViewController.swift; sourceTree = "<group>"; };
 		80F21A571B13639300070B96 /* DetailPersonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPersonTableViewController.swift; sourceTree = "<group>"; };
+		80F21A591B13742C00070B96 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		80F5FAF11AB7971200295D23 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				8090C2A01B03E60F00B703F4 /* MapViewController.swift */,
+				80F21A591B13742C00070B96 /* Place.swift */,
+				801476D31B14C90000B2071B /* VCMapView.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -414,9 +420,11 @@
 				80D663911AAE805900433C79 /* Announcement.swift in Sources */,
 				80F21A581B13639300070B96 /* DetailPersonTableViewController.swift in Sources */,
 				80AF32041AAD1E4A006C94CE /* AnnouncementsTableViewController.swift in Sources */,
+				80F21A5A1B13742C00070B96 /* Place.swift in Sources */,
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
 				80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */,
 				80EAEA281ABB80FC000F8229 /* HoursTableViewController.swift in Sources */,
+				801476D41B14C90000B2071B /* VCMapView.swift in Sources */,
 				8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */,
 				8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */,
 				80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */,

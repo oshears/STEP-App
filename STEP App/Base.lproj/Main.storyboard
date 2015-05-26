@@ -1341,6 +1341,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="DBK-ET-ncd"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="mapView" destination="Pau-vc-b55" id="dDr-nb-GDb"/>
                         <outlet property="menuButton" destination="DBK-ET-ncd" id="8xJ-Tv-inW"/>
                     </connections>
                 </viewController>
