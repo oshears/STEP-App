@@ -18,10 +18,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     //List of places
     var places:[Place] = [
         
-        Place(name: "Johnson Center", location:"George Mason", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.830113,-77.307650)),
-        Place(name: "SUB I", location:"George Mason", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.831808, -77.308679))
+        Place(name: "Johnson Center (JC)", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.830113,-77.307650)),
+        Place(name: "Student Union Building I (SUB I)", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.831808, -77.308679)),
+        Place(name: "Office of Diversity, Inclusion and Multicultural Education (ODIME)", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.831894, -77.308808)),
+        Place(name: "David Krug Hall", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.830590, -77.306672)),
+        Place(name: "Planetary Hall", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.829839, -77.306216)),
+        Place(name: "Enterprise Hall", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.829067, -77.306067)),
+        Place(name: "Innovation Hall", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.828606, -77.307353)),
+        Place(name: "Robinson Hall A", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.831364, -77.307864)),
+        Place(name: "Robinson Hall B", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.830930, -77.307992)),
+        Place(name: "Eastern Shore", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.833371, -77.304262)),
+        Place(name: "Merten Hall", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.834967, -77.307891)),
+        Place(name: "Manhattan Pizza", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834970, -77.307449)),
+        Place(name: "Panda Express", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834838, -77.308083))
     ]
     
+    //Center on the middle of George Mason
     let initialLocation = CLLocation(latitude: 38.830113,longitude: -77.307650)
     
     override func viewDidLoad() {
@@ -45,6 +57,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.delegate = self
         mapView.mapType = MKMapType.Hybrid
         
+        //User location setup
         if (CLLocationManager.locationServicesEnabled())
         {
             locationManager = CLLocationManager()
@@ -60,6 +73,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         checkLocationAuthorizationStatus()
     }
     
+    //Helper method for centering the map on a region
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
@@ -72,6 +86,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Dispose of any resources that can be recreated.
     }
     
+    //The below code pertains to the user's location
     //This code creates a CLLocationManager object, which keeps track of your app’s authorization status for accessing the user’s location.
     var locationManager = CLLocationManager()
     func checkLocationAuthorizationStatus() {

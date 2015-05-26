@@ -362,6 +362,9 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 75DR37G5C2;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};

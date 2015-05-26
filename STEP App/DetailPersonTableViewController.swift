@@ -13,6 +13,7 @@ class DetailPersonTableViewController: UITableViewController {
     @IBOutlet weak var bioTextView: UITextView!
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     var person:Person!
     
     override func viewDidLoad() {
@@ -25,11 +26,20 @@ class DetailPersonTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         title = person.name
+        nameLabel.text = person.name
         
         
         bioTextView.text = person.bio
         positionLabel.text = person.role
         profileImageView.image = UIImage(named:person.image)
+        
+        // Circular image
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 4
+        profileImageView.clipsToBounds = true
+        
+        //Textview Outline
+        bioTextView.layer.cornerRadius = 2
+        bioTextView.layer.borderWidth = 0.5
         
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
