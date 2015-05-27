@@ -28,10 +28,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         Place(name: "Robinson Hall A", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.831364, -77.307864)),
         Place(name: "Robinson Hall B", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.830930, -77.307992)),
         Place(name: "Eastern Shore", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.833371, -77.304262)),
+        Place(name: "Center for the Arts", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.829482, -77.309533)),
+        Place(name: "East Building", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.832990, -77.308256)),
+        Place(name: "Nyguyen Engineering Building", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.827518, -77.305267)),
+        Place(name: "Art and Design Building", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.827868, -77.306364)),
         Place(name: "Merten Hall", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.834967, -77.307891)),
         Place(name: "Manhattan Pizza", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834970, -77.307449)),
         Place(name: "Panda Express", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834838, -77.308083))
     ]
+
     
     //Center on the middle of George Mason
     let initialLocation = CLLocation(latitude: 38.830113,longitude: -77.307650)

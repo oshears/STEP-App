@@ -36,7 +36,7 @@ class HoursTableViewController: UITableViewController {
         }
         
         // Self Sizing Cells
-        self.tableView.estimatedRowHeight = 150.0;
+        self.tableView.estimatedRowHeight = 123.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
 
         
