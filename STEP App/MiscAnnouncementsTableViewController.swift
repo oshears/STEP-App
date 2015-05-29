@@ -110,19 +110,12 @@ class MiscAnnouncementsTableViewController: UITableViewController {
                 self.spinner.stopAnimating()
             })
         }
-        
-        
         UIView.animateWithDuration(0.5, animations: {
             cell.announcementTime.alpha = 1
             cell.announcementContent.alpha = 1
         })
         
-        //cell.cellSize = tableView(self.tableView, heightForRowAtIndexPath: indexPath)
-        
-        
         cell.cellSize = cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
-        
-            
         return cell
     }
 
@@ -167,6 +160,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         }
         self.refreshControl?.endRefreshing()
     }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

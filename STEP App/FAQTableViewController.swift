@@ -34,6 +34,10 @@ class FAQTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        //Self-Sizing
+        tableView.estimatedRowHeight = 36.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        
         // Pull To Refresh Control
         refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
@@ -142,9 +146,9 @@ class FAQTableViewController: UITableViewController {
                 
                 let faq:PFObject = self.faqList.objectAtIndex(row) as! PFObject
                 var question:String = faq.objectForKey("question") as! String
-                var answer:String = faq.objectForKey("answer") as! String
-                
+                var answer:String = (faq.objectForKey("answer")==nil) ? "" : faq.objectForKey("answer") as! String
                 let destinationController = segue.destinationViewController as! DetailFAQTableViewController
+                
                 
                 destinationController.faq = FAQ(question: question, answer: answer)
                 
@@ -153,10 +157,10 @@ class FAQTableViewController: UITableViewController {
         
     }
     
-    
-    @IBAction func unwindToFAQsScreen(segue:UIStoryboardSegue) {
+    @IBAction func unwindToFaqsScreen(segue:UIStoryboardSegue) {
         
     }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
