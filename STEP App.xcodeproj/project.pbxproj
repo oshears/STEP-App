@@ -16,6 +16,12 @@
 		80459D641B02C0D500BFA30C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80459D601B02C0D500BFA30C /* Parse.framework */; };
 		80459D661B02C37E00BFA30C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80459D651B02C37E00BFA30C /* Person.swift */; };
 		80459D671B02C37E00BFA30C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80459D651B02C37E00BFA30C /* Person.swift */; };
+		80819AFA1B18B4D400E35C3A /* FAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819AF91B18B4D400E35C3A /* FAQTableViewController.swift */; };
+		80819AFC1B18B4F300E35C3A /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819AFB1B18B4F300E35C3A /* FAQTableViewCell.swift */; };
+		80819B021B18B77B00E35C3A /* AddFAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B011B18B77B00E35C3A /* AddFAQTableViewController.swift */; };
+		80819B041B18B8AF00E35C3A /* DetailFAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B031B18B8AF00E35C3A /* DetailFAQTableViewController.swift */; };
+		80819B061B18C28D00E35C3A /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B051B18C28D00E35C3A /* FAQ.swift */; };
+		80819B091B18D9A100E35C3A /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */; };
 		8090C29E1B03E43100B703F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8090C29D1B03E43100B703F4 /* MapKit.framework */; };
 		8090C2A11B03E60F00B703F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090C2A01B03E60F00B703F4 /* MapViewController.swift */; };
 		80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF31881AAC8E08006C94CE /* AppDelegate.swift */; };
@@ -72,6 +78,12 @@
 		80459D5F1B02C0D500BFA30C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
 		80459D601B02C0D500BFA30C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
 		80459D651B02C37E00BFA30C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		80819AF91B18B4D400E35C3A /* FAQTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQTableViewController.swift; sourceTree = "<group>"; };
+		80819AFB1B18B4F300E35C3A /* FAQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		80819B011B18B77B00E35C3A /* AddFAQTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFAQTableViewController.swift; sourceTree = "<group>"; };
+		80819B031B18B8AF00E35C3A /* DetailFAQTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailFAQTableViewController.swift; sourceTree = "<group>"; };
+		80819B051B18C28D00E35C3A /* FAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
+		80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
 		8090C29D1B03E43100B703F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8090C2A01B03E60F00B703F4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		80AF31831AAC8E08006C94CE /* STEP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,10 +201,29 @@
 			isa = PBXGroup;
 			children = (
 				80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */,
-				80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */,
 				80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */,
 			);
 			name = Admin;
+			sourceTree = "<group>";
+		};
+		80819AF81B18B4B000E35C3A /* FAQs */ = {
+			isa = PBXGroup;
+			children = (
+				80819AF91B18B4D400E35C3A /* FAQTableViewController.swift */,
+				80819AFB1B18B4F300E35C3A /* FAQTableViewCell.swift */,
+				80819B011B18B77B00E35C3A /* AddFAQTableViewController.swift */,
+				80819B031B18B8AF00E35C3A /* DetailFAQTableViewController.swift */,
+				80819B051B18C28D00E35C3A /* FAQ.swift */,
+			);
+			name = FAQs;
+			sourceTree = "<group>";
+		};
+		80819B071B18D98400E35C3A /* Snaps */ = {
+			isa = PBXGroup;
+			children = (
+				80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */,
+			);
+			name = Snaps;
 			sourceTree = "<group>";
 		};
 		8090C29F1B03E5C700B703F4 /* Map */ = {
@@ -241,6 +272,8 @@
 				8026B31A1AAF60A7001DC66A /* Calendar */,
 				80EAEA241ABB80BB000F8229 /* Hours */,
 				8090C29F1B03E5C700B703F4 /* Map */,
+				80819AF81B18B4B000E35C3A /* FAQs */,
+				80819B071B18D98400E35C3A /* Snaps */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -297,6 +330,7 @@
 			children = (
 				80AF326C1AADF164006C94CE /* SWRevealViewController.h */,
 				80AF326D1AADF164006C94CE /* SWRevealViewController.m */,
+				80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */,
 			);
 			name = SWRevealView;
 			sourceTree = "<group>";
@@ -425,11 +459,16 @@
 				80AF32041AAD1E4A006C94CE /* AnnouncementsTableViewController.swift in Sources */,
 				80F21A5A1B13742C00070B96 /* Place.swift in Sources */,
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
+				80819B091B18D9A100E35C3A /* SnapsTableViewController.swift in Sources */,
 				80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */,
+				80819AFA1B18B4D400E35C3A /* FAQTableViewController.swift in Sources */,
 				80EAEA281ABB80FC000F8229 /* HoursTableViewController.swift in Sources */,
+				80819B061B18C28D00E35C3A /* FAQ.swift in Sources */,
 				801476D41B14C90000B2071B /* VCMapView.swift in Sources */,
 				8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */,
+				80819B021B18B77B00E35C3A /* AddFAQTableViewController.swift in Sources */,
 				8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */,
+				80819AFC1B18B4F300E35C3A /* FAQTableViewCell.swift in Sources */,
 				80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */,
 				80DD6E211AAF1132001D4479 /* MiscPostTableViewController.swift in Sources */,
 				80AF32061AAD21CE006C94CE /* AnnoucementTableViewCell.swift in Sources */,
@@ -440,6 +479,7 @@
 				80C993501AC6187100C2A1D6 /* Eatery.swift in Sources */,
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,
 				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
+				80819B041B18B8AF00E35C3A /* DetailFAQTableViewController.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */,
 				80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */,
 				80459D661B02C37E00BFA30C /* Person.swift in Sources */,
