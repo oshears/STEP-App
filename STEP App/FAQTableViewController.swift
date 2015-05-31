@@ -129,9 +129,7 @@ class FAQTableViewController: UITableViewController {
                 println("Failed to retrieve faqs from database")
             }
         }
-        
-        println("Finished retrieving stuff, if stuff was gotten...")
-        
+                
         //Save to local datastore
         PFObject.pinAllInBackground(faqList as [AnyObject], block: nil)
         //Remove from local datastore

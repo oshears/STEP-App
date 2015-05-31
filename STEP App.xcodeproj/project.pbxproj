@@ -22,6 +22,8 @@
 		80819B041B18B8AF00E35C3A /* DetailFAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B031B18B8AF00E35C3A /* DetailFAQTableViewController.swift */; };
 		80819B061B18C28D00E35C3A /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B051B18C28D00E35C3A /* FAQ.swift */; };
 		80819B091B18D9A100E35C3A /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */; };
+		80848F631B1B5DBE00789BAF /* DetailedHoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80848F621B1B5DBE00789BAF /* DetailedHoursTableViewController.swift */; };
+		80848F651B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80848F641B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift */; };
 		8090C29E1B03E43100B703F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8090C29D1B03E43100B703F4 /* MapKit.framework */; };
 		8090C2A11B03E60F00B703F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090C2A01B03E60F00B703F4 /* MapViewController.swift */; };
 		80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF31881AAC8E08006C94CE /* AppDelegate.swift */; };
@@ -84,6 +86,8 @@
 		80819B031B18B8AF00E35C3A /* DetailFAQTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailFAQTableViewController.swift; sourceTree = "<group>"; };
 		80819B051B18C28D00E35C3A /* FAQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
 		80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
+		80848F621B1B5DBE00789BAF /* DetailedHoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedHoursTableViewController.swift; sourceTree = "<group>"; };
+		80848F641B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCalendarTableViewController.swift; sourceTree = "<group>"; };
 		8090C29D1B03E43100B703F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8090C2A01B03E60F00B703F4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		80AF31831AAC8E08006C94CE /* STEP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +172,7 @@
 			children = (
 				8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */,
 				80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */,
+				80848F641B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				80EAEA271ABB80FC000F8229 /* HoursTableViewController.swift */,
 				80EAEA251ABB80E7000F8229 /* HoursTableViewCell.swift */,
 				80C9934F1AC6187100C2A1D6 /* Eatery.swift */,
+				80848F621B1B5DBE00789BAF /* DetailedHoursTableViewController.swift */,
 			);
 			name = Hours;
 			sourceTree = "<group>";
@@ -474,7 +480,9 @@
 				80AF32061AAD21CE006C94CE /* AnnoucementTableViewCell.swift in Sources */,
 				80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */,
 				8090C2A11B03E60F00B703F4 /* MapViewController.swift in Sources */,
+				80848F651B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift in Sources */,
 				80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */,
+				80848F631B1B5DBE00789BAF /* DetailedHoursTableViewController.swift in Sources */,
 				80EAEA261ABB80E7000F8229 /* HoursTableViewCell.swift in Sources */,
 				80C993501AC6187100C2A1D6 /* Eatery.swift in Sources */,
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,

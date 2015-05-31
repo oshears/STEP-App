@@ -1634,13 +1634,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FAQCell" rowHeight="55" id="aQC-G6-7te" customClass="FAQTableViewCell" customModule="STEP_App" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FAQCell" rowHeight="55" id="aQC-G6-7te" customClass="FAQTableViewCell" customModule="STEP_App" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQC-G6-7te" id="fFF-2c-tx9">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the difference between STEP and ODIME?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clw-EP-zqx">
-                                            <rect key="frame" x="8" y="8" width="584" height="38"/>
+                                            <rect key="frame" x="8" y="8" width="551" height="38"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1764,13 +1764,13 @@
                         <color key="backgroundColor" red="0.87058823529999996" green="0.87450980389999999" blue="0.88235294119999996" alpha="1" colorSpace="deviceRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.87058823529999996" green="0.87450980389999999" blue="0.88235294119999996" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
-                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HoursCell" rowHeight="123" id="LpS-K3-WsL" customClass="HoursTableViewCell" customModule="STEP_App" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HoursCell" rowHeight="123" id="LpS-K3-WsL" customClass="HoursTableViewCell" customModule="STEP_App" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LpS-K3-WsL" id="qLG-As-y63">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEk-iv-rwv">
-                                            <rect key="frame" x="8" y="8" width="551" height="106"/>
+                                            <rect key="frame" x="8" y="8" width="575" height="106"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chickfila" translatesAutoresizingMaskIntoConstraints="NO" id="NYA-8Z-xWs">
                                                     <rect key="frame" x="8" y="8" width="82" height="82"/>
@@ -1780,25 +1780,25 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chick fil A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdk-xh-J7r">
-                                                    <rect key="frame" x="98" y="8" width="74" height="22"/>
+                                                    <rect key="frame" x="98" y="8" width="477" height="22"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday - Friday: 11:00 am - 3:00pm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaU-IL-y7b">
-                                                    <rect key="frame" x="98" y="47" width="173" height="14"/>
+                                                    <rect key="frame" x="98" y="47" width="477" height="14"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday - Sunday: Closed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFI-EN-dvX">
-                                                    <rect key="frame" x="98" y="66" width="122" height="14"/>
+                                                    <rect key="frame" x="98" y="66" width="477" height="14"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIB-Jt-Fuj">
-                                                    <rect key="frame" x="98" y="30" width="31" height="14"/>
+                                                    <rect key="frame" x="98" y="30" width="477" height="14"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1806,20 +1806,23 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="jFI-EN-dvX" firstAttribute="leading" secondItem="UaU-IL-y7b" secondAttribute="leading" id="1zr-Z1-DWh"/>
-                                                <constraint firstItem="jFI-EN-dvX" firstAttribute="leading" secondItem="yIB-Jt-Fuj" secondAttribute="leading" id="2AN-IJ-I1l"/>
+                                                <constraint firstItem="yIB-Jt-Fuj" firstAttribute="top" secondItem="Xdk-xh-J7r" secondAttribute="bottom" id="8Ef-AS-GQQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="yIB-Jt-Fuj" secondAttribute="trailing" id="Aa7-ga-0Uh"/>
                                                 <constraint firstAttribute="height" constant="106" id="Cto-AL-tMR"/>
                                                 <constraint firstItem="Xdk-xh-J7r" firstAttribute="leading" secondItem="NYA-8Z-xWs" secondAttribute="trailing" constant="8" id="FAK-qT-dNP"/>
-                                                <constraint firstAttribute="width" constant="584" id="Gbw-Lb-h5m"/>
-                                                <constraint firstItem="UaU-IL-y7b" firstAttribute="top" secondItem="yIB-Jt-Fuj" secondAttribute="bottom" constant="3" id="Hh6-WQ-z7b"/>
+                                                <constraint firstItem="Xdk-xh-J7r" firstAttribute="leading" secondItem="yIB-Jt-Fuj" secondAttribute="leading" id="L9L-XY-ua7"/>
+                                                <constraint firstAttribute="trailing" secondItem="UaU-IL-y7b" secondAttribute="trailing" id="RMP-3Q-F64"/>
                                                 <constraint firstItem="NYA-8Z-xWs" firstAttribute="top" secondItem="SEk-iv-rwv" secondAttribute="top" constant="8" id="UZa-Gg-VvT"/>
-                                                <constraint firstItem="jFI-EN-dvX" firstAttribute="leading" secondItem="Xdk-xh-J7r" secondAttribute="leading" id="YJk-OH-bNW"/>
-                                                <constraint firstAttribute="trailing" secondItem="UaU-IL-y7b" secondAttribute="trailing" constant="280" id="Zoc-sJ-0Wa"/>
                                                 <constraint firstItem="Xdk-xh-J7r" firstAttribute="top" secondItem="SEk-iv-rwv" secondAttribute="top" constant="8" id="agi-sK-UiE"/>
-                                                <constraint firstItem="jFI-EN-dvX" firstAttribute="top" secondItem="UaU-IL-y7b" secondAttribute="bottom" constant="5" id="nRH-nN-Hm6"/>
-                                                <constraint firstAttribute="trailing" secondItem="jFI-EN-dvX" secondAttribute="trailing" constant="331" id="pfc-0q-rzY"/>
+                                                <constraint firstAttribute="trailing" secondItem="jFI-EN-dvX" secondAttribute="trailing" id="ane-bM-aqA"/>
+                                                <constraint firstItem="Xdk-xh-J7r" firstAttribute="leading" secondItem="jFI-EN-dvX" secondAttribute="leading" id="c0r-bt-uC9"/>
+                                                <constraint firstItem="UaU-IL-y7b" firstAttribute="top" secondItem="yIB-Jt-Fuj" secondAttribute="bottom" constant="3" id="daK-iA-vpv"/>
+                                                <constraint firstItem="Xdk-xh-J7r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SEk-iv-rwv" secondAttribute="top" constant="8" id="lB2-rk-2Rf"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xdk-xh-J7r" secondAttribute="trailing" id="pXw-R4-uoM"/>
                                                 <constraint firstItem="NYA-8Z-xWs" firstAttribute="leading" secondItem="SEk-iv-rwv" secondAttribute="leading" constant="8" id="quA-F3-Hgz"/>
-                                                <constraint firstItem="yIB-Jt-Fuj" firstAttribute="top" secondItem="Xdk-xh-J7r" secondAttribute="bottom" id="zIh-cM-6Ge"/>
+                                                <constraint firstAttribute="bottom" secondItem="jFI-EN-dvX" secondAttribute="bottom" constant="26" id="wPt-44-tDP"/>
+                                                <constraint firstItem="jFI-EN-dvX" firstAttribute="top" secondItem="UaU-IL-y7b" secondAttribute="bottom" constant="5" id="x1G-OU-Jn2"/>
+                                                <constraint firstItem="Xdk-xh-J7r" firstAttribute="leading" secondItem="UaU-IL-y7b" secondAttribute="leading" id="zSE-iG-b4c"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1832,16 +1835,11 @@
                                                     <integer key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="Gbw-Lb-h5m"/>
-                                                </mask>
-                                            </variation>
                                         </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="SEk-iv-rwv" firstAttribute="leading" secondItem="qLG-As-y63" secondAttribute="leadingMargin" id="TeR-1B-96O"/>
-                                        <constraint firstItem="SEk-iv-rwv" firstAttribute="trailing" secondItem="qLG-As-y63" secondAttribute="trailingMargin" id="WBP-jV-M3s"/>
+                                        <constraint firstItem="SEk-iv-rwv" firstAttribute="trailing" secondItem="qLG-As-y63" secondAttribute="trailingMargin" constant="24" id="WBP-jV-M3s"/>
                                         <constraint firstItem="SEk-iv-rwv" firstAttribute="top" secondItem="qLG-As-y63" secondAttribute="topMargin" id="ape-yv-fVO"/>
                                         <constraint firstItem="SEk-iv-rwv" firstAttribute="bottom" secondItem="qLG-As-y63" secondAttribute="bottomMargin" id="d0e-B8-DBS"/>
                                     </constraints>

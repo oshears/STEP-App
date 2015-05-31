@@ -14,13 +14,15 @@ class Eatery {
     var weekHours:String
     var weekendHours:String
     var image:String
+    var desc:String
     
-    init(title:String, weekHours:String, weekendHours:String, image:String){
+    init(title:String, weekHours:String, weekendHours:String, image:String, desc:String){
         
         self.title = title
         self.weekHours = weekHours
         self.weekendHours = weekendHours
         self.image = image
+        self.desc = desc
         
     }
 

@@ -14,9 +14,33 @@ class HoursTableViewController: UITableViewController {
     
     var eateries:[Eatery] =
     [
-        Eatery(title:"Chick fil A",weekHours:"Monday - Friday: 11:00 am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"chickfila"),
-        Eatery(title:"Einstein's Bagels",weekHours:"Monday - Friday: 11:00 am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"einstein"),
-        Eatery(title:"Subway",weekHours:"Monday - Friday: 11:00 am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"subway")
+        Eatery(title:"Chick fil A",weekHours:"Monday - Friday: 10:00am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"chickfila",desc:"Chicken sandwiches, chicken strips and chicken nuggets served with waffle fries and fresh squeezed lemonade."),
+        
+        Eatery(title:"Rathskeller",weekHours:"Monday - Friday: 11:00am - 2:00pm",weekendHours:"Saturday - Sunday: Closed",image:"rathsk",desc:"Relax with friends, enjoy our \"fan\"tastic menu and catch up on all the games at this sports bar with a touch of Mason history."),
+        
+        Eatery(title:"Burger King",weekHours:"Monday - Friday: 11:00am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"burgerking",desc:"Burger King, in the Johnson Center, is a proven hit on the Mason campus. Whether breakfast, lunch or dinner, the Mason community can always depend on Burger King for the high quality and value for which this national brand is known."),
+        
+        Eatery(title:"Freshen's and Express (General Store)",weekHours:"Monday: 11:00am - 3:00pm, \n Tuesday - Friday: 8:30am - 6:00pm",weekendHours:"Saturday - Sunday: 10:00am - 4:00pm",image:"convenience",desc:"The Express General Store and Freshns is at home in the Johnson Center adjacent to the Food Court! With lots of retail shelf, cooler and freezer space, packaged sandwiches and fresh salads, Mason students love the Express!"),
+        
+        Eatery(title:"IndAroma",weekHours:"Monday - Friday: 11:00am - 7:00pm",weekendHours:"Saturday - Sunday: 11:00am - 6:00pm",image:"indaroma",desc:"Sangam Restaurant blends fresh local ingredients with bold Indian sauces and spices, always with a focus on North & South Indian dishes. Each day you’ll find a tantalizing range of appetizers, entrées, fresh Sangam specialty dishes and desserts. Halal vendor."),
+        
+        Eatery(title:"Jorge's",weekHours:"Monday - Friday: 11:00am - 3:00pm",weekendHours:"Saturday: 11:00am - 3:00pm, \n Sunday: Closed",image:"jorges",desc:"New to Mason Dining, Jorge’s features Tex Mex cuisine made fresh daily."),
+        
+        Eatery(title:"Panera Bread",weekHours:"Monday - Friday: 7:00am - 8:00pm",weekendHours:"Saturday - Sunday: 7:00am - 7:00pm",image:"",desc:"N/A"),
+        
+        Eatery(title:"Red, Hot & Blue",weekHours:"Monday - Friday: 11:00am - 7:00pm",weekendHours:"Saturday - Sunday: 11:00am - 6:00pm",image:"redhotblue",desc:"The well-known barbecue joint is located in the Johnson Center. Featuring pulled pork sandwiches and a variety of barbecue favorites!"),
+       
+        Eatery(title:"Starbucks",weekHours:"Monday - Thursday: 7:30am - 5:00pm, \n Friday: 7:30am - 3:30pm",weekendHours:"Saturday - Sunday: Closed",image:"starbucks",desc:"The well-known barbecue joint is located in the Johnson Center. Featuring pulled pork sandwiches and a variety of barbecue favorites!"),
+        
+        Eatery(title:"Einstein's Bagels",weekHours:"Monday - Friday: 7:00am - 3:30pm",weekendHours:"Saturday - Sunday: Closed",image:"einstein",desc:"Grab a bagel and cup of coffee on your way to class from either of these convenient locations."),
+        
+        Eatery(title:"Manhattan Pizza",weekHours:"Monday - Friday: 11:00am - 7:00pm",weekendHours:"Saturday: 11:00am - 4:00pm, \n Sunday: Closed",image:"manhattan",desc:"New York style pizza along with wings, subs, calzones, garlic knots, and French fries served right here on campus!"),
+        
+        Eatery(title:"Panda",weekHours:"Monday - Friday: 10:30am - 3:30pm",weekendHours:"Saturday - Sunday: Closed",image:"panda",desc:"Panda Express is America’s favorite Chinese restaurant, serving fresh and fast Chinese food."),
+        
+        Eatery(title:"Globe",weekHours:"Monday - Friday: 7:00am - 6:00pm",weekendHours:"Saturday - Sunday: 10:30am - 6:00pm",image:"",desc:"N/A"),
+        
+        Eatery(title:"Subway",weekHours:"Monday - Friday: 11:00am - 3:00pm",weekendHours:"Saturday - Sunday: Closed",image:"subway",desc:"Recently opened on campus Spring 2012, this Subway restaurant features many of the famous foot-long subs and sandwiches that you love! This establishment offers a full-service menu and is located in Rogers (residence hall).")
     ]
     
     override func viewDidLoad() {
