@@ -50,6 +50,10 @@ class PeopleTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        // Self Sizing Cells
+        self.tableView.estimatedRowHeight = 123.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
     }
 
     override func didReceiveMemoryWarning() {

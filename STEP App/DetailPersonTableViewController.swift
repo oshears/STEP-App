@@ -38,8 +38,9 @@ class DetailPersonTableViewController: UITableViewController {
         profileImageView.clipsToBounds = true
         
         //Textview Outline
-        bioTextView.layer.cornerRadius = 2
+        bioTextView.layer.borderColor = UIColor.blackColor().CGColor
         bioTextView.layer.borderWidth = 0.5
+        bioTextView.layer.cornerRadius = 5
         
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)

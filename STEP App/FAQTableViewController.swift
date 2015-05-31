@@ -149,12 +149,10 @@ class FAQTableViewController: UITableViewController {
                 var answer:String = (faq.objectForKey("answer")==nil) ? "" : faq.objectForKey("answer") as! String
                 let destinationController = segue.destinationViewController as! DetailFAQTableViewController
                 
-                
                 destinationController.faq = FAQ(question: question, answer: answer)
                 
             }
         }
-        
     }
     
     @IBAction func unwindToFaqsScreen(segue:UIStoryboardSegue) {
