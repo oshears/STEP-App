@@ -344,9 +344,9 @@
 			isa = PBXGroup;
 			children = (
 				80EAEA271ABB80FC000F8229 /* HoursTableViewController.swift */,
-				80EAEA251ABB80E7000F8229 /* HoursTableViewCell.swift */,
 				80C9934F1AC6187100C2A1D6 /* Eatery.swift */,
 				80848F621B1B5DBE00789BAF /* DetailedHoursTableViewController.swift */,
+				80EAEA251ABB80E7000F8229 /* HoursTableViewCell.swift */,
 			);
 			name = Hours;
 			sourceTree = "<group>";

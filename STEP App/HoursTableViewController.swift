@@ -67,6 +67,7 @@ class HoursTableViewController: UITableViewController {
     }
     
     
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return self.eateries.count
@@ -87,9 +88,14 @@ class HoursTableViewController: UITableViewController {
         // Circular image
         cell.eateryImage.layer.cornerRadius = cell.eateryImage.frame.size.width / 2
         cell.eateryImage.clipsToBounds = true
-                
+        
+        //Dynamic Cell Height Fix?
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        
         return cell
     }
+    
     
 
     override func didReceiveMemoryWarning() {

@@ -29,7 +29,8 @@ class DetailedHoursTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.title=eatery.title
+        self.title = eatery.title
+        nameLabel.text = eatery.title
         logoImageView.image = UIImage(named: eatery.image)
         weekHoursLabel.text = eatery.weekHours
         weekendHoursLabel.text = eatery.weekendHours

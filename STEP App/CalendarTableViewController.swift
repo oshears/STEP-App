@@ -148,8 +148,9 @@ class CalendarTableViewController: UITableViewController {
             cell.dayLabelView.alpha = 1
             cell.monthLabelView.alpha = 1
         })
-        
-        
+
+        //Dynamic Cell Height Fix?
+        cell.layoutIfNeeded()
         return cell
 
 

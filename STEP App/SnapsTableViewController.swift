@@ -48,15 +48,16 @@ class SnapsTableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SnapCell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
 
+        cell.layoutIfNeeded()
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

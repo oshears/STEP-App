@@ -1797,7 +1797,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIB-Jt-Fuj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIB-Jt-Fuj">
                                                     <rect key="frame" x="98" y="30" width="485" height="14"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1808,7 +1808,6 @@
                                             <constraints>
                                                 <constraint firstItem="yIB-Jt-Fuj" firstAttribute="top" secondItem="Xdk-xh-J7r" secondAttribute="bottom" id="8Ef-AS-GQQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="yIB-Jt-Fuj" secondAttribute="trailing" id="Aa7-ga-0Uh"/>
-                                                <constraint firstAttribute="height" constant="106" id="Cto-AL-tMR"/>
                                                 <constraint firstItem="Xdk-xh-J7r" firstAttribute="leading" secondItem="NYA-8Z-xWs" secondAttribute="trailing" constant="8" id="FAK-qT-dNP"/>
                                                 <constraint firstItem="Xdk-xh-J7r" firstAttribute="leading" secondItem="yIB-Jt-Fuj" secondAttribute="leading" id="L9L-XY-ua7"/>
                                                 <constraint firstAttribute="trailing" secondItem="UaU-IL-y7b" secondAttribute="trailing" id="RMP-3Q-F64"/>
@@ -1886,8 +1885,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cT0-ny-aFN" id="KOD-Ev-0LY">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chick fil A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clk-ZP-jQF">
-                                                    <rect key="frame" x="259" y="160" width="83" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eatery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clk-ZP-jQF">
+                                                    <rect key="frame" x="274" y="160" width="53" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>

@@ -149,6 +149,10 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
             cell.announcementTitle.alpha = 1
         })
 
+        
+        //Dynamic Cell Height Fix?
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
         return cell
     }
     
