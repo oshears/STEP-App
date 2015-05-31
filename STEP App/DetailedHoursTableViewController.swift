@@ -10,7 +10,15 @@ import UIKit
 
 class DetailedHoursTableViewController: UITableViewController {
 
+    @IBOutlet weak var logoImageView: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
     var eatery:Eatery!
+    
+    @IBOutlet weak var weekHoursLabel: UILabel!
+    @IBOutlet weak var additionalInfoLabel: UILabel!
+    @IBOutlet weak var weekendHoursLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +28,16 @@ class DetailedHoursTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.title=eatery.title
+        logoImageView.image = UIImage(named: eatery.image)
+        weekHoursLabel.text = eatery.weekHours
+        weekendHoursLabel.text = eatery.weekendHours
+        additionalInfoLabel.text = eatery.desc
+        
+        // Self Sizing Cells
+        self.tableView.estimatedRowHeight = 123.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
     }
 
     override func didReceiveMemoryWarning() {
