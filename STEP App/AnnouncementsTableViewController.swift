@@ -134,25 +134,30 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                 }
             }
         }
+        else{
+            var titleText:String = announcement.objectForKey("title") as! String
+            println("found a nil type announcement with title: \(titleText)")
+        }
+        
         if self.spinner.isAnimating() {
             dispatch_async(dispatch_get_main_queue(), {
                 self.spinner.stopAnimating()
             })
         }
 
-        
-        
-        
+
         UIView.animateWithDuration(0.5, animations: {
             cell.announcementImage.alpha = 1
             cell.announcementTime.alpha = 1
             cell.announcementTitle.alpha = 1
         })
 
-        
+        /*
         //Dynamic Cell Height Fix?
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
+        */
+        cell.setNeedsDisplay()
         return cell
     }
     
@@ -191,6 +196,9 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                 }
                 else{
                     println("Failed to retrieve announcements from database")
+                    var errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                    errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                    self.presentViewController(errorAlert,animated: true, completion: nil)
                 }
             }
         

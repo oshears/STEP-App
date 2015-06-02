@@ -86,6 +86,8 @@ class PeopleTableViewController: UITableViewController {
         cell.profileImge.layer.cornerRadius = cell.profileImge.frame.size.width / 2
         cell.profileImge.clipsToBounds = true
         
+        
+        cell.setNeedsDisplay()
         return cell
     }
     

@@ -149,8 +149,7 @@ class CalendarTableViewController: UITableViewController {
             cell.monthLabelView.alpha = 1
         })
 
-        //Dynamic Cell Height Fix?
-        cell.layoutIfNeeded()
+
         return cell
 
 
@@ -190,11 +189,29 @@ class CalendarTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             else{
-                println("Failed to retrieve announcements from database")
+                println("Failed to retrieve calendar information from database")
+                var errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(errorAlert,animated: true, completion: nil)
             }
         }
         self.refreshControl?.endRefreshing()
     
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "detailDay" {
+            if let row = tableView.indexPathForSelectedRow()?.row {
+                let destinationController = segue.destinationViewController as! DetailedCalendarTableViewController
+                let calendarDay:PFObject = self.calendarDayList.objectAtIndex(row) as! PFObject
+                destinationController.calendarDay = calendarDay
+                destinationController.hidesBottomBarWhenPushed = true
+            }
+        }
+        
+    }
+    @IBAction func unwindToPeopleScreen(segue:UIStoryboardSegue) {
+        
     }
     
 

@@ -30,7 +30,7 @@ class HoursTableViewController: UITableViewController {
         
         Eatery(title:"Red, Hot & Blue",weekHours:"Monday - Friday: 11:00am - 7:00pm",weekendHours:"Saturday - Sunday: 11:00am - 6:00pm",image:"redhotblue",desc:"The well-known barbecue joint is located in the Johnson Center. Featuring pulled pork sandwiches and a variety of barbecue favorites!"),
        
-        Eatery(title:"Starbucks",weekHours:"Monday - Thursday: 7:30am - 5:00pm, Friday: 7:30am - 3:30pm",weekendHours:"Saturday - Sunday: Closed",image:"starbucks",desc:"The well-known barbecue joint is located in the Johnson Center. Featuring pulled pork sandwiches and a variety of barbecue favorites!"),
+        Eatery(title:"Starbucks",weekHours:"Monday - Thursday: 7:30am - 5:00pm, Friday: 7:30am - 3:30pm",weekendHours:"Saturday - Sunday: Closed",image:"starbucks",desc:"Check out Starbucks in the JC on the bottom level."),
         
         Eatery(title:"Einstein's Bagels",weekHours:"Monday - Friday: 7:00am - 3:30pm",weekendHours:"Saturday - Sunday: Closed",image:"einstein",desc:"Grab a bagel and cup of coffee on your way to class from either of these convenient locations."),
         
@@ -89,9 +89,13 @@ class HoursTableViewController: UITableViewController {
         cell.eateryImage.layer.cornerRadius = cell.eateryImage.frame.size.width / 2
         cell.eateryImage.clipsToBounds = true
         
+        /*
         //Dynamic Cell Height Fix?
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
+        */
+        cell.setNeedsDisplay()
+        
         
         return cell
     }

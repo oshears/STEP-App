@@ -24,9 +24,7 @@ class DetailFAQTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         
-        //Self-Sizing
-        tableView.estimatedRowHeight = 36.0;
-        tableView.rowHeight = UITableViewAutomaticDimension;
+        
         
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
@@ -34,6 +32,17 @@ class DetailFAQTableViewController: UITableViewController {
         title = "FAQs"
         questionLabel.text = faq.question
         answerLabel.text = (faq.answer=="") ? "This question has no answer yet." : faq.answer
+        
+        //Self-Sizing
+        tableView.estimatedRowHeight = 36.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //Update the cells again
+        var indexPath:NSIndexPath=NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
+        indexPath=NSIndexPath(forRow: 1, inSection: 0)
+        self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
+        
     }
 
     override func didReceiveMemoryWarning() {

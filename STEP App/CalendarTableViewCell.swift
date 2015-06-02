@@ -31,10 +31,5 @@ class CalendarTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    //Dynamic Cell Height Fix?
-    override func didMoveToSuperview() {
-        self.layoutIfNeeded()
-    }
 
 }

@@ -54,7 +54,6 @@ class SnapsTableViewController: UITableViewController {
 
         // Configure the cell...
 
-        cell.layoutIfNeeded()
         return cell
     }
 

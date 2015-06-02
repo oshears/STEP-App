@@ -156,6 +156,9 @@ class MiscAnnouncementsTableViewController: UITableViewController {
             }
             else{
                 println("Failed to retrieve announcements from database")
+                var errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(errorAlert,animated: true, completion: nil)
             }
         }
         self.refreshControl?.endRefreshing()

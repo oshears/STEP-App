@@ -23,9 +23,7 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
         
         title = announcement.title
         
-        //Self-Sizing
-        tableView.estimatedRowHeight = 36.0;
-        tableView.rowHeight = UITableViewAutomaticDimension;
+        
         
         println(announcement.title)
         announcementTitle.text = announcement.title
@@ -35,6 +33,15 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
         
+        //Self-Sizing
+        tableView.estimatedRowHeight = 36.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //Update the cells again
+        var indexPath:NSIndexPath=NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
+        indexPath=NSIndexPath(forRow: 1, inSection: 0)
+        self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
         
     }
     

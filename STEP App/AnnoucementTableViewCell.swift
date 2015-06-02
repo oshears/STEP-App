@@ -47,6 +47,7 @@ class AnnoucementTableViewCell: UITableViewCell {
     
     //Dynamic Cell Height Fix?
     override func didMoveToSuperview() {
+        self.setNeedsLayout()
         self.layoutIfNeeded()
     }
 

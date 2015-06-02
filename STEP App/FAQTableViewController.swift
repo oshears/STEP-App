@@ -107,10 +107,13 @@ class FAQTableViewController: UITableViewController {
             cell.questionLabel.alpha = 1
         })
         
+        /*
         //Dynamic Cell Height Fix?
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
+        */
         
+        cell.setNeedsDisplay()
         return cell
     }
     
@@ -131,6 +134,9 @@ class FAQTableViewController: UITableViewController {
             }
             else{
                 println("Failed to retrieve faqs from database")
+                var errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(errorAlert,animated: true, completion: nil)
             }
         }
                 
