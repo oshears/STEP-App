@@ -39,6 +39,17 @@ class DetailedHoursTableViewController: UITableViewController {
         // Self Sizing Cells
         self.tableView.estimatedRowHeight = 123.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //Update the cells again
+        /*
+        var indexPath:NSIndexPath=NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
+        indexPath=NSIndexPath(forRow: 1, inSection: 0)
+        self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()*/
+        for x in 0...tableView.numberOfRowsInSection(0){
+            var indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
+            self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
+        }
     }
 
     override func didReceiveMemoryWarning() {

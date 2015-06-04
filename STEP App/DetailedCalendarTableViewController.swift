@@ -42,6 +42,7 @@ class DetailedCalendarTableViewController: UITableViewController {
         
         dataFormatter.dateFormat = "EEEE, MMMM dd, YYYY"
         dateLabel.text = dataFormatter.stringFromDate(calendarDate)
+        self.title = dataFormatter.stringFromDate(calendarDate)
         dataFormatter.dateFormat = "dd"
         dayLabel.text = dataFormatter.stringFromDate(calendarDate)
         dataFormatter.dateFormat = "MMMM"
@@ -50,9 +51,23 @@ class DetailedCalendarTableViewController: UITableViewController {
         moreInfoLabel.text=""
         
         
+        
+        
+        //Change Separator Color
+        self.tableView.separatorColor = UIColor.clearColor()
+        
+        
         // Self Sizing Cells
         self.tableView.estimatedRowHeight = 100.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //Update the cells again
+        for x in 0...tableView.numberOfRowsInSection(0){
+            var indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
+            self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
+        }
+        //indexPath=NSIndexPath(forRow: 1, inSection: 0)
+        //self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
 
     }
 

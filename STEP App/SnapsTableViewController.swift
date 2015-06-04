@@ -11,6 +11,10 @@ import UIKit
 class SnapsTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    var pictureList:NSMutableArray = NSMutableArray()
+    var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +30,34 @@ class SnapsTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        
+        
+        // Pull To Refresh Control
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
+        refreshControl?.tintColor = UIColor.grayColor()
+        refreshControl?.addTarget(self, action: "loadSnapData", forControlEvents:
+            UIControlEvents.ValueChanged)
+        
+        // Configure the activity indicator and start animating
+        spinner.activityIndicatorViewStyle = .Gray
+        spinner.center = self.view.center
+        spinner.hidesWhenStopped = true
+        self.parentViewController?.view.addSubview(spinner)
+        spinner.startAnimating()
+        
+        //Load Snaps
+        //self.loadSnapData()
+        self.loadSnapData()
+        
+        
+        //Self-Sizing
+        tableView.estimatedRowHeight = 20.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //No excess
+        self.tableView.tableFooterView = UIView(frame:CGRectZero)
 
     }
 
@@ -33,74 +65,117 @@ class SnapsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return pictureList.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SnapCell", forIndexPath: indexPath) as! UITableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("SnapCell", forIndexPath: indexPath) as! SnapImageTableViewCell
+        
+        println("hai")
+        
+        if (indexPath.row > pictureList.count){
+            return cell
+        }
+        
         // Configure the cell...
+        cell.imageImageView.alpha = 0
+        cell.captionLabel.alpha = 0
+        
+        
+        let snap:PFObject = self.pictureList.objectAtIndex(indexPath.row) as! PFObject
+        
+        println("Creating Row")
+        println(indexPath.row)
+        
+        
+        let imageFile = snap.objectForKey("image") as! PFFile
+        imageFile.getDataInBackgroundWithBlock {
+            (imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                if let imageData = imageData {
+                    let image = UIImage(data:imageData)
+                    cell.imageImageView.image = image
+                }
+            }
+        }
+        cell.captionLabel.text = snap.objectForKey("caption") as? String
+        
+        if self.spinner.isAnimating() {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.spinner.stopAnimating()
+            })
+        }
+        
+        UIView.animateWithDuration(0.5, animations: {
+            cell.imageImageView.alpha = 1
+            cell.captionLabel.alpha = 1
+        })
+        
+        /*
+        //Dynamic Cell Height Fix?
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        */
+        cell.setNeedsDisplay()
 
+        
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    
+    @IBAction func loadSnapData(){
+        pictureList.removeAllObjects()
+        var findSnaps:PFQuery = PFQuery(className: "SnapImage")
+        
+        findSnaps.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]?,error:NSError?)-> Void in
+            if error == nil{
+                for object in objects!{
+                    let snap:PFObject = object as! PFObject
+                    self.pictureList.addObject(snap)
+                }
+                let array:NSArray = self.pictureList.reverseObjectEnumerator().allObjects
+                self.pictureList = NSMutableArray(array: array)
+                self.tableView.reloadData()
+            }
+            else{
+                println("Failed to retrieve snaps from database")
+                var errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(errorAlert,animated: true, completion: nil)
+            }
+        }
+        
+        //Save to local datastore
+        PFObject.pinAllInBackground(pictureList as [AnyObject], block: nil)
+        //Remove from local datastore
+        PFObject.unpinAllInBackground(pictureList as [AnyObject], block: nil)
+        self.refreshControl?.endRefreshing()
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    @IBAction func unwindToSnapsScreen(segue:UIStoryboardSegue) {
+        
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

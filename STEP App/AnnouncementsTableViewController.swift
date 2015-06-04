@@ -138,6 +138,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
             var titleText:String = announcement.objectForKey("title") as! String
             println("found a nil type announcement with title: \(titleText)")
         }
+        cell.announcementImage.layer.cornerRadius = cell.announcementImage.frame.size.width / 2
         
         if self.spinner.isAnimating() {
             dispatch_async(dispatch_get_main_queue(), {

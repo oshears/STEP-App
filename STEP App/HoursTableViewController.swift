@@ -94,7 +94,7 @@ class HoursTableViewController: UITableViewController {
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
         */
-        cell.setNeedsDisplay()
+        //cell.setNeedsDisplay()
         
         
         return cell

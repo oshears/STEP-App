@@ -50,6 +50,8 @@
 		80AF32751AAE08D9006C94CE /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF32741AAE08D9006C94CE /* SideMenuTableViewController.swift */; };
 		80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */; };
 		80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */; };
+		80BC3C951B1F8C090043109D /* SnapImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC3C941B1F8C090043109D /* SnapImageTableViewCell.swift */; };
+		80BC3C991B20F93C0043109D /* PostSnapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC3C981B20F93C0043109D /* PostSnapTableViewController.swift */; };
 		80C993501AC6187100C2A1D6 /* Eatery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C9934F1AC6187100C2A1D6 /* Eatery.swift */; };
 		80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */; };
 		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */; };
@@ -120,6 +122,8 @@
 		80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAnnouncementTableViewController.swift; sourceTree = "<group>"; };
 		80AF32821AAE5AA6006C94CE /* STEP App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEP App-Bridging-Header.h"; sourceTree = "<group>"; };
 		80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		80BC3C941B1F8C090043109D /* SnapImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapImageTableViewCell.swift; sourceTree = "<group>"; };
+		80BC3C981B20F93C0043109D /* PostSnapTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSnapTableViewController.swift; sourceTree = "<group>"; };
 		80C9934F1AC6187100C2A1D6 /* Eatery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eatery.swift; sourceTree = "<group>"; };
 		80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentTableViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */,
+				80BC3C941B1F8C090043109D /* SnapImageTableViewCell.swift */,
+				80BC3C981B20F93C0043109D /* PostSnapTableViewController.swift */,
 			);
 			name = Snaps;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				80AF32041AAD1E4A006C94CE /* AnnouncementsTableViewController.swift in Sources */,
 				80F21A5A1B13742C00070B96 /* Place.swift in Sources */,
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
+				80BC3C951B1F8C090043109D /* SnapImageTableViewCell.swift in Sources */,
 				80819B091B18D9A100E35C3A /* SnapsTableViewController.swift in Sources */,
 				80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */,
 				80819AFA1B18B4D400E35C3A /* FAQTableViewController.swift in Sources */,
@@ -490,6 +497,7 @@
 				80819B041B18B8AF00E35C3A /* DetailFAQTableViewController.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */,
 				80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */,
+				80BC3C991B20F93C0043109D /* PostSnapTableViewController.swift in Sources */,
 				80459D661B02C37E00BFA30C /* Person.swift in Sources */,
 				80F5FAF21AB7971200295D23 /* PeopleTableViewCell.swift in Sources */,
 				80AF326E1AADF164006C94CE /* SWRevealViewController.m in Sources */,

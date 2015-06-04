@@ -24,8 +24,7 @@ class FAQTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         
-        //Load FAQs
-        self.loadFAQData()
+        
         
         //Side Menu
         if self.revealViewController() != nil {
@@ -33,10 +32,6 @@ class FAQTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-        //Self-Sizing
-        tableView.estimatedRowHeight = 36.0;
-        tableView.rowHeight = UITableViewAutomaticDimension;
         
         // Pull To Refresh Control
         refreshControl = UIRefreshControl()
@@ -52,6 +47,16 @@ class FAQTableViewController: UITableViewController {
         spinner.hidesWhenStopped = true
         self.parentViewController?.view.addSubview(spinner)
         spinner.startAnimating()
+        
+        //Load FAQs
+        self.loadFAQData()
+        
+        //Self-Sizing
+        tableView.estimatedRowHeight = 20.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //No excess
+        self.tableView.tableFooterView = UIView(frame:CGRectZero)
         
     }
     
@@ -111,9 +116,11 @@ class FAQTableViewController: UITableViewController {
         //Dynamic Cell Height Fix?
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
-        */
+        
         
         cell.setNeedsDisplay()
+        */
+        
         return cell
     }
     
@@ -139,6 +146,7 @@ class FAQTableViewController: UITableViewController {
                 self.presentViewController(errorAlert,animated: true, completion: nil)
             }
         }
+        println("Found faqs, now exiting")
                 
         //Save to local datastore
         PFObject.pinAllInBackground(faqList as [AnyObject], block: nil)

@@ -41,7 +41,7 @@ class AddFAQTableViewController: UITableViewController, UITextViewDelegate {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else{
-            var errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting an announcement.", preferredStyle: UIAlertControllerStyle.Alert)
+            var errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting a FAQ.", preferredStyle: UIAlertControllerStyle.Alert)
             errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(errorAlert,animated: true, completion: nil)
         }
