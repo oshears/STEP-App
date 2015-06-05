@@ -17,12 +17,6 @@ class SnapsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         //Side Menu
         if self.revealViewController() != nil {
@@ -88,7 +82,6 @@ class SnapsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SnapCell", forIndexPath: indexPath) as! SnapImageTableViewCell
         
-        println("hai")
         
         if (indexPath.row > pictureList.count){
             return cell
@@ -101,8 +94,6 @@ class SnapsTableViewController: UITableViewController {
         
         let snap:PFObject = self.pictureList.objectAtIndex(indexPath.row) as! PFObject
         
-        println("Creating Row")
-        println(indexPath.row)
         
         
         let imageFile = snap.objectForKey("image") as! PFFile
@@ -172,7 +163,26 @@ class SnapsTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+        
+        let imageMenu = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let saveAction = UIAlertAction(title: "Save Image", style: UIAlertActionStyle.Default, handler:{ alertAction in
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! SnapImageTableViewCell
+            UIImageWriteToSavedPhotosAlbum(cell.imageImageView.image, nil, nil, nil)
+            var confirmationAlert:UIAlertController = UIAlertController(title: "Image Saved!", message: "The image has been saved to your photo library!", preferredStyle: UIAlertControllerStyle.Alert)
+            confirmationAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(confirmationAlert,animated: true, completion: nil)
+            
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        imageMenu.addAction(saveAction)
+        imageMenu.addAction(cancelAction)
+        
+        self.presentViewController(imageMenu, animated: true, completion: nil)
     }
     
     @IBAction func unwindToSnapsScreen(segue:UIStoryboardSegue) {

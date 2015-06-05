@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostSnapTableViewController: UITableViewController, UITextViewDelegate {
+class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var snapImageView: UIImageView!
    
@@ -17,12 +17,15 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         snapCaptionTextView.layer.borderColor = UIColor.blackColor().CGColor
         snapCaptionTextView.layer.borderWidth = 0.5
         snapCaptionTextView.layer.cornerRadius = 5
         snapCaptionTextView.delegate = self
-        snapCaptionTextView.becomeFirstResponder()
+        snapCaptionTextView.returnKeyType = .Done
+        
+        
+        //No excess
+        self.tableView.tableFooterView = UIView(frame:CGRectZero)
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,10 +36,14 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate {
     @IBAction func postQuestion(){
         var notBlank = snapCaptionTextView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
         if notBlank{
-            var faq:PFObject = PFObject(className: "SnapImage")
-            faq["caption"] = snapCaptionTextView.text
+            var snap:PFObject = PFObject(className: "SnapImage")
+            snap["caption"] = snapCaptionTextView.text
             
-            faq.saveInBackgroundWithTarget(nil, selector: nil)
+            let imageData = UIImagePNGRepresentation(snapImageView.image)
+            let imageFile = PFFile(name:"snapimage.png", data:imageData)
+            snap["image"] = imageFile
+            
+            snap.saveInBackgroundWithTarget(nil, selector: nil)
             //performSegueWithIdentifier("unwindToFaqsScreen", sender: self)
             self.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -46,4 +53,34 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate {
             self.presentViewController(errorAlert,animated: true, completion: nil)
         }
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        textField.endEditing(true)
+        return true
+    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //Selected the image
+        if indexPath.row == 0 {
+            if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.allowsEditing = false
+                imagePicker.delegate = self
+                imagePicker.sourceType = .PhotoLibrary
+                
+                self.presentViewController(imagePicker, animated: true, completion: nil)
+            }
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    //Image Picker Controller
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        snapImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        snapImageView.contentMode = UIViewContentMode.ScaleAspectFit
+        snapImageView.clipsToBounds = true
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
 }
