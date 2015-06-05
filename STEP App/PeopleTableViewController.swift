@@ -33,6 +33,9 @@ class PeopleTableViewController: UITableViewController {
         Person(name:"Kristi Mokube", bio:"Hi! My name is Kristi Mokube and I am a rising senior at GMU! I am an Integrative Studies major and I play on the Women’s basketball team as a forward! If you want to get ready for Dr. Yu’s basketball tournament, let me know! Can’t wait to meet you all!", image:"kristi", role:"Intern for Activities")
         
     ]
+    
+    var countReloads:Int = 0
+
 
     
     override func viewDidLoad() {
@@ -49,8 +52,6 @@ class PeopleTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 123.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +85,7 @@ class PeopleTableViewController: UITableViewController {
         cell.profileImge.clipsToBounds = true
         
 
-        cell.layoutIfNeeded()
+        //cell.setNeedsLayout()
         return cell
     }
     
@@ -103,6 +104,14 @@ class PeopleTableViewController: UITableViewController {
     }
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<2){
+            countReloads++
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
     }
     
 

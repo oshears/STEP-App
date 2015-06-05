@@ -66,37 +66,42 @@ class AdminTableViewController: UITableViewController {
                 logInOut.text = "Admin Login"
             }
         }
-        else if (indexPath.row==2 && PFUser.currentUser() != nil){
-            var messageAlert:UIAlertController = UIAlertController(title: "New Push Notification", message: "Enter your message", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            messageAlert.addTextFieldWithConfigurationHandler{
-                (textfield:UITextField!) -> Void in
-                
-                textfield.placeholder = "Your message ..."
-                
+        else if (indexPath.row==2){
+            if (PFUser.currentUser()==nil){
+                showLogin()
             }
-            
-            messageAlert.addAction(UIAlertAction(title: "Send", style: UIAlertActionStyle.Default, handler: {
-                (alertAction:UIAlertAction!) -> Void in
-                var push:PFPush = PFPush()
-                //push.setChannel("Reload")
-                //Custom sound, badge app icon, alert message?
-                var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":"Glass.aiff"]
-                push.setData(data as [NSObject : AnyObject])
-                //Send push notification
-                var pushQuery:PFQuery = PFInstallation.query()!
-                pushQuery.whereKey("channels",equalTo: "Reload")
-                push.setQuery(pushQuery)
+            else{
+                var messageAlert:UIAlertController = UIAlertController(title: "New Push Notification", message: "Enter your message", preferredStyle: UIAlertControllerStyle.Alert)
                 
-                let messageTextField:UITextField = messageAlert.textFields?.first as! UITextField
-                push.setMessage(messageTextField.text)
-                push.sendPushInBackgroundWithTarget(nil, selector: nil)
+                messageAlert.addTextFieldWithConfigurationHandler{
+                    (textfield:UITextField!) -> Void in
+                    
+                    textfield.placeholder = "Your message ..."
+                    
+                }
                 
-            }))
-            
-            messageAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-            
-            self.presentViewController(messageAlert, animated: true, completion: nil)
+                messageAlert.addAction(UIAlertAction(title: "Send", style: UIAlertActionStyle.Default, handler: {
+                    (alertAction:UIAlertAction!) -> Void in
+                    var push:PFPush = PFPush()
+                    //push.setChannel("Reload")
+                    //Custom sound, badge app icon, alert message?
+                    var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":"Glass.aiff"]
+                    push.setData(data as [NSObject : AnyObject])
+                    //Send push notification
+                    var pushQuery:PFQuery = PFInstallation.query()!
+                    pushQuery.whereKey("channels",equalTo: "Reload")
+                    push.setQuery(pushQuery)
+                    
+                    let messageTextField:UITextField = messageAlert.textFields?.first as! UITextField
+                    push.setMessage(messageTextField.text)
+                    push.sendPushInBackgroundWithTarget(nil, selector: nil)
+                    
+                }))
+                
+                messageAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+                
+                self.presentViewController(messageAlert, animated: true, completion: nil)
+            }
         }
        
     }

@@ -185,13 +185,5 @@ class FAQTableViewController: UITableViewController {
             loadFAQData()
         }
     }
-    /*
-    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-            if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<3){
-                countReloads++
-                tableView.reloadData()
-            }
-    }*/
-
 
 }

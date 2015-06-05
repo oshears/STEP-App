@@ -21,7 +21,7 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
         snapCaptionTextView.layer.borderWidth = 0.5
         snapCaptionTextView.layer.cornerRadius = 5
         snapCaptionTextView.delegate = self
-        snapCaptionTextView.returnKeyType = .Done
+        //snapCaptionTextView.returnKeyType = .Done
         
         
         //No excess
@@ -54,10 +54,6 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool{
-        textField.endEditing(true)
-        return true
-    }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //Selected the image
         if indexPath.row == 0 {
