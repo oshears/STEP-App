@@ -12,6 +12,7 @@ class FAQTableViewController: UITableViewController {
     
     var faqList:NSMutableArray = NSMutableArray()
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
+    var countReloads:Int = 0
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -146,7 +147,6 @@ class FAQTableViewController: UITableViewController {
                 self.presentViewController(errorAlert,animated: true, completion: nil)
             }
         }
-        println("Found faqs, now exiting")
                 
         //Save to local datastore
         PFObject.pinAllInBackground(faqList as [AnyObject], block: nil)
@@ -178,5 +178,20 @@ class FAQTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<1){
+            countReloads++
+            loadFAQData()
+        }
+    }
+    /*
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+            if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<3){
+                countReloads++
+                tableView.reloadData()
+            }
+    }*/
+
 
 }

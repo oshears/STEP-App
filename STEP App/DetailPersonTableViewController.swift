@@ -41,6 +41,8 @@ class DetailPersonTableViewController: UITableViewController {
         bioTextView.layer.borderColor = UIColor.blackColor().CGColor
         bioTextView.layer.borderWidth = 0.5
         bioTextView.layer.cornerRadius = 5
+        //Scroll to top
+        self.bioTextView.scrollRangeToVisible(NSMakeRange(0, 1))
         
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)

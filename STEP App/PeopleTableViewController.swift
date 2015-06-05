@@ -38,12 +38,6 @@ class PeopleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
         //Side Menu
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -54,6 +48,9 @@ class PeopleTableViewController: UITableViewController {
         // Self Sizing Cells
         self.tableView.estimatedRowHeight = 123.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //self.tableView.beginUpdates()
+        //self.tableView.endUpdates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,8 +83,10 @@ class PeopleTableViewController: UITableViewController {
         cell.profileImge.layer.cornerRadius = cell.profileImge.frame.size.width / 2
         cell.profileImge.clipsToBounds = true
         
-        
-        cell.setNeedsDisplay()
+
+        cell.layoutIfNeeded()
+        tableView.beginUpdates()
+        tableView.endUpdates()
         return cell
     }
     
@@ -103,6 +102,9 @@ class PeopleTableViewController: UITableViewController {
     }
     @IBAction func unwindToPeopleScreen(segue:UIStoryboardSegue) {
         
+    }
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
 

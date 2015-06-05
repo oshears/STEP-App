@@ -52,6 +52,7 @@
 		80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */; };
 		80BC3C951B1F8C090043109D /* SnapImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC3C941B1F8C090043109D /* SnapImageTableViewCell.swift */; };
 		80BC3C991B20F93C0043109D /* PostSnapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC3C981B20F93C0043109D /* PostSnapTableViewController.swift */; };
+		80BC3C9B1B2158770043109D /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 80BC3C9A1B2158770043109D /* Glass.aiff */; };
 		80C993501AC6187100C2A1D6 /* Eatery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C9934F1AC6187100C2A1D6 /* Eatery.swift */; };
 		80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */; };
 		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */; };
@@ -124,6 +125,7 @@
 		80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		80BC3C941B1F8C090043109D /* SnapImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapImageTableViewCell.swift; sourceTree = "<group>"; };
 		80BC3C981B20F93C0043109D /* PostSnapTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSnapTableViewController.swift; sourceTree = "<group>"; };
+		80BC3C9A1B2158770043109D /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Glass.aiff; path = ../../../../../Desktop/Glass.aiff; sourceTree = "<group>"; };
 		80C9934F1AC6187100C2A1D6 /* Eatery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eatery.swift; sourceTree = "<group>"; };
 		80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentTableViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		804B238A1AAF1C190008EE81 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				80BC3C9A1B2158770043109D /* Glass.aiff */,
 				80AF32721AAE00DC006C94CE /* AdminTableViewController.swift */,
 				80AF327C1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift */,
 			);
@@ -283,8 +286,8 @@
 				8026B31A1AAF60A7001DC66A /* Calendar */,
 				80EAEA241ABB80BB000F8229 /* Hours */,
 				8090C29F1B03E5C700B703F4 /* Map */,
-				80819AF81B18B4B000E35C3A /* FAQs */,
 				80819B071B18D98400E35C3A /* Snaps */,
+				80819AF81B18B4B000E35C3A /* FAQs */,
 			);
 			path = "STEP App";
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80BC3C9B1B2158770043109D /* Glass.aiff in Resources */,
 				80AF31911AAC8E08006C94CE /* Main.storyboard in Resources */,
 				80AF31961AAC8E08006C94CE /* LaunchScreen.xib in Resources */,
 				80AF31931AAC8E08006C94CE /* Images.xcassets in Resources */,

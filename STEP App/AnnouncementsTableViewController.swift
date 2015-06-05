@@ -70,7 +70,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     
     
     override func viewDidAppear(animated: Bool) {
-        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -166,24 +166,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     @IBAction func loadAnnouncementData(){
             announcementList.removeAllObjects()
             var findAnnouncements:PFQuery = PFQuery(className: "Announcement")
-            /*
-            findAnnouncements.findObjectsInBackgroundWithBlock({
-                (objects:[AnyObject]!,error:NSError!)->Void in
-                
-                if error == nil{
-                    for object in objects{
-                        let announcement:PFObject = object as PFObject
-                        self.announcementList.addObject(announcement)
-                    }
-                    let array:NSArray = self.announcementList.reverseObjectEnumerator().allObjects
-                    self.announcementList = NSMutableArray(array: array)
-                    self.tableView.reloadData()
-                }
-                else{
-                    println("Failed to retrieve announcements from database")
-                }
-                
-            })*/
+        
         findAnnouncements.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in
                 if error == nil{

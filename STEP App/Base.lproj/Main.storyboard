@@ -12,7 +12,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="22" sectionFooterHeight="22" id="df7-f4-VtU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.86274509803921573" green="0.87058823529411766" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="y5J-ud-iNO" customClass="AnnoucementTableViewCell" customModule="STEP_App" customModuleProvider="target">
@@ -241,7 +241,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption of the picture." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAQ-UV-zLl">
                                                     <rect key="frame" x="8" y="329" width="568" height="18.5"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -617,7 +617,7 @@
             </objects>
             <point key="canvasLocation" x="2173" y="-2186"/>
         </scene>
-        <!--Miscellaneous Announcements-->
+        <!--Misc. Announcements-->
         <scene sceneID="Vrc-u5-MYW">
             <objects>
                 <tableViewController id="0gj-LB-H47" customClass="MiscAnnouncementsTableViewController" customModule="STEP_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -667,7 +667,7 @@
                             <outlet property="delegate" destination="0gj-LB-H47" id="Rb2-NH-eHs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Miscellaneous Announcements" id="sKM-PH-6EU">
+                    <navigationItem key="navigationItem" title="Misc. Announcements" id="sKM-PH-6EU">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="oVJ-Ys-Guk"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tfg-ax-4SX">
                             <connections>
@@ -1779,13 +1779,13 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FAQDetailCell" rowHeight="164" id="IEs-ph-AUz">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FAQDetailCell" id="IEs-ph-AUz">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IEs-ph-AUz" id="lbp-3s-OA9">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wup-K1-gZi">
-                                                    <rect key="frame" x="8" y="8" width="584" height="147.5"/>
+                                                    <rect key="frame" x="8" y="8" width="584" height="27.5"/>
                                                     <string key="text">The Office of Diversity, Inclusion and Multicultural Education (ODIME) is the office that houses the STEP Program. STEP is one of ODIME’s largest initiatives. More information about the office can be found at odime.gmu.edu.</string>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2056,7 +2056,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chickfila" translatesAutoresizingMaskIntoConstraints="NO" id="fhV-z1-7lT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chickfila" translatesAutoresizingMaskIntoConstraints="NO" id="fhV-z1-7lT">
                                                     <rect key="frame" x="228" y="8" width="145" height="145"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="82" id="VOt-tX-Avl"/>

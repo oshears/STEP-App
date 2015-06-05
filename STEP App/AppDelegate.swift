@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Change status bar style
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
+
         
         // Change navigation bar appearance
         UINavigationBar.appearance().barTintColor = UIColor(red: 0/255.0, green: 102.0/255.0, blue: 51/255.0, alpha: 1)

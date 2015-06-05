@@ -43,10 +43,13 @@ class DetailFAQTableViewController: UITableViewController {
         self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
         indexPath=NSIndexPath(forRow: 1, inSection: 0)
         self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()*/
+        /*
         for x in 0...tableView.numberOfRowsInSection(0){
             var indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
-            self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
-        }
+            self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsLayout()
+        }*/
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
         
     }
 
@@ -57,7 +60,6 @@ class DetailFAQTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.navigationController?.hidesBarsOnSwipe = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }

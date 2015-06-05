@@ -14,6 +14,7 @@ class CalendarTableViewController: UITableViewController {
     
     var calendarDayList:NSMutableArray = NSMutableArray()
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
+    var reloaded:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +32,7 @@ class CalendarTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        // Self Sizing Cells
-        self.tableView.estimatedRowHeight = 131.0;
-        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
         
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
@@ -43,7 +42,7 @@ class CalendarTableViewController: UITableViewController {
         
         // Pull To Refresh Control
         refreshControl = UIRefreshControl()
-        refreshControl?.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
+        refreshControl?.backgroundColor = UIColor(red: 240/255, green: 242/255, blue: 243/255, alpha: 1)
         refreshControl?.tintColor = UIColor.grayColor()
         refreshControl?.addTarget(self, action: "loadCalendarDays", forControlEvents:
             UIControlEvents.ValueChanged)
@@ -55,6 +54,14 @@ class CalendarTableViewController: UITableViewController {
         spinner.hidesWhenStopped = true
         self.parentViewController?.view.addSubview(spinner)
         spinner.startAnimating()
+ 
+        
+        // Self Sizing Cells
+        self.tableView.estimatedRowHeight = 131.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        //self.tableView.beginUpdates()
+        //self.tableView.endUpdates()
 
     }
 
@@ -65,7 +72,6 @@ class CalendarTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         /*
-        
         Below is an unfinished implimentation of the autonomous scolling to a specific date
         
         let date = NSDate()
@@ -76,6 +82,11 @@ class CalendarTableViewController: UITableViewController {
         var indexPathForRow:NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
         tableView.scrollToRowAtIndexPath( indexPathForRow, atScrollPosition: UITableViewScrollPosition.Middle, animated: false)
         */
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && !reloaded){
+            reloaded=true
+            tableView.reloadData()
+        }
+
         
     }
     
@@ -105,6 +116,7 @@ class CalendarTableViewController: UITableViewController {
         cell.mainActivity3.alpha = 0
         cell.dayLabelView.alpha = 0
         cell.monthLabelView.alpha = 0
+        cell.fulldateLabel.alpha = 0
         
         
         let calendarDay:PFObject = self.calendarDayList.objectAtIndex(indexPath.row) as! PFObject
@@ -138,45 +150,27 @@ class CalendarTableViewController: UITableViewController {
         }
         
         
-        
-        
-        
         UIView.animateWithDuration(0.5, animations: {
             cell.mainActivity1.alpha = 1
             cell.mainActivity2.alpha = 1
             cell.mainActivity3.alpha = 1
             cell.dayLabelView.alpha = 1
             cell.monthLabelView.alpha = 1
+            cell.fulldateLabel.alpha=1
         })
 
 
+        //cell.setNeedsDisplay()
+        //cell.setNeedsLayout()
+        cell.layoutIfNeeded()
         return cell
-
-
     }
     
     @IBAction func loadCalendarDays(){
         calendarDayList.removeAllObjects()
         var findCalendarDays:PFQuery = PFQuery(className: "CalendarDay")
         findCalendarDays.orderByDescending("date")
-        /*
-        findCalendarDays.findObjectsInBackgroundWithBlock({
-            (objects:[AnyObject]!,error:NSError!)->Void in
-            
-            if error == nil{
-                for object in objects{
-                    let calendarDay:PFObject = object as PFObject
-                    self.calendarDayList.addObject(calendarDay)
-                }
-                let array:NSArray = self.calendarDayList.reverseObjectEnumerator().allObjects
-                self.calendarDayList = NSMutableArray(array: array)
-                self.tableView.reloadData()
-            }
-            else{
-                println("Failed to retrieve announcements from database")
-            }
-            
-        })*/
+
         findCalendarDays.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in
             if error == nil{
@@ -213,6 +207,16 @@ class CalendarTableViewController: UITableViewController {
     @IBAction func unwindToPeopleScreen(segue:UIStoryboardSegue) {
         
     }
+    override func viewDidAppear(animated: Bool) {
+        
+    }
+    
+    /*
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row){
+            tableView.reloadData()
+        }
+    }*/
     
 
 

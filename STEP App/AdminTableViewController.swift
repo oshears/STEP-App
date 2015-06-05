@@ -15,12 +15,6 @@ class AdminTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
         // Empty back button title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
 
@@ -36,7 +30,7 @@ class AdminTableViewController: UITableViewController {
     }
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() != nil{
-            logInOut.text = "Logout of \(PFUser.currentUser()!.username)"
+            logInOut.text = "Logout of \(PFUser.currentUser()!.username!)"
         }
         else{
             logInOut.text = "Admin Login"
@@ -61,16 +55,48 @@ class AdminTableViewController: UITableViewController {
             else{
                 self.showLogin()
             }
+            if PFUser.currentUser() != nil{
+                logInOut.text = "Logout of \(PFUser.currentUser()!.username!)"
+            }
+            else{
+                logInOut.text = "Admin Login"
+            }
         }
-        if PFUser.currentUser() != nil{
-            logInOut.text = "Logout of \(PFUser.currentUser()!.username)"
+        else if (indexPath.row==2 && PFUser.currentUser() != nil){
+            var messageAlert:UIAlertController = UIAlertController(title: "New Push Notification", message: "Enter your message", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            messageAlert.addTextFieldWithConfigurationHandler{
+                (textfield:UITextField!) -> Void in
+                
+                textfield.placeholder = "Your message ..."
+                
+            }
+            
+            messageAlert.addAction(UIAlertAction(title: "Send", style: UIAlertActionStyle.Default, handler: {
+                (alertAction:UIAlertAction!) -> Void in
+                var push:PFPush = PFPush()
+                //push.setChannel("Reload")
+                //Custom sound, badge app icon, alert message?
+                var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":"Glass.aiff"]
+                push.setData(data as [NSObject : AnyObject])
+                //Send push notification
+                var pushQuery:PFQuery = PFInstallation.query()!
+                pushQuery.whereKey("channels",equalTo: "Reload")
+                push.setQuery(pushQuery)
+                
+                let messageTextField:UITextField = messageAlert.textFields?.first as! UITextField
+                push.setMessage(messageTextField.text)
+                push.sendPushInBackgroundWithTarget(nil, selector: nil)
+                
+            }))
+            
+            messageAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(messageAlert, animated: true, completion: nil)
         }
-        else{
-            logInOut.text = "Admin Login"
-        }
-        
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+       
     }
+    
     
 
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
@@ -133,12 +159,12 @@ class AdminTableViewController: UITableViewController {
                     
                 }
                 else{
-                    var loginAlert:UIAlertController = UIAlertController(title: "Hello \(PFUser.currentUser()!.username)", message:"Successfully logged in as \(PFUser.currentUser()!.username)",preferredStyle: .Alert)
+                    var loginAlert:UIAlertController = UIAlertController(title: "Hello \(PFUser.currentUser()!.username!)", message:"Successfully logged in as \(PFUser.currentUser()!.username!)",preferredStyle: .Alert)
                     loginAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                     self.presentViewController(loginAlert,animated: true, completion: nil)
                     
                     if PFUser.currentUser() != nil{
-                        self.logInOut.text = "Logout out of \(PFUser.currentUser()!.username)"
+                        self.logInOut.text = "Logout out of \(PFUser.currentUser()!.username!)"
                     }
                     else{
                         self.logInOut.text = "Admin Login"
@@ -158,52 +184,4 @@ class AdminTableViewController: UITableViewController {
         
     }
     
-
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

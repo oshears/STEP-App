@@ -122,6 +122,12 @@ class HoursTableViewController: UITableViewController {
         }
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        tableView.reloadData()
+        
+    }
 
     
 
