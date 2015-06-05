@@ -25,6 +25,10 @@ class AdminTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        //No excess
+        self.tableView.tableFooterView = UIView(frame:CGRectZero)
+
 
         
     }

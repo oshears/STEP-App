@@ -117,7 +117,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="22" sectionFooterHeight="22" id="tWy-S5-CFF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                         <sections>
                             <tableViewSection id="jas-jp-MO3">
                                 <cells>
@@ -148,6 +148,7 @@
                                                 <constraint firstItem="0TY-QS-nJh" firstAttribute="leading" secondItem="64x-n0-G0D" secondAttribute="leadingMargin" id="pIF-hW-QsY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="jfN-Hc-Nq0">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -173,6 +174,7 @@
                                                 <constraint firstItem="Uwi-7V-G1i" firstAttribute="top" secondItem="2At-Sf-T8a" secondAttribute="topMargin" id="uD5-hP-h1t"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <segue destination="sAw-TQ-w5c" kind="presentation" identifier="postGeneralAnnouncement" id="Mu7-Jp-568"/>
                                         </connections>
@@ -201,6 +203,7 @@
                                                 <constraint firstItem="aM2-sq-ItA" firstAttribute="top" secondItem="dyP-pK-7vo" secondAttribute="topMargin" id="kxr-Ou-ARC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

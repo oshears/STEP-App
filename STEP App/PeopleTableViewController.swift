@@ -49,8 +49,8 @@ class PeopleTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 123.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         
-        //self.tableView.beginUpdates()
-        //self.tableView.endUpdates()
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,8 +85,6 @@ class PeopleTableViewController: UITableViewController {
         
 
         cell.layoutIfNeeded()
-        tableView.beginUpdates()
-        tableView.endUpdates()
         return cell
     }
     
