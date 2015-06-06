@@ -85,7 +85,7 @@ class AdminTableViewController: UITableViewController {
                     var push:PFPush = PFPush()
                     //push.setChannel("Reload")
                     //Custom sound, badge app icon, alert message?
-                    var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":"Glass.aiff"]
+                    var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":"default"]
                     push.setData(data as [NSObject : AnyObject])
                     //Send push notification
                     var pushQuery:PFQuery = PFInstallation.query()!

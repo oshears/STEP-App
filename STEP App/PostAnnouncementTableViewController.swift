@@ -82,8 +82,7 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
                 //push.setChannel("Reload")
             
                 //Custom sound, badge app icon, alert message?
-                var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":""]
-            
+                var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":"default"]
                 push.setData(data as [NSObject : AnyObject])
             
                 //Send push notification

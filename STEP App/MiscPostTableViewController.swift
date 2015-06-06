@@ -45,13 +45,15 @@ class MiscPostTableViewController: UITableViewController, UINavigationController
         
             //Create a check here to determine if PFUser is nil or not
             announcement.saveInBackgroundWithTarget(nil, selector: nil)
+            /*
             var push:PFPush = PFPush()
             push.setChannel("Reload")
             
             //Custom sound, badge app icon, alert message?
-            var data:NSDictionary = ["alert":"","badge":"0","content-available":"1","sound":""]
+            var data:NSDictionary = ["alert":"","badge":"0","content-available":"1","sound":"default"]
             push.setData(data as [NSObject : AnyObject])
             push.sendPushInBackgroundWithTarget(nil, selector: nil)
+            */
             
             performSegueWithIdentifier("unwindToAnnouncementScreen", sender: self)
         }

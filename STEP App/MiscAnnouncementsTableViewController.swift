@@ -12,6 +12,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
 
     var miscAnnouncementList:NSMutableArray = NSMutableArray()
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
+    var countReloads:Int = 0
 
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -116,6 +117,8 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         })
         
         cell.cellSize = cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+        
+        
         return cell
     }
 
@@ -123,25 +126,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     @IBAction func loadAnnouncementData(){
         miscAnnouncementList.removeAllObjects()
         var findAnnouncements:PFQuery = PFQuery(className: "MiscAnnouncement")
-        //FindAnnouncements.findObjectsInBackgroundWithBlock
-        /*
-        findAnnouncements.findObjectsInBackgroundWithBlock({
-            (objects:[AnyObject]!,error:NSError!)->Void in
-            
-            if error == nil{
-                for object in objects{
-                    let announcement:PFObject = object as PFObject
-                    self.miscAnnouncementList.addObject(announcement)
-                }
-            
-                let array:NSArray = self.miscAnnouncementList.reverseObjectEnumerator().allObjects
-                self.miscAnnouncementList = NSMutableArray(array: array)
-                self.tableView.reloadData()
-            }
-            else{
-                println("Failed to retrieve announcements from database")
-            }
-        })*/
+
         findAnnouncements.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in
             if error == nil{
@@ -166,6 +151,13 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<2){
+            countReloads++
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
     }
 
 }
