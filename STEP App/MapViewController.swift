@@ -32,9 +32,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         Place(name: "East Building", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.832990, -77.308256)),
         Place(name: "Nyguyen Engineering Building", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.827518, -77.305267)),
         Place(name: "Art and Design Building", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.827868, -77.306364)),
+        Place(name: "Music and Theater Building", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.829271, -77.307990)),
         Place(name: "Merten Hall", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.834967, -77.307891)),
         Place(name: "Manhattan Pizza", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834970, -77.307449)),
-        Place(name: "Panda Express", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834838, -77.308083))
+        Place(name: "Panda Express", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834838, -77.308083)),
+        Place(name: "Einstein's Bagels", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834927, -77.307809)),
+        Place(name: "Eagle Bank Arena (Patriot Center)", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.826814, -77.309717)),
+        Place(name: "Aquatic and Fitness Center (AFC)", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.826417, -77.304186)),
+        Place(name: "Global Center", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.829622, -77.314867)),
+        Place(name: "Recreation and Atheletic Complex", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.830579, -77.312287)),
+        Place(name: "Subway", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834367, -77.310776)),
+        Place(name: "The Globe", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.829854, -77.314831)),
+        Place(name: "Rathskeller", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.831421, -77.308732)),
+        Place(name: "Chick-Fil-A", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.831592, -77.308877)),
+        Place(name: "Panera Bread", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.830384, -77.307412)),
+        Place(name: "IndAroma", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.830146, -77.307782)),
+        Place(name: "Burger King", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.830071, -77.307718)),
+        Place(name: "Freshen's and Express (General Store)", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.830021, -77.307198)),
+        Place(name: "Red, Hot & Blue", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.830079, -77.307793)),
+        Place(name: "Starbucks", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.829649, -77.307053)),
+        Place(name: "Jorge's", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.829887, -77.307611)),
     ]
 
     
