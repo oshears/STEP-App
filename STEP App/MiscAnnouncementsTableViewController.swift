@@ -40,7 +40,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnouncementData", name: "reloadAnnouncements", object: nil)
         
         //Change Separator Color
-        self.tableView.separatorColor = UIColor.clearColor()
+        //self.tableView.separatorColor = UIColor.clearColor()
         
         //Side Menu
         if self.revealViewController() != nil {

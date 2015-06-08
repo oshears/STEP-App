@@ -15,6 +15,7 @@ class CalendarTableViewController: UITableViewController {
     var calendarDayList:NSMutableArray = NSMutableArray()
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
     var reloaded:Bool = false
+    var countReloads:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +32,7 @@ class CalendarTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-        
-        
+                
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
         
@@ -60,8 +59,7 @@ class CalendarTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 131.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         
-        //self.tableView.beginUpdates()
-        //self.tableView.endUpdates()
+
 
     }
 
@@ -70,28 +68,17 @@ class CalendarTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        /*
-        Below is an unfinished implimentation of the autonomous scolling to a specific date
-        
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        NSCalendarUnit.CalendarUnitMonth
-        let components = calendar.components
-        
-        var indexPathForRow:NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        tableView.scrollToRowAtIndexPath( indexPathForRow, atScrollPosition: UITableViewScrollPosition.Middle, animated: false)
-        */
-        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && !reloaded){
-            reloaded=true
-            tableView.reloadData()
-        }
 
-        
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<2){
+            countReloads++
+            //tableView.reloadData()
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
     }
     
-
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
@@ -208,15 +195,8 @@ class CalendarTableViewController: UITableViewController {
         
     }
     override func viewDidAppear(animated: Bool) {
-        
+        tableView.reloadData()
     }
-    
-    /*
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row){
-            tableView.reloadData()
-        }
-    }*/
     
 
 

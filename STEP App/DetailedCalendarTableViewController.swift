@@ -26,8 +26,9 @@ class DetailedCalendarTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        topicLabel.text = (calendarDay.objectForKey("weekTopic")==nil) ? "" : calendarDay.objectForKey("weekTopic") as? String
+        var topicString:String = "Week Topic: "
+        topicString += (calendarDay.objectForKey("weekTopic")==nil) ? "" : calendarDay.objectForKey("weekTopic") as! String
+        topicLabel.text = topicString
         
         activity1Label.text = (calendarDay.objectForKey("main_activity_1")==nil) ? "" : calendarDay.objectForKey("main_activity_1") as? String
         //if (activity1Label.text == ""){ activity1Label.text = " "}
@@ -66,6 +67,8 @@ class DetailedCalendarTableViewController: UITableViewController {
             var indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
             self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
         }
+        tableView.beginUpdates()
+        tableView.endUpdates()
         //indexPath=NSIndexPath(forRow: 1, inSection: 0)
         //self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
 

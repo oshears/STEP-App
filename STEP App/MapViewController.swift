@@ -42,6 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         Place(name: "Global Center", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.829622, -77.314867)),
         Place(name: "Recreation and Atheletic Complex", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.830579, -77.312287)),
         Place(name: "The HUB", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.830618, -77.304647)),
+        Place(name: "Hanover Hall", location:"George Mason University", isBuilding:true, coordinate: CLLocationCoordinate2DMake(38.832137, -77.304812)),
         Place(name: "Subway", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.834367, -77.310776)),
         Place(name: "The Globe", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.829854, -77.314831)),
         Place(name: "Rathskeller", location:"George Mason University", isBuilding:false, coordinate: CLLocationCoordinate2DMake(38.831421, -77.308732)),

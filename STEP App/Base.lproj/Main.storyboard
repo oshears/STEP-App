@@ -624,10 +624,11 @@
         <scene sceneID="Vrc-u5-MYW">
             <objects>
                 <tableViewController id="0gj-LB-H47" customClass="MiscAnnouncementsTableViewController" customModule="STEP_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="KBk-Gd-Hjd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="KBk-Gd-Hjd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="4Mm-mv-0bf" customClass="MiscAnnouncementTableViewCell" customModule="STEP_App" customModuleProvider="target">
@@ -636,13 +637,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEe-W6-Mdd">
-                                            <rect key="frame" x="18" y="18" width="564" height="59.5"/>
+                                            <rect key="frame" x="18" y="8" width="564" height="47"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-mv-WgH">
-                                            <rect key="frame" x="18" y="77" width="564" height="14.5"/>
+                                            <rect key="frame" x="18" y="63" width="564" height="14.5"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -650,15 +651,16 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                     <constraints>
-                                        <constraint firstItem="vNe-mv-WgH" firstAttribute="bottom" secondItem="dKT-mB-gj9" secondAttribute="bottomMargin" constant="10" id="0Id-bS-dj9"/>
-                                        <constraint firstItem="vNe-mv-WgH" firstAttribute="top" secondItem="PEe-W6-Mdd" secondAttribute="bottom" id="7bb-8W-nOd"/>
-                                        <constraint firstItem="vNe-mv-WgH" firstAttribute="trailing" secondItem="dKT-mB-gj9" secondAttribute="trailingMargin" constant="-10" id="9jy-Oq-0av"/>
-                                        <constraint firstItem="PEe-W6-Mdd" firstAttribute="top" secondItem="dKT-mB-gj9" secondAttribute="topMargin" constant="10" id="MAD-iC-3rN"/>
-                                        <constraint firstItem="PEe-W6-Mdd" firstAttribute="trailing" secondItem="dKT-mB-gj9" secondAttribute="trailingMargin" constant="-10" id="WfI-Pj-oFu"/>
-                                        <constraint firstItem="vNe-mv-WgH" firstAttribute="leading" secondItem="dKT-mB-gj9" secondAttribute="leadingMargin" constant="10" id="jiZ-Uf-6dk"/>
-                                        <constraint firstItem="PEe-W6-Mdd" firstAttribute="leading" secondItem="dKT-mB-gj9" secondAttribute="leadingMargin" constant="10" id="xRy-99-jWu"/>
+                                        <constraint firstItem="vNe-mv-WgH" firstAttribute="top" secondItem="PEe-W6-Mdd" secondAttribute="bottom" constant="8" id="5CW-KB-ift"/>
+                                        <constraint firstItem="vNe-mv-WgH" firstAttribute="trailing" secondItem="PEe-W6-Mdd" secondAttribute="trailing" id="BWc-wv-Af0"/>
+                                        <constraint firstItem="vNe-mv-WgH" firstAttribute="leading" secondItem="PEe-W6-Mdd" secondAttribute="leading" id="KgB-GW-5IS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="PEe-W6-Mdd" secondAttribute="trailing" constant="10" id="OW8-8c-7gS"/>
+                                        <constraint firstItem="PEe-W6-Mdd" firstAttribute="leading" secondItem="dKT-mB-gj9" secondAttribute="leadingMargin" constant="10" id="Sux-l4-Mqx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vNe-mv-WgH" secondAttribute="bottom" constant="4" id="iOu-9X-YH4"/>
+                                        <constraint firstItem="PEe-W6-Mdd" firstAttribute="top" secondItem="dKT-mB-gj9" secondAttribute="topMargin" id="w45-Kf-HCK"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="announcementContent" destination="PEe-W6-Mdd" id="Cxh-af-oab"/>
                                     <outlet property="announcementTime" destination="vNe-mv-WgH" id="M0H-Al-rk8"/>
@@ -1118,6 +1120,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="vmf-dv-kV4" secondAttribute="bottom" constant="8" id="OzT-O0-8em"/>
                                         <constraint firstItem="vmf-dv-kV4" firstAttribute="leading" secondItem="MQ2-gv-OYY" secondAttribute="leading" id="bK7-xu-jzQ"/>
                                         <constraint firstItem="4Bq-bH-oUP" firstAttribute="leading" secondItem="ZjJ-mA-veT" secondAttribute="leadingMargin" id="bU9-3D-pub"/>
+                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="TWI-dk-skq" secondAttribute="bottom" constant="14.5" id="baV-Y8-67T"/>
                                         <constraint firstItem="vmf-dv-kV4" firstAttribute="trailing" secondItem="sh8-Rs-jeg" secondAttribute="trailing" id="jEe-1d-xZ4"/>
                                         <constraint firstItem="vmf-dv-kV4" firstAttribute="top" secondItem="34a-b0-hlx" secondAttribute="bottom" constant="16" id="lmy-ST-X5u"/>
                                         <constraint firstItem="vmf-dv-kV4" firstAttribute="trailing" secondItem="MQ2-gv-OYY" secondAttribute="trailing" id="r7m-2K-3nh"/>
@@ -1145,6 +1148,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Calendar" id="RCY-mg-dSX">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="njZ-GC-YPb"/>
+                        <barButtonItem key="rightBarButtonItem" image="calendar-7" id="zRq-XL-qZX">
+                            <connections>
+                                <segue destination="MK7-kO-CdY" kind="show" id="pO6-Yx-2d6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="njZ-GC-YPb" id="vyN-TD-d8d"/>
@@ -1352,7 +1360,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week Topic" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3L-f6-jO4">
                                                     <rect key="frame" x="8" y="8" width="584" height="27.5"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1470,7 +1478,48 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc6-HB-4Nw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1347" y="-744"/>
+            <point key="canvasLocation" x="1167" y="-744"/>
+        </scene>
+        <!--STEP 2015 Calendar-->
+        <scene sceneID="TVI-wA-rUH">
+            <objects>
+                <viewController title="STEP 2015 Calendar" id="MK7-kO-CdY" customClass="FullCalendarViewController" customModule="STEP_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ziy-ur-ugj"/>
+                        <viewControllerLayoutGuide type="bottom" id="PsA-lP-ObS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sCE-UA-mZ1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ah6-4o-ihU">
+                                <rect key="frame" x="16" y="64" width="568" height="536"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="step2015calendar" translatesAutoresizingMaskIntoConstraints="NO" id="FgW-VV-GHf">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="536"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="MK7-kO-CdY" id="332-g0-bDY"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ah6-4o-ihU" firstAttribute="trailing" secondItem="sCE-UA-mZ1" secondAttribute="trailingMargin" id="9eV-jb-rdM"/>
+                            <constraint firstItem="PsA-lP-ObS" firstAttribute="top" secondItem="ah6-4o-ihU" secondAttribute="bottom" id="JhH-oR-gaL"/>
+                            <constraint firstItem="ah6-4o-ihU" firstAttribute="top" secondItem="Ziy-ur-ugj" secondAttribute="bottom" id="K2S-wT-zeC"/>
+                            <constraint firstItem="ah6-4o-ihU" firstAttribute="leading" secondItem="sCE-UA-mZ1" secondAttribute="leadingMargin" id="Ojc-HS-nwh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendarImge" destination="FgW-VV-GHf" id="kDg-ud-gYk"/>
+                        <outlet property="scrollView" destination="ah6-4o-ihU" id="aso-Q3-HJj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydd-Wa-FsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="-744"/>
         </scene>
         <!--Detail Person View-->
         <scene sceneID="1WS-lP-Gf7">
@@ -2386,6 +2435,7 @@
         <image name="menu" width="22" height="22"/>
         <image name="message-7" width="30" height="30"/>
         <image name="paper-map-7" width="30" height="30"/>
+        <image name="step2015calendar" width="1275" height="1650"/>
         <image name="steplogo" width="782" height="444"/>
         <image name="type_General" width="200" height="200"/>
         <image name="type_Informative" width="200" height="200"/>
