@@ -15,6 +15,8 @@ class HoursTableViewCell: UITableViewCell {
     @IBOutlet weak var eateryWeekHours: UILabel!
     @IBOutlet weak var eateryWeekendHours: UILabel!
     
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -15,7 +15,7 @@ class Eatery {
     var weekendHours:String
     var image:String
     var desc:String
-    var closed:Bool
+    var isClosed:Bool = false
     var openTimes:[Double]
     var closeTimes:[Double]
     
@@ -26,13 +26,12 @@ class Eatery {
         self.weekendHours = weekendHours
         self.image = image
         self.desc = desc
-        self.closed=false
         self.openTimes = openTimes
         self.closeTimes = closeTimes
-        
+        fixOpenStatus()
     }
     
-    func isOpen(){
+    func fixOpenStatus(){
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitDay | .CalendarUnitWeekday | .CalendarUnitMonth, fromDate: date)
@@ -45,13 +44,14 @@ class Eatery {
         var currTime:Double = Double(hour)
         if (minutes>=30){ currTime+=0.5}
         println("Current time representation: \(currTime)")
-        if (openTimes[weekday] == nil){
-            closed=true
+        if (openTimes[weekday] == -1){
+            println("\(title) is not open")
+            isClosed=true
             return
         }
         if (currTime<openTimes[weekday] || currTime>closeTimes[weekday]){
-            //Int.
-            closed=true
+            println("\(title) is not open")
+            isClosed=true
         }
         
         

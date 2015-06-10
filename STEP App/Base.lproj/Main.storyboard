@@ -2061,6 +2061,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.87058823529999996" green="0.87450980389999999" blue="0.88235294119999996" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
+                                    <outlet property="containerView" destination="SEk-iv-rwv" id="j7I-at-b9Q"/>
                                     <outlet property="eateryImage" destination="NYA-8Z-xWs" id="uRN-Cp-atH"/>
                                     <outlet property="eateryTitle" destination="Xdk-xh-J7r" id="iVU-Fw-EtZ"/>
                                     <outlet property="eateryWeekHours" destination="UaU-IL-y7b" id="2cm-p7-gzV"/>
