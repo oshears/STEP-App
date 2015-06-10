@@ -72,9 +72,40 @@ class CalendarTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<2){
             countReloads++
-            //tableView.reloadData()
-            self.tableView.beginUpdates()
-            self.tableView.endUpdates()
+            tableView.reloadData()
+            //self.tableView.beginUpdates()
+            //self.tableView.endUpdates()
+           
+            /*
+            let date = NSDate()
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitDay | .CalendarUnitWeekday | .CalendarUnitMonth, fromDate: date)
+            let hour = components.hour
+            let minutes = components.minute
+            let day = components.day
+            let weekday = components.weekday
+            let month = components.month
+            println("Some date today is: \(hour):\(minutes), on \(weekday) \(month) \(day)")
+            
+            if (month==6){
+                var someRow = day-27
+                if (someRow<calendarDayList.count){
+                    tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: someRow, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+                }
+            }
+            if (month==7){
+                var someRow = 4 + day
+                if (someRow<calendarDayList.count){
+                    tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: someRow, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+                }
+            }
+            if (month==8){
+                var someRow = 36 + day
+                if (someRow<calendarDayList.count){
+                    tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: someRow, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+                }
+            }*/
+            
         }
     }
     
@@ -124,6 +155,8 @@ class CalendarTableViewController: UITableViewController {
         cell.dayLabel.text = dataFormatter.stringFromDate(calendarDate)
         dataFormatter.dateFormat = "MMMM"
         cell.monthLabel.text = dataFormatter.stringFromDate(calendarDate)
+        
+        
         
         //cell.monthLabel.text = calendarDay.objectForKey("date") as? String
         //cell.dayLabel.text = calendarDay.objectForKey("date") as? String
