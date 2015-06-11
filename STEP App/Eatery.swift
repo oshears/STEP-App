@@ -40,9 +40,10 @@ class Eatery {
         let day = components.day
         let weekday = components.weekday
         let month = components.month
-        //println("Some date today is: \(hour):\(minutes), on \(weekday) \(month) \(day)")
+        println("Some date today is: \(hour):\(minutes), on \(weekday) \(month) \(day)")
         var currTime:Double = Double(hour)
-        if (minutes>=30){ currTime+=0.5}
+        //if (minutes>=30){ currTime+=0.5}
+        currTime+=((Double(minutes))/60)
         //println("Current time representation: \(currTime)")
         if (openTimes[weekday-1] == -1){
             //println("\(title) is not open")
