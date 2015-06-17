@@ -47,6 +47,10 @@ class DetailPersonTableViewController: UITableViewController {
         //No excess
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
         
+        // Self Sizing Cells
+        self.tableView.estimatedRowHeight = 100.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
         
     }
     
@@ -63,5 +67,10 @@ class DetailPersonTableViewController: UITableViewController {
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.layoutIfNeeded()
+        cell.setNeedsDisplay()
     }
 }

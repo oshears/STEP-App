@@ -14,6 +14,7 @@ class SnapsTableViewController: UITableViewController {
     var pictureList:NSMutableArray = NSMutableArray()
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
     
+    @IBOutlet weak var postSnapBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -188,4 +189,31 @@ class SnapsTableViewController: UITableViewController {
     @IBAction func unwindToSnapsScreen(segue:UIStoryboardSegue) {
         
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+            // Launch walkthrough screens
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let hasViewedWalkthrough = defaults.boolForKey("hasViewedSnapsPopTip")
+            if hasViewedWalkthrough == false {
+                defaults.setBool(true, forKey: "hasViewedSnapsPopTip")
+                showPopTip(cell,message: "Tap an image to save it.",time:10)
+                showPopTip(postSnapBtn,message:"Tap the plus to post a new Snap!",time:10)
+            }
+        }
+    }
+    
+    func showPopTip(sender: AnyObject, message: String, time:Double) {
+        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
+        popTip.titleColor = UIColor.whiteColor()
+        popTip.textColor = UIColor.whiteColor()
+        popTip.pointDirection = .Down
+        if sender.dynamicType === UIBarButtonItem.self {
+            popTip.presentAnimatedPointingAtBarButtonItem(sender as! UIBarButtonItem, autodismissAtTime: time)
+        } else {
+            popTip.presentAnimatedPointingAtView(sender as! UIView, inView: self.view, autodismissAtTime: time)
+        }
+    }
+
 }

@@ -134,6 +134,32 @@ class HoursTableViewController: UITableViewController {
         tableView.reloadData()
         
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+            // Launch walkthrough screens
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let hasViewedWalkthrough = defaults.boolForKey("hasViewedHoursPopTip")
+            
+            if hasViewedWalkthrough == false {
+                defaults.setBool(true, forKey: "hasViewedHoursPopTip")
+                showPopTip(cell,message: "Tap a restaurant to view detailed information. Restaurants with a gray background are closed at the current time.")
+            }
+        }
+    }
+    
+    func showPopTip(sender: AnyObject, message: String) {
+        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
+        popTip.titleColor = UIColor.whiteColor()
+        popTip.textColor = UIColor.whiteColor()
+        if sender.dynamicType === UIBarButtonItem.self {
+            popTip.presentAnimatedPointingAtBarButtonItem(sender as! UIBarButtonItem, autodismissAtTime: 10)
+        } else {
+            popTip.presentAnimatedPointingAtView(sender as! UIView, inView: self.view, autodismissAtTime: 10)
+        }
+    }
+
 
     
 

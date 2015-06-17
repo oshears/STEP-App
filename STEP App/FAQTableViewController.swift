@@ -13,6 +13,7 @@ class FAQTableViewController: UITableViewController {
     var faqList:NSMutableArray = NSMutableArray()
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
     var countReloads:Int = 0
+    @IBOutlet weak var postFaqBtn: UIBarButtonItem!
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -180,10 +181,33 @@ class FAQTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+            // Launch walkthrough screens
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let hasViewedWalkthrough = defaults.boolForKey("hasViewedFaqsPopTip")
+            
+            if hasViewedWalkthrough == false {
+                defaults.setBool(true, forKey: "hasViewedFaqsPopTip")
+                showPopTip(cell,message: "Tap a question to view its answer.")
+                showPopTip(postFaqBtn,message:"Tap the plus to post a new question.")
+            }
+        }
         if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<1){
             countReloads++
             loadFAQData()
         }
     }
+    func showPopTip(sender: AnyObject, message: String) {
+        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
+        popTip.titleColor = UIColor.whiteColor()
+        popTip.textColor = UIColor.whiteColor()
+        if sender.dynamicType === UIBarButtonItem.self {
+            popTip.presentAnimatedPointingAtBarButtonItem(sender as! UIBarButtonItem, autodismissAtTime: 10)
+        } else {
+            popTip.presentAnimatedPointingAtView(sender as! UIView, inView: self.view, autodismissAtTime: 10)
+        }
+    }
+
 
 }

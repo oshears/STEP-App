@@ -14,6 +14,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     var spinner:UIActivityIndicatorView = UIActivityIndicatorView()
     var countReloads:Int = 0
 
+    @IBOutlet weak var postMiscBtn: UIBarButtonItem!
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -63,7 +64,10 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         self.parentViewController?.view.addSubview(spinner)
         spinner.startAnimating()
         
+        
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -153,10 +157,32 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+                // Launch walkthrough screens
+                let defaults = NSUserDefaults.standardUserDefaults()
+                let hasViewedWalkthrough = defaults.boolForKey("hasViewedMiscAnnouncementPopTip")
+                
+                if hasViewedWalkthrough == false {
+                    defaults.setBool(true, forKey: "hasViewedMiscAnnouncementPopTip")
+                    showPopTip(cell,message: "View announcements posted by everyone.")
+                    showPopTip(postMiscBtn,message:"Tap the plus to post a new announcement.")
+                }
+            }
         if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<2){
             countReloads++
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
+        }
+    }
+    func showPopTip(sender: AnyObject, message: String) {
+        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
+        popTip.titleColor = UIColor.whiteColor()
+        popTip.textColor = UIColor.whiteColor()
+        if sender.dynamicType === UIBarButtonItem.self {
+            popTip.presentAnimatedPointingAtBarButtonItem(sender as! UIBarButtonItem, autodismissAtTime: 10)
+        } else {
+            popTip.presentAnimatedPointingAtView(sender as! UIView, inView: self.view, autodismissAtTime: 10)
         }
     }
 

@@ -24,6 +24,7 @@
 		80819B091B18D9A100E35C3A /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */; };
 		80848F631B1B5DBE00789BAF /* DetailedHoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80848F621B1B5DBE00789BAF /* DetailedHoursTableViewController.swift */; };
 		80848F651B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80848F641B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift */; };
+		808EE5CD1B2F197200D31CBF /* SwiftPopTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808EE5CC1B2F197200D31CBF /* SwiftPopTipView.swift */; };
 		8090C29E1B03E43100B703F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8090C29D1B03E43100B703F4 /* MapKit.framework */; };
 		8090C2A11B03E60F00B703F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090C2A01B03E60F00B703F4 /* MapViewController.swift */; };
 		80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF31881AAC8E08006C94CE /* AppDelegate.swift */; };
@@ -41,7 +42,6 @@
 		80AF32141AAD25CA006C94CE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF32131AAD25CA006C94CE /* MobileCoreServices.framework */; };
 		80AF32161AAD25CF006C94CE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF32151AAD25CF006C94CE /* QuartzCore.framework */; };
 		80AF32181AAD25D4006C94CE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF32171AAD25D4006C94CE /* Security.framework */; };
-		80AF321A1AAD25D8006C94CE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF32191AAD25D8006C94CE /* StoreKit.framework */; };
 		80AF321C1AAD25E3006C94CE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF321B1AAD25E3006C94CE /* SystemConfiguration.framework */; };
 		80AF321E1AAD25EA006C94CE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF321D1AAD25EA006C94CE /* libz.dylib */; };
 		80AF32201AAD25EF006C94CE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */; };
@@ -91,6 +91,7 @@
 		80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
 		80848F621B1B5DBE00789BAF /* DetailedHoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedHoursTableViewController.swift; sourceTree = "<group>"; };
 		80848F641B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCalendarTableViewController.swift; sourceTree = "<group>"; };
+		808EE5CC1B2F197200D31CBF /* SwiftPopTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftPopTipView.swift; path = "../../../../../Downloads/SwiftPopTipView-master/SwiftPopTipView/SwiftPopTipView.swift"; sourceTree = "<group>"; };
 		8090C29D1B03E43100B703F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8090C2A01B03E60F00B703F4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		80AF31831AAC8E08006C94CE /* STEP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +113,6 @@
 		80AF32131AAD25CA006C94CE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		80AF32151AAD25CF006C94CE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		80AF32171AAD25D4006C94CE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		80AF32191AAD25D8006C94CE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		80AF321B1AAD25E3006C94CE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		80AF321D1AAD25EA006C94CE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -149,7 +149,6 @@
 				80AF321C1AAD25E3006C94CE /* SystemConfiguration.framework in Frameworks */,
 				80459D611B02C0D500BFA30C /* Bolts.framework in Frameworks */,
 				8090C29E1B03E43100B703F4 /* MapKit.framework in Frameworks */,
-				80AF321A1AAD25D8006C94CE /* StoreKit.framework in Frameworks */,
 				80AF32181AAD25D4006C94CE /* Security.framework in Frameworks */,
 				80459D631B02C0D500BFA30C /* Parse.framework in Frameworks */,
 				80AF32161AAD25CF006C94CE /* QuartzCore.framework in Frameworks */,
@@ -275,6 +274,7 @@
 				80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */,
 				80AF31921AAC8E08006C94CE /* Images.xcassets */,
 				80AF318F1AAC8E08006C94CE /* Main.storyboard */,
+				808EE5CC1B2F197200D31CBF /* SwiftPopTipView.swift */,
 				804B23891AAF1BE80008EE81 /* Announcements */,
 				804B238A1AAF1C190008EE81 /* Admin */,
 				8026B31F1AAF8BEE001DC66A /* People */,
@@ -321,7 +321,6 @@
 				80AF321F1AAD25EF006C94CE /* libsqlite3.dylib */,
 				80AF321D1AAD25EA006C94CE /* libz.dylib */,
 				80AF321B1AAD25E3006C94CE /* SystemConfiguration.framework */,
-				80AF32191AAD25D8006C94CE /* StoreKit.framework */,
 				80AF32171AAD25D4006C94CE /* Security.framework */,
 				80AF32151AAD25CF006C94CE /* QuartzCore.framework */,
 				80AF32131AAD25CA006C94CE /* MobileCoreServices.framework */,
@@ -430,6 +429,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -500,6 +502,7 @@
 				801476D41B14C90000B2071B /* VCMapView.swift in Sources */,
 				8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */,
 				80819B021B18B77B00E35C3A /* AddFAQTableViewController.swift in Sources */,
+				808EE5CD1B2F197200D31CBF /* SwiftPopTipView.swift in Sources */,
 				8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */,
 				80819AFC1B18B4F300E35C3A /* FAQTableViewCell.swift in Sources */,
 				80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */,
@@ -649,8 +652,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Osaze Shears";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Osaze Shears";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library-1.7.2";
 				INFOPLIST_FILE = "STEP App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -666,8 +669,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Osaze Shears";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Osaze Shears";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library-1.7.2";
 				INFOPLIST_FILE = "STEP App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

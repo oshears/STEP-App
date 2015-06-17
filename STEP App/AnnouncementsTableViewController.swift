@@ -25,6 +25,8 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        
+        
         // Empty back button title
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
@@ -65,6 +67,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         spinner.hidesWhenStopped = true
         self.parentViewController?.view.addSubview(spinner)
         spinner.startAnimating()
+        
         
     }
     
@@ -225,6 +228,33 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+            // Launch walkthrough screens
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let hasViewedWalkthrough = defaults.boolForKey("hasViewedAnnouncementPopTip")
+            
+            if hasViewedWalkthrough == false {
+                defaults.setBool(true, forKey: "hasViewedAnnouncementPopTip")
+                showPopTip(cell,message: "Tap announcements for more information.")
+                showPopTip(menuButton, message: "Tap the menu to view other information.")
+            }
+        }
+    }
+    
+    func showPopTip(sender: AnyObject, message: String) {
+        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
+        popTip.titleColor = UIColor.whiteColor()
+        popTip.textColor = UIColor.whiteColor()
+        if sender.dynamicType === UIBarButtonItem.self {
+            popTip.presentAnimatedPointingAtBarButtonItem(sender as! UIBarButtonItem, autodismissAtTime: 10)
+        } else {
+            popTip.presentAnimatedPointingAtView(sender as! UIView, inView: self.view, autodismissAtTime: 10)
+        }
     }
 
 }

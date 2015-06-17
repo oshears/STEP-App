@@ -205,6 +205,32 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="HuU-hy-GXD">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HuU-hy-GXD" id="ZKn-iE-CW9">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset PopTips" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVT-qV-ZP0">
+                                                    <rect key="frame" x="8" y="8" width="100.5" height="31.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message-7" translatesAutoresizingMaskIntoConstraints="NO" id="jor-ZE-FJf">
+                                                    <rect key="frame" x="562" y="8" width="30" height="31.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oVT-qV-ZP0" firstAttribute="bottom" secondItem="ZKn-iE-CW9" secondAttribute="bottomMargin" id="6FO-c0-zoE"/>
+                                                <constraint firstItem="jor-ZE-FJf" firstAttribute="trailing" secondItem="ZKn-iE-CW9" secondAttribute="trailingMargin" id="EM1-Xo-ByD"/>
+                                                <constraint firstItem="jor-ZE-FJf" firstAttribute="top" secondItem="ZKn-iE-CW9" secondAttribute="topMargin" id="Gn8-2s-fQX"/>
+                                                <constraint firstItem="jor-ZE-FJf" firstAttribute="bottom" secondItem="ZKn-iE-CW9" secondAttribute="bottomMargin" id="erb-i2-dud"/>
+                                                <constraint firstItem="oVT-qV-ZP0" firstAttribute="top" secondItem="ZKn-iE-CW9" secondAttribute="topMargin" id="mhA-xZ-UNc"/>
+                                                <constraint firstItem="oVT-qV-ZP0" firstAttribute="leading" secondItem="ZKn-iE-CW9" secondAttribute="leadingMargin" id="uLb-I1-QtV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="deviceRGB"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -299,6 +325,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="ohb-Np-8E0" id="CGD-nA-ssX"/>
+                        <outlet property="postSnapBtn" destination="bS6-d2-Zu0" id="Da0-0j-8lL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrw-NP-rHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,6 +709,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="oVJ-Ys-Guk" id="Fg4-zT-Mbs"/>
+                        <outlet property="postMiscBtn" destination="tfg-ax-4SX" id="iph-TL-u36"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4x-j7-qft" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1156,6 +1184,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="njZ-GC-YPb" id="vyN-TD-d8d"/>
+                        <outlet property="viewCalBtn" destination="zRq-XL-qZX" id="dFp-yV-hMO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1N-JT-9g1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1577,8 +1606,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uBj-iU-PfQ" id="QSj-1J-TZL">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDE-Y0-SWA">
-                                                    <rect key="frame" x="8" y="5.5" width="61" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDE-Y0-SWA">
+                                                    <rect key="frame" x="8" y="8" width="584" height="16"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1586,8 +1615,10 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.94117647058823528" green="0.94901960784313721" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="iDE-Y0-SWA" firstAttribute="leading" secondItem="QSj-1J-TZL" secondAttribute="leadingMargin" id="nDA-44-1Hf"/>
-                                                <constraint firstAttribute="centerY" secondItem="iDE-Y0-SWA" secondAttribute="centerY" id="qr4-gh-KRK"/>
+                                                <constraint firstItem="iDE-Y0-SWA" firstAttribute="top" secondItem="QSj-1J-TZL" secondAttribute="topMargin" id="705-Db-Rcn"/>
+                                                <constraint firstItem="iDE-Y0-SWA" firstAttribute="trailing" secondItem="QSj-1J-TZL" secondAttribute="trailingMargin" id="DHa-MV-QB2"/>
+                                                <constraint firstItem="iDE-Y0-SWA" firstAttribute="bottom" secondItem="QSj-1J-TZL" secondAttribute="bottomMargin" id="fWk-fh-LI0"/>
+                                                <constraint firstItem="iDE-Y0-SWA" firstAttribute="leading" secondItem="QSj-1J-TZL" secondAttribute="leadingMargin" id="n4X-Vh-YDT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1792,6 +1823,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="StW-Px-laT" id="btM-aM-I7q"/>
+                        <outlet property="postFaqBtn" destination="TOc-Mu-MgH" id="EQe-0w-qyV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pyu-e2-59m" userLabel="First Responder" sceneMemberID="firstResponder"/>

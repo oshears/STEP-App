@@ -103,6 +103,21 @@ class AdminTableViewController: UITableViewController {
                 self.presentViewController(messageAlert, animated: true, completion: nil)
             }
         }
+        else if (indexPath.row==3){
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(false, forKey: "hasViewedAnnouncementPopTip")
+            defaults.setBool(false, forKey: "hasViewedMiscAnnouncementPopTip")
+            defaults.setBool(false, forKey: "hasViewedCalendarPopTip")
+            defaults.setBool(false, forKey: "hasViewedPeoplePopTip")
+            defaults.setBool(false, forKey: "hasViewedHoursPopTip")
+            defaults.setBool(false, forKey: "hasViewedFaqsPopTip")
+            defaults.setBool(false, forKey: "hasViewedSnapsPopTip")
+            
+            var messageAlert:UIAlertController = UIAlertController(title: "PopTips Reset!", message: "All PopTips have been reset.", preferredStyle: UIAlertControllerStyle.Alert)
+            messageAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(messageAlert, animated: true, completion: nil)
+
+        }
        
     }
     

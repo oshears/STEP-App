@@ -30,7 +30,8 @@ class PeopleTableViewController: UITableViewController {
         Person(name:"Shanice Ford", bio:"My name is Shanice Ford, I am a Junior here at Mason and a first generation student. I am a Communication major with a minor in Sports Communication. One day I hope to be a sports anchor! I currently work on campus as a Resident Advisor as well as a Desk Assistant/Logistics Coordinator with STEP.", image:"shanice", role:"Assistant Coordinator for Logistics"),
         Person(name:"Osaze Shears", bio:"Salve! I am a sophomore computer science and engineering major here at Mason. I am from the Hampton Roads area and enjoy mobile application development and graphic design. I am the Technology and Equipment coordinator at ODIME and have an extensive background in mathematics coursework. I love to play soccer and enjoy sharing good laughs with others!", image:"osaze", role:"Intern for Logistics"),
         Person(name:"Alexandro Villarroel", bio:"¡Hola mis futuro amigos! My name is Alexandro C. Villarroel, I’m a rising sophomore. I am a Criminology Law & Society major with minors in Intelligence Analysis and IT. I was in the STEP class of 2014.This summer I will be one of the interns for your class. I love cooking, exercising, listening to music (especially The Weeknd), & longboarding. For those taking public speaking and the art history class, come to me for any questions, I’d be happy to help. ¡Buena Suerte!", image:"alex", role:"Intern for Programming"),
-        Person(name:"Kristi Mokube", bio:"Hi! My name is Kristi Mokube and I am a rising senior at GMU! I am an Integrative Studies major and I play on the Women’s basketball team as a forward! If you want to get ready for Dr. Yu’s basketball tournament, let me know! Can’t wait to meet you all!", image:"kristi", role:"Intern for Activities")
+        Person(name:"Kristi Mokube", bio:"Hi! My name is Kristi Mokube and I am a rising senior at GMU! I am an Integrative Studies major and I play on the Women’s basketball team as a forward! If you want to get ready for Dr. Yu’s basketball tournament, let me know! Can’t wait to meet you all!", image:"kristi", role:"Intern for Activities"),
+        Person(name:"Jalen Sherald", bio:"Former Assistant Coordinator for First Generation Initiatives at ODIME", image:"jalen", role:"Former Assistant Coordinator for First Generation Initiatives")
         
     ]
     
@@ -107,10 +108,33 @@ class PeopleTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+            // Launch walkthrough screens
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let hasViewedWalkthrough = defaults.boolForKey("hasViewedPeoplePopTip")
+            
+            if hasViewedWalkthrough == false {
+                defaults.setBool(true, forKey: "hasViewedPeoplePopTip")
+                showPopTip(cell,message: "Tap people to learn more about them!")
+            }
+        }
+
         if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<2){
             countReloads++
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
+        }
+    }
+    
+    func showPopTip(sender: AnyObject, message: String) {
+        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
+        popTip.titleColor = UIColor.whiteColor()
+        popTip.textColor = UIColor.whiteColor()
+        if sender.dynamicType === UIBarButtonItem.self {
+            popTip.presentAnimatedPointingAtBarButtonItem(sender as! UIBarButtonItem, autodismissAtTime: 10)
+        } else {
+            popTip.presentAnimatedPointingAtView(sender as! UIView, inView: self.view, autodismissAtTime: 10)
         }
     }
     
