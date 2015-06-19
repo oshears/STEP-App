@@ -15,6 +15,7 @@ class DetailPersonTableViewController: UITableViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     var person:Person!
+    var reloaded:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,5 +73,9 @@ class DetailPersonTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.layoutIfNeeded()
         cell.setNeedsDisplay()
+        if (!reloaded && indexPath.row==3){
+            tableView.reloadData()
+            reloaded=true
+        }
     }
 }

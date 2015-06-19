@@ -24,9 +24,9 @@
 		80819B091B18D9A100E35C3A /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */; };
 		80848F631B1B5DBE00789BAF /* DetailedHoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80848F621B1B5DBE00789BAF /* DetailedHoursTableViewController.swift */; };
 		80848F651B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80848F641B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift */; };
-		808EE5CD1B2F197200D31CBF /* SwiftPopTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808EE5CC1B2F197200D31CBF /* SwiftPopTipView.swift */; };
 		8090C29E1B03E43100B703F4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8090C29D1B03E43100B703F4 /* MapKit.framework */; };
 		8090C2A11B03E60F00B703F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090C2A01B03E60F00B703F4 /* MapViewController.swift */; };
+		80A268CA1B33BF2F00208B3C /* SwiftPopTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A268C91B33BF2F00208B3C /* SwiftPopTipView.swift */; };
 		80AF31891AAC8E08006C94CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AF31881AAC8E08006C94CE /* AppDelegate.swift */; };
 		80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */; };
 		80AF31911AAC8E08006C94CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AF318F1AAC8E08006C94CE /* Main.storyboard */; };
@@ -91,9 +91,9 @@
 		80819B081B18D9A100E35C3A /* SnapsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
 		80848F621B1B5DBE00789BAF /* DetailedHoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedHoursTableViewController.swift; sourceTree = "<group>"; };
 		80848F641B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCalendarTableViewController.swift; sourceTree = "<group>"; };
-		808EE5CC1B2F197200D31CBF /* SwiftPopTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftPopTipView.swift; path = "../../../../../Downloads/SwiftPopTipView-master/SwiftPopTipView/SwiftPopTipView.swift"; sourceTree = "<group>"; };
 		8090C29D1B03E43100B703F4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8090C2A01B03E60F00B703F4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		80A268C91B33BF2F00208B3C /* SwiftPopTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPopTipView.swift; sourceTree = "<group>"; };
 		80AF31831AAC8E08006C94CE /* STEP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AF31871AAC8E08006C94CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AF31881AAC8E08006C94CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 				80AF318A1AAC8E08006C94CE /* STEP_App.xcdatamodeld */,
 				80AF31921AAC8E08006C94CE /* Images.xcassets */,
 				80AF318F1AAC8E08006C94CE /* Main.storyboard */,
-				808EE5CC1B2F197200D31CBF /* SwiftPopTipView.swift */,
+				80A268C91B33BF2F00208B3C /* SwiftPopTipView.swift */,
 				804B23891AAF1BE80008EE81 /* Announcements */,
 				804B238A1AAF1C190008EE81 /* Admin */,
 				8026B31F1AAF8BEE001DC66A /* People */,
@@ -502,7 +502,6 @@
 				801476D41B14C90000B2071B /* VCMapView.swift in Sources */,
 				8026B31C1AAF60C5001DC66A /* CalendarTableViewController.swift in Sources */,
 				80819B021B18B77B00E35C3A /* AddFAQTableViewController.swift in Sources */,
-				808EE5CD1B2F197200D31CBF /* SwiftPopTipView.swift in Sources */,
 				8026B31E1AAF8BE9001DC66A /* PeopleTableViewController.swift in Sources */,
 				80819AFC1B18B4F300E35C3A /* FAQTableViewCell.swift in Sources */,
 				80AF327D1AAE3E14006C94CE /* PostAnnouncementTableViewController.swift in Sources */,
@@ -517,6 +516,7 @@
 				80C993501AC6187100C2A1D6 /* Eatery.swift in Sources */,
 				80AF318C1AAC8E08006C94CE /* STEP_App.xcdatamodeld in Sources */,
 				80D6638F1AAE7E5600433C79 /* MiscAnnouncementsTableViewController.swift in Sources */,
+				80A268CA1B33BF2F00208B3C /* SwiftPopTipView.swift in Sources */,
 				80819B041B18B8AF00E35C3A /* DetailFAQTableViewController.swift in Sources */,
 				80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */,
 				80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */,
