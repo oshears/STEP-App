@@ -169,6 +169,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     @IBAction func loadAnnouncementData(){
             announcementList.removeAllObjects()
             var findAnnouncements:PFQuery = PFQuery(className: "Announcement")
+        findAnnouncements.orderByAscending("createdAt")
         
         findAnnouncements.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in

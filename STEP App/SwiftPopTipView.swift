@@ -309,7 +309,7 @@ class SwiftPopTipView: UIView {
     }
     
     func presentPointingAtBarButtonItem(barButtonItem: UIBarButtonItem, animated: Bool) {
-        var targetView = barButtonItem.valueForKey("view") as UIView
+        var targetView = barButtonItem.valueForKey("view") as! UIView
         var targetSuperview = targetView.superview
         var containerView: UIView?
         if targetSuperview!.dynamicType === UINavigationBar.self {
@@ -530,7 +530,7 @@ class SwiftPopTipView: UIView {
     }
     
     func autoDismissAnimatedDidFire(theTimer: NSTimer) {
-        var animated = theTimer.userInfo?.objectForKey("animated") as Bool
+        var animated = theTimer.userInfo?.objectForKey("animated") as! Bool
         self.dismissAnimated(animated)
         self.notifyDelegatePopTipViewWasDismissedByUser()
     }
@@ -544,13 +544,14 @@ class SwiftPopTipView: UIView {
         self.delegate?.popTipViewWasDismissedByUser(self)
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         if self.disableTapToDismiss {
-            super.touchesBegan(touches, withEvent: event)
+            super.touchesBegan(touches as Set<NSObject>, withEvent: event)
             return
         }
         self.dismissByUser()
     }
+    
     
     func dismissTapAnywhereFired(button: UIButton) {
         self.dismissByUser()

@@ -2462,7 +2462,7 @@
         <image name="chickfila" width="281" height="281"/>
         <image name="clock-7" width="30" height="30"/>
         <image name="crown-7" width="30" height="30"/>
-        <image name="lifebuoy-7" width="30" height="30"/>
+        <image name="lifebuoy-7" width="25" height="25"/>
         <image name="man-7" width="29" height="30"/>
         <image name="megaphone" width="30" height="30"/>
         <image name="menu" width="22" height="22"/>
