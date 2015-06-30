@@ -130,7 +130,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     @IBAction func loadAnnouncementData(){
         miscAnnouncementList.removeAllObjects()
         var findAnnouncements:PFQuery = PFQuery(className: "MiscAnnouncement")
-
+        findAnnouncements.orderByAscending("createdAt")
         findAnnouncements.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in
             if error == nil{

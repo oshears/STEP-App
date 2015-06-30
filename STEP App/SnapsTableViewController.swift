@@ -135,7 +135,7 @@ class SnapsTableViewController: UITableViewController {
     @IBAction func loadSnapData(){
         pictureList.removeAllObjects()
         var findSnaps:PFQuery = PFQuery(className: "SnapImage")
-        
+        findSnaps.orderByAscending("createdAt")
         findSnaps.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in
             if error == nil{

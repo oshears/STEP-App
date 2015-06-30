@@ -39,12 +39,20 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
             var snap:PFObject = PFObject(className: "SnapImage")
             snap["caption"] = snapCaptionTextView.text
             
-            let imageData = UIImagePNGRepresentation(snapImageView.image)
+            //Compress before upload(?)
+            
+            //snapImageView.image?.imageOrientation = UIImageOrientation.Up
+            //var someCiImage = CIImage(image: snapImageView.image)
+
+            //var newImage = UIImage(CIImage: someCiImage, scale: 1.0, orientation: UIImageOrientation.Up)
+            
+            let imageData = UIImageJPEGRepresentation(fixImageOrientation(snapImageView.image!),0.8)
             let imageFile = PFFile(name:"snapimage.png", data:imageData)
             snap["image"] = imageFile
-            
+
             snap.saveInBackgroundWithTarget(nil, selector: nil)
             //performSegueWithIdentifier("unwindToFaqsScreen", sender: self)
+
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else{
@@ -78,5 +86,68 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    //cosnovae
+    //https://github.com/cosnovae/fixUIImageOrientation
+    func fixImageOrientation(src:UIImage)->UIImage {
+        
+        if src.imageOrientation == UIImageOrientation.Up {
+            return src
+        }
+        
+        var transform: CGAffineTransform = CGAffineTransformIdentity
+        
+        switch src.imageOrientation {
+        case UIImageOrientation.Down, UIImageOrientation.DownMirrored:
+            transform = CGAffineTransformTranslate(transform, src.size.width, src.size.height)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI))
+            break
+        case UIImageOrientation.Left, UIImageOrientation.LeftMirrored:
+            transform = CGAffineTransformTranslate(transform, src.size.width, 0)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI_2))
+            break
+        case UIImageOrientation.Right, UIImageOrientation.RightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, src.size.height)
+            transform = CGAffineTransformRotate(transform, CGFloat(-M_PI_2))
+            break
+        case UIImageOrientation.Up, UIImageOrientation.UpMirrored:
+            break
+        default:
+            break
+        }
+        
+        switch src.imageOrientation {
+        case UIImageOrientation.UpMirrored, UIImageOrientation.DownMirrored:
+            CGAffineTransformTranslate(transform, src.size.width, 0)
+            CGAffineTransformScale(transform, -1, 1)
+            break
+        case UIImageOrientation.LeftMirrored, UIImageOrientation.RightMirrored:
+            CGAffineTransformTranslate(transform, src.size.height, 0)
+            CGAffineTransformScale(transform, -1, 1)
+        case UIImageOrientation.Up, UIImageOrientation.Down, UIImageOrientation.Left, UIImageOrientation.Right:
+            break
+        default:
+            break
+        }
+        
+        //var ctv:CGContextRef = CGBitmapContextCreate(<#data: UnsafeMutablePointer<Void>#>, <#width: Int#>, <#height: Int#>, <#bitsPerComponent: Int#>, <#bytesPerRow: Int#>, <#space: CGColorSpace!#>, <#bitmapInfo: CGBitmapInfo#>)
+        
+        var ctx:CGContextRef = CGBitmapContextCreate(nil, Int(src.size.width), Int(src.size.height), CGImageGetBitsPerComponent(src.CGImage), 0, CGImageGetColorSpace(src.CGImage), CGImageGetBitmapInfo(src.CGImage))
+        
+        CGContextConcatCTM(ctx, transform)
+        
+        switch src.imageOrientation {
+        case UIImageOrientation.Left, UIImageOrientation.LeftMirrored, UIImageOrientation.Right, UIImageOrientation.RightMirrored:
+            CGContextDrawImage(ctx, CGRectMake(0, 0, src.size.height, src.size.width), src.CGImage)
+            break
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0, 0, src.size.width, src.size.height), src.CGImage)
+            break
+        }
+        
+        let cgimg:CGImageRef = CGBitmapContextCreateImage(ctx)
+        var img:UIImage = UIImage(CGImage: cgimg)!
+        
+        return img
+    }
 
 }

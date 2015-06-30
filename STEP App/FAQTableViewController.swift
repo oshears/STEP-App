@@ -129,7 +129,7 @@ class FAQTableViewController: UITableViewController {
     @IBAction func loadFAQData(){
         faqList.removeAllObjects()
         var findFaqs:PFQuery = PFQuery(className: "FAQ")
-        
+        findFaqs.orderByAscending("createdAt")
         findFaqs.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in
             if error == nil{
