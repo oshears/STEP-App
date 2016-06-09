@@ -22,7 +22,7 @@ class AdminTableViewController: UITableViewController {
         //Side Menu
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -52,7 +52,7 @@ class AdminTableViewController: UITableViewController {
         if indexPath.row == 0{
             if PFUser.currentUser() != nil{
                 PFUser.logOut()
-                var errorAlert:UIAlertController = UIAlertController(title: "Logout Successful!", message: "You have been logged out.", preferredStyle: UIAlertControllerStyle.Alert)
+                let errorAlert:UIAlertController = UIAlertController(title: "Logout Successful!", message: "You have been logged out.", preferredStyle: UIAlertControllerStyle.Alert)
                 errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                 self.presentViewController(errorAlert,animated: true, completion: nil)
             }
@@ -71,7 +71,7 @@ class AdminTableViewController: UITableViewController {
                 showLogin()
             }
             else{
-                var messageAlert:UIAlertController = UIAlertController(title: "New Push Notification", message: "Enter your message", preferredStyle: UIAlertControllerStyle.Alert)
+                let messageAlert:UIAlertController = UIAlertController(title: "New Push Notification", message: "Enter your message", preferredStyle: UIAlertControllerStyle.Alert)
                 
                 messageAlert.addTextFieldWithConfigurationHandler{
                     (textfield:UITextField!) -> Void in
@@ -81,18 +81,18 @@ class AdminTableViewController: UITableViewController {
                 }
                 
                 messageAlert.addAction(UIAlertAction(title: "Send", style: UIAlertActionStyle.Default, handler: {
-                    (alertAction:UIAlertAction!) -> Void in
-                    var push:PFPush = PFPush()
+                    (alertAction:UIAlertAction) -> Void in
+                    let push:PFPush = PFPush()
                     //push.setChannel("Reload")
                     //Custom sound, badge app icon, alert message?
-                    var data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":"default"]
+                    let data:NSDictionary = ["alert":"","badge":"1","content-available":"1","sound":"default"]
                     push.setData(data as [NSObject : AnyObject])
                     //Send push notification
-                    var pushQuery:PFQuery = PFInstallation.query()!
+                    let pushQuery:PFQuery = PFInstallation.query()!
                     pushQuery.whereKey("channels",equalTo: "Reload")
                     push.setQuery(pushQuery)
                     
-                    let messageTextField:UITextField = messageAlert.textFields?.first as! UITextField
+                    let messageTextField:UITextField = (messageAlert.textFields?.first!)! as UITextField
                     push.setMessage(messageTextField.text)
                     push.sendPushInBackgroundWithTarget(nil, selector: nil)
                     
@@ -113,7 +113,7 @@ class AdminTableViewController: UITableViewController {
             defaults.setBool(false, forKey: "hasViewedFaqsPopTip")
             defaults.setBool(false, forKey: "hasViewedSnapsPopTip")
             
-            var messageAlert:UIAlertController = UIAlertController(title: "PopTips Reset!", message: "All PopTips have been reset.", preferredStyle: UIAlertControllerStyle.Alert)
+            let messageAlert:UIAlertController = UIAlertController(title: "PopTips Reset!", message: "All PopTips have been reset.", preferredStyle: UIAlertControllerStyle.Alert)
             messageAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(messageAlert, animated: true, completion: nil)
 
@@ -123,14 +123,14 @@ class AdminTableViewController: UITableViewController {
     
     
 
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "postGeneralAnnouncement"{
             if PFUser.currentUser() != nil{
-                println("Transition authorized")
+                print("Transition authorized")
                 return true
             }
             else{
-                println("Login requested")
+                print("Login requested")
                 self.showLogin()
                 return false
             }
@@ -140,8 +140,8 @@ class AdminTableViewController: UITableViewController {
     
     func showLogin(){
         var didLogin:Bool = false
-        println("Proceeding with attempt...")
-        var loginAlert:UIAlertController = UIAlertController(title: "Admin Login", message: "Please login to proceed", preferredStyle: UIAlertControllerStyle.Alert)
+        print("Proceeding with attempt...")
+        let loginAlert:UIAlertController = UIAlertController(title: "Admin Login", message: "Please login to proceed", preferredStyle: UIAlertControllerStyle.Alert)
         loginAlert.addTextFieldWithConfigurationHandler({
             textField in
             textField.placeholder = "Admin username"
@@ -162,28 +162,28 @@ class AdminTableViewController: UITableViewController {
         
             PFUser.logInWithUsernameInBackground(usernameTextfield.text!, password: passwordTextField.text!){
                 (user:PFUser?,error:NSError?)->Void in
-                println("User info exits?: \(user)")
+                print("User info exits?: \(user)")
                 if (user != nil){
-                    println("login successful")
+                    print("login successful")
                     
                     //What does this do?
-                    var installation:PFInstallation = PFInstallation.currentInstallation()
+                    let installation:PFInstallation = PFInstallation.currentInstallation()
                     installation.addUniqueObject("Reload", forKey: "channels")
                     installation["user"] = PFUser.currentUser()
                     installation.saveInBackgroundWithTarget(nil, selector: nil)
                     didLogin = true
                 }
                 else{
-                    println("login failed")
+                    print("login failed")
                 }
                 if !(didLogin){
-                    var errorAlert:UIAlertController = UIAlertController(title: "Incorrect Login Credentials!", message: "Only registered admins may access this tab...", preferredStyle: UIAlertControllerStyle.Alert)
+                    let errorAlert:UIAlertController = UIAlertController(title: "Incorrect Login Credentials!", message: "Only registered admins may access this tab...", preferredStyle: UIAlertControllerStyle.Alert)
                     errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                     self.presentViewController(errorAlert,animated: true, completion: nil)
                     
                 }
                 else{
-                    var loginAlert:UIAlertController = UIAlertController(title: "Hello \(PFUser.currentUser()!.username!)", message:"Successfully logged in as \(PFUser.currentUser()!.username!)",preferredStyle: .Alert)
+                    let loginAlert:UIAlertController = UIAlertController(title: "Hello \(PFUser.currentUser()!.username!)", message:"Successfully logged in as \(PFUser.currentUser()!.username!)",preferredStyle: .Alert)
                     loginAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                     self.presentViewController(loginAlert,animated: true, completion: nil)
                     

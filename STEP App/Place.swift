@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 class Place: NSObject, MKAnnotation {
-    let title:String!
+    let title:String?
     let locationName:String!
     let isBuilding:Bool!
     let coordinate: CLLocationCoordinate2D
@@ -21,7 +21,7 @@ class Place: NSObject, MKAnnotation {
         self.coordinate = coordinate
         super.init()
     }
-    var subtitle: String {
+    var subtitle: String? {
         return locationName
     }
     func pinColor() -> MKPinAnnotationColor  {

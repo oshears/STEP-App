@@ -34,9 +34,9 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
     }
     
     @IBAction func postQuestion(){
-        var notBlank = snapCaptionTextView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
+        let notBlank = snapCaptionTextView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
         if notBlank{
-            var snap:PFObject = PFObject(className: "SnapImage")
+            let snap:PFObject = PFObject(className: "SnapImage")
             snap["caption"] = snapCaptionTextView.text
             
             //Compress before upload(?)
@@ -45,9 +45,9 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
             //var someCiImage = CIImage(image: snapImageView.image)
 
             //var newImage = UIImage(CIImage: someCiImage, scale: 1.0, orientation: UIImageOrientation.Up)
-            
-            let imageData = UIImageJPEGRepresentation(fixImageOrientation(snapImageView.image!),0.8)
-            let imageFile = PFFile(name:"snapimage.png", data:imageData)
+            //let scaledImage = self.scaledImageWith(snapImageView, newSize: CGSizeMake())
+            let imageData = UIImageJPEGRepresentation(snapImageView.image!,0.8)
+            let imageFile = PFFile(name:"snapimage.png", data:imageData!)
             snap["image"] = imageFile
 
             snap.saveInBackgroundWithTarget(nil, selector: nil)
@@ -56,7 +56,7 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else{
-            var errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting a Snap.", preferredStyle: UIAlertControllerStyle.Alert)
+            let errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting a Snap.", preferredStyle: UIAlertControllerStyle.Alert)
             errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(errorAlert,animated: true, completion: nil)
         }
@@ -77,7 +77,7 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     //Image Picker Controller
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         snapImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         snapImageView.contentMode = UIViewContentMode.ScaleAspectFit
@@ -88,6 +88,7 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
     
     //cosnovae
     //https://github.com/cosnovae/fixUIImageOrientation
+   /*
     func fixImageOrientation(src:UIImage)->UIImage {
         
         if src.imageOrientation == UIImageOrientation.Up {
@@ -144,10 +145,18 @@ class PostSnapTableViewController: UITableViewController, UITextViewDelegate, UI
             break
         }
         
-        let cgimg:CGImageRef = CGBitmapContextCreateImage(ctx)
-        var img:UIImage = UIImage(CGImage: cgimg)!
+        let cgimg:CGImageRef = CGBitmapContextCreateImage(ctx)!
+        var img:UIImage = UIImage(CGImage: cgimg)
         
         return img
     }
+    
+    func scaledImageWith (image:UIImage, newSize:CGSize)->UIImage{
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        image.drawInRect((CGRectMake(0, 0, newSize.width, newSize.height)))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }*/
 
 }

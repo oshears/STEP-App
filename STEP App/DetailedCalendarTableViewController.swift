@@ -37,8 +37,8 @@ class DetailedCalendarTableViewController: UITableViewController {
         activity3Label.text = (calendarDay.objectForKey("main_activity_3")==nil) ? "" : calendarDay.objectForKey("main_activity_3") as? String
         //if (activity3Label.text == ""){ activity3Label.text = " "}
         
-        var calendarDate = calendarDay.objectForKey("date") as! NSDate
-        var dataFormatter:NSDateFormatter = NSDateFormatter()
+        let calendarDate = calendarDay.objectForKey("date") as! NSDate
+        let dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
         
         dataFormatter.dateFormat = "EEEE, MMMM dd, YYYY"
@@ -64,7 +64,7 @@ class DetailedCalendarTableViewController: UITableViewController {
         
         //Update the cells again
         for x in 0...tableView.numberOfRowsInSection(0){
-            var indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
+            let indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
             self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
         }
         tableView.beginUpdates()

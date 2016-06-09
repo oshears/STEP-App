@@ -66,27 +66,27 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
     
     
     @IBAction func postAnnouncement(sender: AnyObject) {
-        var notBlank = announcementTitle.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && announcementContent.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
+        let notBlank = announcementTitle.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && announcementContent.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
         if notBlank{
-            var announcement:PFObject = PFObject(className: "Announcement")
+            let announcement:PFObject = PFObject(className: "Announcement")
             announcement["title"] = announcementTitle.text
             announcement["content"] = announcementContent.text
             announcement["type"] = announcementType
             announcement["hasImage"] = announcementHasImage
-            println("New Announcement with image of \(announcementType)")
+            print("New Announcement with image of \(announcementType)")
         
             if PFUser.currentUser() != nil{
                 announcement["poster"] = PFUser.currentUser()
                 announcement.saveInBackgroundWithTarget(nil, selector: nil)
-                var push:PFPush = PFPush()
+                let push:PFPush = PFPush()
                 //push.setChannel("Reload")
             
                 //Custom sound, badge app icon, alert message?
-                var data:NSDictionary = ["alert":"","badge":"1","content-available":"1"]
+                let data:NSDictionary = ["alert":"","badge":"1","content-available":"1"]
                 push.setData(data as [NSObject : AnyObject])
             
                 //Send push notification
-                var pushQuery:PFQuery = PFInstallation.query()!
+                let pushQuery:PFQuery = PFInstallation.query()!
                 pushQuery.whereKey("channels",equalTo: "Reload")
                 push.setQuery(pushQuery)
                 push.setMessage(announcementTitle.text)
@@ -100,7 +100,7 @@ class PostAnnouncementTableViewController: UITableViewController, UINavigationCo
         
         }
         else{
-            var errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting an announcement.", preferredStyle: UIAlertControllerStyle.Alert)
+            let errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting an announcement.", preferredStyle: UIAlertControllerStyle.Alert)
             errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(errorAlert,animated: true, completion: nil)
         }

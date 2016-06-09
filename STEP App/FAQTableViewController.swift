@@ -31,7 +31,7 @@ class FAQTableViewController: UITableViewController {
         //Side Menu
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -39,7 +39,7 @@ class FAQTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
         refreshControl?.tintColor = UIColor.grayColor()
-        refreshControl?.addTarget(self, action: "loadFAQData", forControlEvents:
+        refreshControl?.addTarget(self, action: #selector(FAQTableViewController.loadFAQData), forControlEvents:
             UIControlEvents.ValueChanged)
         
         
@@ -128,7 +128,7 @@ class FAQTableViewController: UITableViewController {
     
     @IBAction func loadFAQData(){
         faqList.removeAllObjects()
-        var findFaqs:PFQuery = PFQuery(className: "FAQ")
+        let findFaqs:PFQuery = PFQuery(className: "FAQ")
         findFaqs.orderByAscending("createdAt")
         findFaqs.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in
@@ -142,8 +142,8 @@ class FAQTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             else{
-                println("Failed to retrieve faqs from database")
-                var errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                print("Failed to retrieve faqs from database")
+                let errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                 self.presentViewController(errorAlert,animated: true, completion: nil)
             }
@@ -159,11 +159,11 @@ class FAQTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "detailedQuestion" {
-            if let row = tableView.indexPathForSelectedRow()?.row {
+            if let row = tableView.indexPathForSelectedRow?.row {
                 
                 let faq:PFObject = self.faqList.objectAtIndex(row) as! PFObject
-                var question:String = faq.objectForKey("question") as! String
-                var answer:String = (faq.objectForKey("answer")==nil) ? "" : faq.objectForKey("answer") as! String
+                let question:String = faq.objectForKey("question") as! String
+                let answer:String = (faq.objectForKey("answer")==nil) ? "" : faq.objectForKey("answer") as! String
                 let destinationController = segue.destinationViewController as! DetailFAQTableViewController
                 
                 destinationController.faq = FAQ(question: question, answer: answer)
@@ -181,7 +181,7 @@ class FAQTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows?.first?.row ){
             // Launch walkthrough screens
             let defaults = NSUserDefaults.standardUserDefaults()
             let hasViewedWalkthrough = defaults.boolForKey("hasViewedFaqsPopTip")
@@ -192,13 +192,13 @@ class FAQTableViewController: UITableViewController {
                 showPopTip(postFaqBtn,message:"Tap the plus to post a new question.")
             }
         }
-        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<1){
-            countReloads++
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows?.last?.row && countReloads<1){
+            countReloads += 1
             loadFAQData()
         }
     }
     func showPopTip(sender: AnyObject, message: String) {
-        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        let popTip = SwiftPopTipView(title: "ProTip!", message: message)
         popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
         popTip.titleColor = UIColor.whiteColor()
         popTip.textColor = UIColor.whiteColor()

@@ -38,7 +38,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
         
         self.loadAnnouncementData()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnouncementData", name: "reloadAnnouncements", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MiscAnnouncementsTableViewController.loadAnnouncementData), name: "reloadAnnouncements", object: nil)
         
         //Change Separator Color
         //self.tableView.separatorColor = UIColor.clearColor()
@@ -46,7 +46,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         //Side Menu
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -54,7 +54,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor(red: 240/255, green: 242/255, blue: 243/255, alpha: 1)
         refreshControl?.tintColor = UIColor.grayColor()
-        refreshControl?.addTarget(self, action: "loadAnnouncementData", forControlEvents:
+        refreshControl?.addTarget(self, action: #selector(MiscAnnouncementsTableViewController.loadAnnouncementData), forControlEvents:
         UIControlEvents.ValueChanged)
         
         // Configure the activity indicator and start animating
@@ -106,7 +106,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         let announcement:PFObject = self.miscAnnouncementList.objectAtIndex(indexPath.row) as! PFObject
         cell.announcementContent.text = announcement.objectForKey("content") as? String
         
-        var dataFormatter:NSDateFormatter = NSDateFormatter()
+        let dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
         cell.announcementTime.text = dataFormatter.stringFromDate(announcement.createdAt!)
         
@@ -129,7 +129,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
     
     @IBAction func loadAnnouncementData(){
         miscAnnouncementList.removeAllObjects()
-        var findAnnouncements:PFQuery = PFQuery(className: "MiscAnnouncement")
+        let findAnnouncements:PFQuery = PFQuery(className: "MiscAnnouncement")
         findAnnouncements.orderByAscending("createdAt")
         findAnnouncements.findObjectsInBackgroundWithBlock{
             (objects:[AnyObject]?,error:NSError?)-> Void in
@@ -144,8 +144,8 @@ class MiscAnnouncementsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             else{
-                println("Failed to retrieve announcements from database")
-                var errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                print("Failed to retrieve announcements from database")
+                let errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                 self.presentViewController(errorAlert,animated: true, completion: nil)
             }
@@ -157,7 +157,7 @@ class MiscAnnouncementsTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows?.first?.row ){
                 // Launch walkthrough screens
                 let defaults = NSUserDefaults.standardUserDefaults()
                 let hasViewedWalkthrough = defaults.boolForKey("hasViewedMiscAnnouncementPopTip")
@@ -168,14 +168,14 @@ class MiscAnnouncementsTableViewController: UITableViewController {
                     showPopTip(postMiscBtn,message:"Tap the plus to post a new announcement.")
                 }
             }
-        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.last?.row && countReloads<2){
-            countReloads++
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows?.last?.row && countReloads<2){
+            countReloads += 1
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
         }
     }
     func showPopTip(sender: AnyObject, message: String) {
-        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        let popTip = SwiftPopTipView(title: "ProTip!", message: message)
         popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
         popTip.titleColor = UIColor.whiteColor()
         popTip.textColor = UIColor.whiteColor()

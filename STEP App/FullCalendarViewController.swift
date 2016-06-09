@@ -30,9 +30,9 @@ class FullCalendarViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return scrollView.subviews.first as? UIView
+        return scrollView.subviews.first! as UIView
     }
-    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView!, atScale scale: CGFloat) {
+    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
         self.scrollView.transform=CGAffineTransformMakeScale(scale, scale)
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnnouncementConentTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate  {
+class AnnouncementConentTableViewController: UITableViewController{
 
     var announcement:Announcement!
     
@@ -25,7 +25,7 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
         
         
         
-        println(announcement.title)
+        print(announcement.title)
         announcementTitle.text = announcement.title
         announcementContent.text = announcement.content
         announcementPostDate.text = announcement.postDate
@@ -44,8 +44,8 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
         indexPath=NSIndexPath(forRow: 1, inSection: 0)
         self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()*/
         for x in 0...tableView.numberOfRowsInSection(0){
-            println("fixing cell -> \(x)")
-            var indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
+            print("fixing cell -> \(x)")
+            let indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
             self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
         }
         
@@ -64,6 +64,11 @@ class AnnouncementConentTableViewController: UITableViewController, UITableViewD
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        tableView.reloadData()
     }
 
 

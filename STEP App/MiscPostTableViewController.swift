@@ -38,9 +38,9 @@ class MiscPostTableViewController: UITableViewController, UINavigationController
 
 
     @IBAction func postMisc(){
-        var notBlank = announcementContent.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
+        let notBlank = announcementContent.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
         if notBlank{
-            var announcement:PFObject = PFObject(className: "MiscAnnouncement")
+            let announcement:PFObject = PFObject(className: "MiscAnnouncement")
             announcement["content"] = announcementContent.text
         
             //Create a check here to determine if PFUser is nil or not
@@ -58,7 +58,7 @@ class MiscPostTableViewController: UITableViewController, UINavigationController
             performSegueWithIdentifier("unwindToAnnouncementScreen", sender: self)
         }
         else{
-            var errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting an announcement.", preferredStyle: UIAlertControllerStyle.Alert)
+            let errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting an announcement.", preferredStyle: UIAlertControllerStyle.Alert)
             errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(errorAlert,animated: true, completion: nil)
         }

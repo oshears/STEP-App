@@ -31,9 +31,9 @@ class AddFAQTableViewController: UITableViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func postQuestion(){
-        var notBlank = faqTextView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
+        let notBlank = faqTextView.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""
         if notBlank{
-            var faq:PFObject = PFObject(className: "FAQ")
+            let faq:PFObject = PFObject(className: "FAQ")
             faq["question"] = faqTextView.text
             
             faq.saveInBackgroundWithTarget(nil, selector: nil)
@@ -41,7 +41,7 @@ class AddFAQTableViewController: UITableViewController, UITextViewDelegate {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else{
-            var errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting a FAQ.", preferredStyle: UIAlertControllerStyle.Alert)
+            let errorAlert:UIAlertController = UIAlertController(title: "Textfields Not Filled", message: "Please fill out all textfields before posting a FAQ.", preferredStyle: UIAlertControllerStyle.Alert)
             errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(errorAlert,animated: true, completion: nil)
         }

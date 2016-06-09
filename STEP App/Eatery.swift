@@ -34,13 +34,13 @@ class Eatery {
     func fixOpenStatus(){
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitDay | .CalendarUnitWeekday | .CalendarUnitMonth, fromDate: date)
+        let components = calendar.components([.Hour, .Minute, .Day, .Weekday, .Month], fromDate: date)
         let hour = components.hour
         let minutes = components.minute
         let day = components.day
         let weekday = components.weekday
         let month = components.month
-        println("Some date today is: \(hour):\(minutes), on \(weekday) \(month) \(day)")
+        print("Some date today is: \(hour):\(minutes), on \(weekday) \(month) \(day)")
         var currTime:Double = Double(hour)
         //if (minutes>=30){ currTime+=0.5}
         currTime+=((Double(minutes))/60)

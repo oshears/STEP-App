@@ -41,7 +41,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         self.loadAnnouncementData()
         
         //Enable Push Notifications
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnouncementData", name: "reloadAnnouncements", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AnnouncementsTableViewController.loadAnnouncementData), name: "reloadAnnouncements", object: nil)
         
         //Change Separator Color
         self.tableView.separatorColor = UIColor.clearColor()
@@ -49,7 +49,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         //Side Menu
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -57,7 +57,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         refreshControl = UIRefreshControl()
         refreshControl?.backgroundColor = UIColor(red: 220/255, green: 222/255, blue: 223/255, alpha: 1)
         refreshControl?.tintColor = UIColor.grayColor()
-        refreshControl?.addTarget(self, action: "loadAnnouncementData", forControlEvents:
+        refreshControl?.addTarget(self, action: #selector(AnnouncementsTableViewController.loadAnnouncementData), forControlEvents:
         UIControlEvents.ValueChanged)
 
         
@@ -120,7 +120,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         
         cell.announcementTitle.text = announcement.objectForKey("title") as? String
         
-        var dataFormatter:NSDateFormatter = NSDateFormatter()
+        let dataFormatter:NSDateFormatter = NSDateFormatter()
         dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
         cell.announcementTime.text = dataFormatter.stringFromDate(announcement.createdAt!)
         
@@ -139,7 +139,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         }
         else{
             var titleText:String = announcement.objectForKey("title") as! String
-            println("found a nil type announcement with title: \(titleText)")
+            //println("found a nil type announcement with title: \(titleText)")
         }
         cell.announcementImage.layer.cornerRadius = cell.announcementImage.frame.size.width / 2
         
@@ -168,7 +168,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     
     @IBAction func loadAnnouncementData(){
             announcementList.removeAllObjects()
-            var findAnnouncements:PFQuery = PFQuery(className: "Announcement")
+            let findAnnouncements:PFQuery = PFQuery(className: "Announcement")
         findAnnouncements.orderByAscending("createdAt")
         
         findAnnouncements.findObjectsInBackgroundWithBlock{
@@ -183,8 +183,8 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
                     self.tableView.reloadData()
                 }
                 else{
-                    println("Failed to retrieve announcements from database")
-                    var errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                    print("Failed to retrieve announcements from database")
+                    let errorAlert:UIAlertController = UIAlertController(title: "Failed to connect to the internet", message: "Check network connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
                     errorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                     self.presentViewController(errorAlert,animated: true, completion: nil)
                 }
@@ -192,24 +192,24 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
         
     
             //Save to local datastore
-            PFObject.pinAllInBackground(announcementList as [AnyObject], block: nil)
+            //PFObject.pinAllInBackground(announcementList as [AnyObject], block: nil)
             //Remove from local datastore
-            PFObject.unpinAllInBackground(announcementList as [AnyObject], block: nil)
+            //PFObject.unpinAllInBackground(announcementList as [AnyObject], block: nil)
             self.refreshControl?.endRefreshing()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "detailedAnnouncement" {
-            if let row = tableView.indexPathForSelectedRow()?.row {
+            if let row = tableView.indexPathForSelectedRow?.row {
                 
                 //var retrievedAnnouncement:PFObject = announcementList[row] as PFObject
                 let announcement:PFObject = self.announcementList.objectAtIndex(row) as! PFObject
-                var title:String = announcement.objectForKey("title") as! String
-                var content:String = announcement.objectForKey("content") as! String
+                let title:String = announcement.objectForKey("title") as! String
+                let content:String = announcement.objectForKey("content") as! String
                 
-                var dataFormatter:NSDateFormatter = NSDateFormatter()
+                let dataFormatter:NSDateFormatter = NSDateFormatter()
                 dataFormatter.dateFormat = "yyy-MM-dd HH:mm"
-                var postDate:String = dataFormatter.stringFromDate(announcement.createdAt!)
+                let postDate:String = dataFormatter.stringFromDate(announcement.createdAt!)
                 
                 
                 let destinationController = segue.destinationViewController as! AnnouncementConentTableViewController
@@ -233,7 +233,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
 
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row==self.tableView.indexPathsForVisibleRows()?.first?.row ){
+        if (indexPath.row==self.tableView.indexPathsForVisibleRows?.first?.row ){
             // Launch walkthrough screens
             let defaults = NSUserDefaults.standardUserDefaults()
             let hasViewedWalkthrough = defaults.boolForKey("hasViewedAnnouncementPopTip")
@@ -247,7 +247,7 @@ class AnnouncementsTableViewController: UITableViewController, UINavigationContr
     }
     
     func showPopTip(sender: AnyObject, message: String) {
-        var popTip = SwiftPopTipView(title: "ProTip!", message: message)
+        let popTip = SwiftPopTipView(title: "ProTip!", message: message)
         popTip.popColor = UIColor(red: 0/255, green: 102/255, blue: 51/255, alpha: 1)
         popTip.titleColor = UIColor.whiteColor()
         popTip.textColor = UIColor.whiteColor()

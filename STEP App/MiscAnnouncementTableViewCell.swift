@@ -19,9 +19,9 @@ class MiscAnnouncementTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        var screenRect:CGRect = UIScreen.mainScreen().bounds
+        let screenRect:CGRect = UIScreen.mainScreen().bounds
                 
-        var whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 25, self.cellSize))
+        let whiteRoundedCornerView = UIView(frame: CGRectMake(10, 10, screenRect.width - 25, self.cellSize))
         whiteRoundedCornerView.backgroundColor = UIColor.whiteColor()
         whiteRoundedCornerView.layer.masksToBounds = false
         whiteRoundedCornerView.layer.cornerRadius = 3

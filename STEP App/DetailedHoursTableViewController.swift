@@ -47,7 +47,7 @@ class DetailedHoursTableViewController: UITableViewController {
         indexPath=NSIndexPath(forRow: 1, inSection: 0)
         self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()*/
         for x in 0...tableView.numberOfRowsInSection(0){
-            var indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
+            let indexPath:NSIndexPath=NSIndexPath(forRow: x, inSection: 0)
             self.tableView.cellForRowAtIndexPath(indexPath)?.setNeedsDisplay()
         }
     }
