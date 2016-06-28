@@ -54,6 +54,7 @@
 		80BC3C991B20F93C0043109D /* PostSnapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC3C981B20F93C0043109D /* PostSnapTableViewController.swift */; };
 		80C793721D090BA400C2B6B4 /* WashingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C793711D090BA400C2B6B4 /* WashingViewController.swift */; };
 		80C793751D09EBEB00C2B6B4 /* RecreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C793741D09EBEB00C2B6B4 /* RecreationViewController.swift */; };
+		80C793781D18C88200C2B6B4 /* ModifiedFullCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C793771D18C88200C2B6B4 /* ModifiedFullCalendarViewController.swift */; };
 		80C993501AC6187100C2A1D6 /* Eatery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C9934F1AC6187100C2A1D6 /* Eatery.swift */; };
 		80D353A41AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */; };
 		80D6638D1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */; };
@@ -129,6 +130,7 @@
 		80BC3C981B20F93C0043109D /* PostSnapTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSnapTableViewController.swift; sourceTree = "<group>"; };
 		80C793711D090BA400C2B6B4 /* WashingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WashingViewController.swift; sourceTree = "<group>"; };
 		80C793741D09EBEB00C2B6B4 /* RecreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecreationViewController.swift; sourceTree = "<group>"; };
+		80C793771D18C88200C2B6B4 /* ModifiedFullCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiedFullCalendarViewController.swift; sourceTree = "<group>"; };
 		80C9934F1AC6187100C2A1D6 /* Eatery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eatery.swift; sourceTree = "<group>"; };
 		80D353A31AAF44030095FFE3 /* MiscAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		80D6638C1AAE7B7C00433C79 /* AnnouncementsConentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsConentTableViewController.swift; sourceTree = "<group>"; };
@@ -179,10 +181,12 @@
 		8026B31A1AAF60A7001DC66A /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				80C793761D18C80600C2B6B4 /* Webview Controller */,
 				8026B31B1AAF60C5001DC66A /* CalendarTableViewController.swift */,
 				80B34B7C1AB64A2600D0AABF /* CalendarTableViewCell.swift */,
 				80848F641B1B5DDC00789BAF /* DetailedCalendarTableViewController.swift */,
 				80F57F831B25ED0900C18F37 /* FullCalendarViewController.swift */,
+				80C793771D18C88200C2B6B4 /* ModifiedFullCalendarViewController.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -367,6 +371,13 @@
 			path = "STEP App";
 			sourceTree = "<group>";
 		};
+		80C793761D18C80600C2B6B4 /* Webview Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Webview Controller";
+			sourceTree = "<group>";
+		};
 		80D7C04C1B234AD1001E906D /* Misc Announcements */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +532,7 @@
 				80AF32731AAE00DC006C94CE /* AdminTableViewController.swift in Sources */,
 				80BC3C951B1F8C090043109D /* SnapImageTableViewCell.swift in Sources */,
 				80819B091B18D9A100E35C3A /* SnapsTableViewController.swift in Sources */,
+				80C793781D18C88200C2B6B4 /* ModifiedFullCalendarViewController.swift in Sources */,
 				80B34B7D1AB64A2600D0AABF /* CalendarTableViewCell.swift in Sources */,
 				80819AFA1B18B4D400E35C3A /* FAQTableViewController.swift in Sources */,
 				80EAEA281ABB80FC000F8229 /* HoursTableViewController.swift in Sources */,

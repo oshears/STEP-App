@@ -34,8 +34,12 @@ class AnnouncementConentTableViewController: UITableViewController{
         self.tableView.tableFooterView = UIView(frame:CGRectZero)
         
         //Self-Sizing
-        tableView.estimatedRowHeight = 36.0;
-        tableView.rowHeight = UITableViewAutomaticDimension;
+        //tableView.estimatedRowHeight = 36.0;
+        //tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        // Self Sizing Cells
+        self.tableView.estimatedRowHeight = 131.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
         
         //Update the cells again
         /*

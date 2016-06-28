@@ -34,7 +34,7 @@ class DetailFAQTableViewController: UITableViewController {
         answerLabel.text = (faq.answer=="") ? "This question has no answer yet." : faq.answer
         
         //Self-Sizing
-        tableView.estimatedRowHeight = 36.0;
+        tableView.estimatedRowHeight = 100.0;
         tableView.rowHeight = UITableViewAutomaticDimension;
         
         //Update the cells again
@@ -50,6 +50,7 @@ class DetailFAQTableViewController: UITableViewController {
         }*/
         self.tableView.beginUpdates()
         self.tableView.endUpdates()
+        self.tableView.layoutIfNeeded();
         
     }
 
